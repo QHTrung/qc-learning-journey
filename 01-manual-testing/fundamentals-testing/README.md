@@ -229,6 +229,7 @@ A number of testing principles offering general guidelines applicable to all tes
    > **_Kiểm thử chỉ cho thấy sự tồn tại của defect, không chứng minh được không có defect_**
    >
    > Testing có thể cho thấy defect tồn tại trong đối tượng kiểm thử, nhưng không thể chứng minh rằng hoàn toàn không có defect (Buxton 1970). Testing giúp giảm khả năng còn defect chưa được phát hiện, nhưng ngay cả khi không tìm thấy defect nào thì cũng không thể khẳng định phần mềm hoàn toàn đúng.
+   >
    > _Ví dụ_:
    > Bạn test chức năng đăng nhập:
    >
@@ -252,6 +253,7 @@ A number of testing principles offering general guidelines applicable to all tes
    > Không thể test mọi trường hợp ngoại trừ các hệ thống rất đơn giản (Manna 1978). Thay vì cố test tất cả, cần sử dụng:
    > Test techniques - Prioritization - Risk-based testing
    > để tập trung effort vào những phần quan trọng nhất.
+   >
    > Ví dụ
    > Form số điện thoại cho phép nhập:
    >
@@ -279,6 +281,7 @@ A number of testing principles offering general guidelines applicable to all tes
    > - Dynamic testing
    >
    > càng sớm càng tốt.
+   >
    > Ví dụ:
    > BA viết sai requirement:
    > Nếu tester review requirement sớm: Chỉ mất vài phút để sửa document.
@@ -303,6 +306,7 @@ A number of testing principles offering general guidelines applicable to all tes
 
    > **_Defect thường tập trung theo cụm_**
    > Một số ít component thường chứa phần lớn defect hoặc gây ra phần lớn failure trong hệ thống (Pareto Principle).
+   >
    > Ví dụ
    > Trong hệ thống e-commerce, 80% bug nằm ở:
    >
@@ -311,6 +315,7 @@ A number of testing principles offering general guidelines applicable to all tes
    > - checkout
    >
    > Trong khi trang About Us gần như không có bug.
+   >
    > => QA nên tập trung nhiều effort hơn vào khu vực có risk cao.
 
 5. **Tests wear out**. If the same tests are repeated many times, they become increasingly ineffective in detecting new defects (Beizer 1990). To overcome this effect, existing tests and test data may need to be modified, and new tests may need to be written. However, in some cases, repeating the same tests can have a beneficial outcome, e.g., in automated regression testing (see section 2.2.3).
@@ -325,6 +330,7 @@ A number of testing principles offering general guidelines applicable to all tes
    > - thay đổi approach
    >
    > Tuy nhiên, việc lặp lại test vẫn hữu ích trong regression testing.
+   >
    > Ví dụ
    > Bạn luôn test login bằng: admin / 123456
    > Sau nhiều sprint: testcase này luôn pass, không phát hiện bug mới
