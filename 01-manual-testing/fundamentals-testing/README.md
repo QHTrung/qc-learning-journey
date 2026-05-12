@@ -14,6 +14,7 @@
     - [1.2.1 Testing’s Contributions to Success](#121-testings-contributions-to-success)
     - [1.2.2 Testing and Quality Assurance (QA)](#122-testing-and-quality-assurance-qa)
     - [1.2.3. Errors, Defects, Failures, and Root Causes](#123-errors-defects-failures-and-root-causes)
+  - [1.3. Testing Principles](#13-testing-principles)
 
 ## Keywords
 
@@ -217,3 +218,173 @@ A root cause is a fundamental reason for the occurrence of a problem (e.g., a si
 > Root cause (nguyên nhân gốc rễ) là lý do cốt lõi dẫn đến sự xuất hiện của một vấn đề (ví dụ: một tình huống dẫn đến error). Root cause được xác định thông qua root cause analysis, hoạt động thường được thực hiện khi xảy ra failure hoặc khi phát hiện defect.
 >
 > Người ta tin rằng việc xử lý root cause, chẳng hạn như loại bỏ nó, có thể ngăn chặn các failure hoặc defect tương tự xảy ra trong tương lai hoặc làm giảm tần suất xuất hiện của chúng.
+
+## 1.3. Testing Principles
+
+A number of testing principles offering general guidelines applicable to all testing have been suggested over the years. This syllabus describes 7 such principles.
+
+1. **Testing shows the presence, not the absence of defects.** Testing can show that defects are present in the test object, but cannot prove that there are no defects (Buxton 1970). Testing reduces the probability of defects remaining undiscovered in the test object, but even if no defects are found, testing cannot prove test object correctness.
+   <br>
+
+   > **_Kiểm thử chỉ cho thấy sự tồn tại của defect, không chứng minh được không có defect_**
+   >
+   > Testing có thể cho thấy defect tồn tại trong đối tượng kiểm thử, nhưng không thể chứng minh rằng hoàn toàn không có defect (Buxton 1970). Testing giúp giảm khả năng còn defect chưa được phát hiện, nhưng ngay cả khi không tìm thấy defect nào thì cũng không thể khẳng định phần mềm hoàn toàn đúng.
+   > _Ví dụ_:
+   > Bạn test chức năng đăng nhập:
+   >
+   > - Login đúng → pass
+   > - Sai password → pass
+   > - Sai captcha → pass
+   >
+   > Dù tất cả testcase đều pass, vẫn có thể tồn tại bug như:
+   >
+   > - Login fail khi username chứa emoji
+   > - Login lỗi trên Safari
+   > - SQL Injection chưa được xử lý
+   >
+   > => Không tìm thấy bug ≠ Không có bug.
+
+2. **Exhaustive testing is impossible**. Testing everything is not feasible except in trivial cases (Manna 1978). Rather than attempting to test exhaustively, test techniques (see chapter 4), test case prioritization (see section 5.1.5), and risk-based testing (see section 5.2), should be used to focus test efforts.
+   <br>
+
+   > **_Kiểm thử toàn diện là không thể_**
+   >
+   > Không thể test mọi trường hợp ngoại trừ các hệ thống rất đơn giản (Manna 1978). Thay vì cố test tất cả, cần sử dụng:
+   > Test techniques - Prioritization - Risk-based testing
+   > để tập trung effort vào những phần quan trọng nhất.
+   > Ví dụ
+   > Form số điện thoại cho phép nhập:
+   >
+   > - 10 chữ số
+   > - Có khoảng trắng
+   > - Có ký tự đặc biệt
+   > - Copy/paste
+   > - Unicode
+   > - SQL injection
+   > - XSS
+   > - Nhiều browser
+   > - Nhiều device
+   >
+   > Số lượng combination gần như vô hạn.
+   > => Không thể test hết mọi input và mọi môi trường
+
+3. **Early testing saves time and money**. Defects that are removed early in the process will not cause subsequent defects in derived work products. The cost of quality will be reduced since fewer failures will occur later in the SDLC (Boehm 1981). To find defects early, both static testing (see chapter 3) and dynamic testing (see chapter 4) should be started as early as possible
+   <br>
+
+   > **_Kiểm thử sớm giúp tiết kiệm thời gian và chi phí_**
+   > Defect được phát hiện càng sớm thì càng ít ảnh hưởng đến các sản phẩm phía sau trong SDLC. Chi phí sửa lỗi ở giai đoạn đầu thường thấp hơn rất nhiều so với khi đã release.
+   > Để phát hiện defect sớm, nên bắt đầu:
+   >
+   > - Static testing
+   > - Dynamic testing
+   >
+   > càng sớm càng tốt.
+   > Ví dụ:
+   > BA viết sai requirement:
+   > Nếu tester review requirement sớm: Chỉ mất vài phút để sửa document.
+   > Nếu phát hiện sau khi:
+   >
+   > - Dev code xong
+   > - QA test xong
+   > - App release production
+   >
+   > => Có thể phải:
+   >
+   > - sửa code
+   > - sửa DB
+   > - retest
+   > - deploy lại
+   > - ảnh hưởng user thật
+   >
+   > => Chi phí tăng lên rất nhiều.
+
+4. **Defects cluster together**. A small number of system components usually contain most of the defects discovered or are responsible for most of the operational failures (Enders 1975). This phenomenon is an illustration of the Pareto principle. Predicted defect clusters, and actual defect clusters observed during testing or in operation, are an important input for risk-based testing (see section 5.2).
+   <br>
+
+   > **_Defect thường tập trung theo cụm_**
+   > Một số ít component thường chứa phần lớn defect hoặc gây ra phần lớn failure trong hệ thống (Pareto Principle).
+   > Ví dụ
+   > Trong hệ thống e-commerce, 80% bug nằm ở:
+   >
+   > - thanh toán
+   > - voucher
+   > - checkout
+   >
+   > Trong khi trang About Us gần như không có bug.
+   > => QA nên tập trung nhiều effort hơn vào khu vực có risk cao.
+
+5. **Tests wear out**. If the same tests are repeated many times, they become increasingly ineffective in detecting new defects (Beizer 1990). To overcome this effect, existing tests and test data may need to be modified, and new tests may need to be written. However, in some cases, repeating the same tests can have a beneficial outcome, e.g., in automated regression testing (see section 2.2.3).
+   <br>
+
+   > **_Test case sẽ “chai lì”_**
+   > Nếu cùng một test được lặp đi lặp lại quá nhiều lần, nó sẽ ngày càng kém hiệu quả trong việc tìm defect mới.
+   > Để tránh điều này:
+   >
+   > - cần update test data
+   > - thêm testcase mới
+   > - thay đổi approach
+   >
+   > Tuy nhiên, việc lặp lại test vẫn hữu ích trong regression testing.
+   > Ví dụ
+   > Bạn luôn test login bằng: admin / 123456
+   > Sau nhiều sprint: testcase này luôn pass, không phát hiện bug mới
+   > Nhưng nếu đổi:
+   >
+   > - password Unicode
+   > - password dài 500 ký tự
+   > - nhiều request cùng lúc
+   >
+   > => Có thể phát hiện defect mới.
+
+6. **Testing is context dependent**. There is no single universally applicable approach to testing. Testing is done differently in different contexts (Kaner 2011).
+   <br>
+
+   > **_Kiểm thử phụ thuộc vào ngữ cảnh_**
+   > Không có một phương pháp testing nào phù hợp cho mọi hệ thống. Cách test sẽ khác nhau tùy:
+   >
+   > - domain
+   > - risk
+   > - business
+   > - technology
+   >
+   > Ví dụ
+   > Banking system
+   > Cần tập trung:
+   >
+   > - security
+   > - transaction accuracy
+   > - audit log
+   >
+   > Game mobile
+   > Cần tập trung:
+   >
+   > - performance
+   > - UX
+   > - compatibility device
+   >
+   > => Mỗi loại sản phẩm cần strategy khác nhau.
+
+7. **Absence-of-defects fallacy**. It is a fallacy (i.e., a misconception) to expect that software verification will ensure the success of a system. Thoroughly testing all the specified requirements and fixing all the defects found could still produce a system that does not fulfill the users’ needs and expectations, that does not help in achieving the customer’s business goals, and that is inferior compared to other competing systems. In addition to verification, validation should also be carried out (Boehm 1981)
+   <br>
+   > **_Không có defect không đồng nghĩa sản phẩm thành công_**
+   > Đây là một ngộ nhận phổ biến. Dù software có pass tất cả requirement, fix toàn bộ defect thì vẫn có thể thất bại nếu:
+   >
+   > - không đáp ứng nhu cầu user
+   > - không đạt business goal
+   > - kém hơn đối thủ
+   >
+   > Ngoài verification còn cần validation.
+   > Ví dụ
+   > Một app đặt đồ ăn:
+   >
+   > - Không crash
+   > - Không bug
+   > - API ổn định
+   > - Test pass hết
+   >   Nhưng:
+   > - UI khó dùng
+   > - Đặt món quá nhiều bước
+   > - App chậm hơn đối thủ
+   >
+   > => Người dùng vẫn bỏ app.
+   > Phần mềm “đúng requirement” chưa chắc là “đúng nhu cầu thực tế”.
