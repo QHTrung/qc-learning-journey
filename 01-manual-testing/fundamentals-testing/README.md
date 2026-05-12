@@ -4,12 +4,18 @@
 
 ### Table of contents
 
-- [Keywords](#keywords)
-- [1.1 What is Testing?](#11-what-is-testing)
-  - [1.1.1 Test Objectives](#111-test-objectives)
-  - [1.1.2 Testing and Debugging](#112-testing-and-debugging)
+- [1. Fundamentals of Testing](#1-fundamentals-of-testing)
+    - [Table of contents](#table-of-contents)
+  - [Keywords](#keywords)
+  - [1.1 What is Testing?](#11-what-is-testing)
+    - [1.1.1 Test Objectives](#111-test-objectives)
+    - [1.1.2 Testing and Debugging](#112-testing-and-debugging)
+  - [1.2 Why is Testing Necessary?](#12-why-is-testing-necessary)
+    - [1.2.1 Testing’s Contributions to Success](#121-testings-contributions-to-success)
+    - [1.2.2 Testing and Quality Assurance (QA)](#122-testing-and-quality-assurance-qa)
+    - [1.2.3. Errors, Defects, Failures, and Root Causes](#123-errors-defects-failures-and-root-causes)
 
-## **Keywords**
+## Keywords
 
 | Keyword             |          Translate           |
 | ------------------- | :--------------------------: |
@@ -135,3 +141,79 @@ When static testing identifies a defect, debugging is concerned with removing it
 > Tiếp theo, regression testing cũng có thể được thực hiện để kiểm tra xem việc sửa lỗi có gây ra failure ở những phần khác của đối tượng kiểm thử hay không (xem mục 2.2.3 để biết thêm thông tin về confirmation testing và regression testing).
 >
 > Khi static testing xác định được defect, debugging sẽ tập trung vào việc loại bỏ defect đó. Trong trường hợp này không cần tái hiện hay chẩn đoán lỗi, vì static testing trực tiếp tìm ra defect và không thể gây ra failure (xem chương 3).
+
+## 1.2 Why is Testing Necessary?
+
+> Tại sao kiểm thử lại cần thiết?
+
+Testing, as a form of quality control, helps in achieving the agreed upon test objectives within the set scope, time, quality, and budget constraints. Testing’s contribution to success should not be restricted to the test team activities. Any stakeholder can use their testing skills to bring the project closer to success. Testing components, systems, and associated work products (e.g., documentation) helps to identify defects in software.
+
+> Kiểm thử, với vai trò là một hình thức kiểm soát chất lượng (quality control), giúp đạt được các mục tiêu kiểm thử đã được thống nhất trong phạm vi, thời gian, chất lượng và ngân sách đã đặt ra.
+>
+> Sự đóng góp của kiểm thử vào thành công của dự án không nên chỉ giới hạn trong các hoạt động của đội ngũ kiểm thử. Bất kỳ bên liên quan nào cũng có thể sử dụng kỹ năng kiểm thử của mình để giúp dự án tiến gần hơn đến thành công.
+>
+> Việc kiểm thử các thành phần, hệ thống và các sản phẩm công việc liên quan (ví dụ: tài liệu) giúp xác định các defect trong phần mềm.
+
+### 1.2.1 Testing’s Contributions to Success
+
+> Sự đóng góp của kiểm thử đối với thành công
+
+Testing provides a cost-effective means of detecting defects. These defects can then be removed (by debugging – a non-testing activity), so testing indirectly contributes to higher quality test objects.
+
+Testing provides a means of directly evaluating the quality of a test object at various phases in the SDLC. These measures are used as part of a larger project management activity, contributing to decisions to move to the next phase of the SDLC, such as the release decision.
+
+Testing provides users with indirect representation on the development project. Testers ensure that their understanding of users’ needs are considered throughout the development lifecycle. The alternative is to involve a representative set of users as part of the development project, which is not usually possible due to the high costs and lack of availability of suitable users.
+
+Testing may also be required to meet contractual or legal requirements, or to comply with regulatory standards.
+
+> Kiểm thử cung cấp một phương pháp hiệu quả về mặt chi phí để phát hiện defect. Những defect này sau đó có thể được loại bỏ (thông qua debugging – một hoạt động không thuộc kiểm thử), vì vậy kiểm thử gián tiếp góp phần nâng cao chất lượng của đối tượng kiểm thử.
+>
+> Kiểm thử cung cấp phương tiện để đánh giá trực tiếp chất lượng của đối tượng kiểm thử tại nhiều giai đoạn khác nhau trong vòng đời phát triển phần mềm (SDLC). Các kết quả đánh giá này được sử dụng như một phần của hoạt động quản lý dự án tổng thể, hỗ trợ cho các quyết định chuyển sang giai đoạn tiếp theo của SDLC, ví dụ như quyết định phát hành sản phẩm.
+>
+> Kiểm thử đại diện gián tiếp cho người dùng trong dự án phát triển. Tester đảm bảo rằng sự hiểu biết của họ về nhu cầu người dùng được xem xét xuyên suốt vòng đời phát triển. Giải pháp thay thế là đưa một nhóm người dùng đại diện tham gia trực tiếp vào dự án phát triển, tuy nhiên điều này thường không khả thi do chi phí cao và khó tìm được người dùng phù hợp.
+>
+> Kiểm thử cũng có thể được yêu cầu nhằm đáp ứng các điều khoản hợp đồng hoặc yêu cầu pháp lý, hay để tuân thủ các tiêu chuẩn quy định.
+
+### 1.2.2 Testing and Quality Assurance (QA)
+
+> Kiểm thử và Đảm bảo chất lượng (QA)
+
+While people often use the terms “testing” and “quality assurance” (QA) interchangeably, testing and QA are not the same.
+
+Testing is a product-oriented, corrective approach that focuses on those activities supporting the achievement of appropriate levels of quality. Testing is a major form of quality control, while others include formal methods (model checking and proof of correctness), simulation and prototyping.
+
+QA is a process-oriented, preventive approach that focuses on the implementation and improvement of processes. It works on the basis that if a good process is followed correctly, then it will generate a good product. QA applies to both the development and testing processes, and is the responsibility of everyone on a project.
+
+Test results are used by QA and testing. In testing they are used to fix defects, while in QA they provide feedback on how well the development and test processes are performing.
+
+> Mặc dù mọi người thường sử dụng hai thuật ngữ “testing” và “quality assurance” (QA) thay thế cho nhau, nhưng kiểm thử và QA không giống nhau.
+>
+> Kiểm thử là một phương pháp mang định hướng sản phẩm (product-oriented), mang tính khắc phục (corrective), tập trung vào các hoạt động hỗ trợ đạt được mức chất lượng phù hợp. Kiểm thử là một hình thức chính của quality control (kiểm soát chất lượng), bên cạnh các hình thức khác như phương pháp hình thức (formal methods – model checking và proof of correctness), mô phỏng (simulation) và tạo mẫu (prototyping).
+>
+> QA là một phương pháp mang định hướng quy trình (process-oriented), mang tính phòng ngừa (preventive), tập trung vào việc triển khai và cải tiến các quy trình. QA hoạt động dựa trên nguyên tắc rằng nếu một quy trình tốt được tuân thủ đúng cách, thì nó sẽ tạo ra một sản phẩm tốt. QA áp dụng cho cả quy trình phát triển và quy trình kiểm thử, đồng thời là trách nhiệm của tất cả mọi người trong dự án.
+>
+> Kết quả kiểm thử được sử dụng bởi cả QA và testing. Trong testing, chúng được dùng để sửa defect, còn trong QA, chúng cung cấp phản hồi về mức độ hiệu quả của các quy trình phát triển và kiểm thử.
+
+### 1.2.3. Errors, Defects, Failures, and Root Causes
+
+Human beings make errors (mistakes), which produce defects (faults, bugs), which in turn may result in failures. Humans make errors for various reasons, such as time pressure, complexity of work products, processes, infrastructure or interactions, or simply because they are tired or lack adequate training
+
+Defects can be found in documentation, such as a requirements specification or a test script, in source code, or in a supporting work product such as a build file. Defects in work products produced earlier in the SDLC, if undetected, often lead to defective work products later in the lifecycle. If a defect in code is executed, the system may fail to do what it should do, or do something it shouldn’t, causing a failure. Some defects will always result in a failure if executed, while others will only result in a failure in specific circumstances, and some may never result in a failure
+
+Errors and defects are not the only cause of failures. Failures can also be caused by environmental conditions, such as when radiation or electromagnetic fields cause defects in firmware
+
+A root cause is a fundamental reason for the occurrence of a problem (e.g., a situation that leads to an error). Root causes are identified through root cause analysis, which is typically performed when a failure occurs or a defect is identified. It is believed that further similar failures or defects can be prevented or their frequency reduced by addressing the root cause, such as by removing it.
+
+> Con người tạo ra error (sai sót), từ đó sinh ra defect (faults, bugs), và các defect này có thể dẫn đến failure. Con người mắc lỗi vì nhiều lý do khác nhau, chẳng hạn như áp lực thời gian, độ phức tạp của sản phẩm công việc, quy trình, cơ sở hạ tầng hoặc các tương tác, hoặc đơn giản là do mệt mỏi hay thiếu đào tạo đầy đủ.
+>
+> Defect có thể được tìm thấy trong tài liệu, ví dụ như đặc tả yêu cầu hoặc test script, trong source code, hoặc trong các sản phẩm công việc hỗ trợ như build file. Các defect xuất hiện ở những sản phẩm công việc được tạo ra sớm trong SDLC nếu không được phát hiện thường sẽ dẫn đến defect ở các sản phẩm công việc về sau trong vòng đời phát triển.
+>
+> Nếu một defect trong code được thực thi, hệ thống có thể không làm được điều mà nó cần làm, hoặc làm điều mà nó không nên làm, từ đó gây ra failure.
+>
+> Một số defect sẽ luôn dẫn đến failure khi được thực thi, trong khi một số khác chỉ gây failure trong những điều kiện cụ thể, và một số defect thậm chí có thể không bao giờ gây ra failure.
+>
+> Error và defect không phải là nguyên nhân duy nhất gây ra failure. Failure cũng có thể do các điều kiện môi trường gây nên, ví dụ như bức xạ hoặc trường điện từ tạo ra defect trong firmware.
+>
+> Root cause (nguyên nhân gốc rễ) là lý do cốt lõi dẫn đến sự xuất hiện của một vấn đề (ví dụ: một tình huống dẫn đến error). Root cause được xác định thông qua root cause analysis, hoạt động thường được thực hiện khi xảy ra failure hoặc khi phát hiện defect.
+>
+> Người ta tin rằng việc xử lý root cause, chẳng hạn như loại bỏ nó, có thể ngăn chặn các failure hoặc defect tương tự xảy ra trong tương lai hoặc làm giảm tần suất xuất hiện của chúng.
