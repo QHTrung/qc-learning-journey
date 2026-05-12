@@ -14,7 +14,10 @@ This is repository document my QC Engineer learning journey.
 
 ## Detailed content of each phase
 
-- Updating...
+#### **Phase 01**: Deep Manual Testing
+
+[1. Fundamentals of Testing](/01-manual-testing/fundamentals-testing/README.md)
+Updating...
 
 ## Resources
 
