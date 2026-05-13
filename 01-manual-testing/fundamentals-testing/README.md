@@ -17,6 +17,10 @@
   - [1.3. Testing Principles](#13-testing-principles)
   - [1.4. Test Activities, Testware and Test Roles](#14-test-activities-testware-and-test-roles)
     - [1.4.1. Test Activities and Tasks](#141-test-activities-and-tasks)
+    - [1.4.2. Test Process in Context](#142-test-process-in-context)
+    - [1.4.3. Testware](#143-testware)
+    - [1.4.4. Traceability between the Test Basis and Testware](#144-traceability-between-the-test-basis-and-testware)
+    - [1.4.5. Roles in Testing](#145-roles-in-testing)
 
 ## Keywords
 
@@ -613,3 +617,220 @@ flowchart TD
     G -.-> E
     G -.-> F
 ```
+
+### 1.4.2. Test Process in Context
+
+> Test Process trong ngữ cảnh thực tế
+
+Testing is not performed in isolation. Test activities are an integral part of the development processes carried out within an organization. Testing is also funded by stakeholders and its final goal is to help fulfill the stakeholders’ business needs. Therefore, the way the testing is carried out will depend on a number of contextual factors including:
+
+- Stakeholders (needs, expectations, requirements, willingness to cooperate, etc.)
+- Team members (skills, knowledge, level of experience, availability, training needs, etc.)
+- Business domain (criticality of the test object, identified risks, market needs, specific legal regulations, etc.)
+- Technical factors (type of software, product architecture, technology used, etc.)
+- Project constraints (scope, time, budget, resources, etc.)
+- Organizational factors (organizational structure, existing policies, practices used, etc.)
+- Software development lifecycle (engineering practices, development methods, etc.)
+- Tools (availability, usability, compliance, etc.)
+
+These factors will have an impact on many test-related issues, including: test strategy, test techniques used, degree of test automation, required level of coverage, level of detail of testware, test reporting, etc.
+
+> Kiểm thử không được thực hiện một cách tách biệt. Các hoạt động kiểm thử là một phần không thể tách rời của các quy trình phát triển được thực hiện trong tổ chức.
+>
+> Kiểm thử cũng được tài trợ bởi các stakeholder và mục tiêu cuối cùng của nó là hỗ trợ đáp ứng các nhu cầu kinh doanh của stakeholder.
+>
+> Vì vậy, cách thức kiểm thử được thực hiện sẽ phụ thuộc vào nhiều yếu tố ngữ cảnh khác nhau, bao gồm:
+>
+> - Stakeholder (nhu cầu, kỳ vọng, yêu cầu, mức độ sẵn sàng hợp tác, v.v.)
+> - Các thành viên trong nhóm (kỹ năng, kiến thức, mức độ kinh nghiệm, khả năng sẵn sàng tham gia, nhu cầu đào tạo, v.v.)
+> - Lĩnh vực kinh doanh (mức độ quan trọng của test object, các rủi ro đã xác định, nhu cầu thị trường, các quy định pháp lý đặc thù, v.v.)
+> - Yếu tố kỹ thuật (loại phần mềm, kiến trúc sản phẩm, công nghệ được sử dụng, v.v.)
+> - Ràng buộc của dự án (phạm vi, thời gian, ngân sách, nguồn lực, v.v.)
+> - Yếu tố tổ chức (cơ cấu tổ chức, chính sách hiện có, các quy trình đang áp dụng, v.v.)
+> - Vòng đời phát triển phần mềm (SDLC) (các thực hành kỹ thuật, phương pháp phát triển, v.v.)
+> - Công cụ (mức độ sẵn có, tính dễ sử dụng, khả năng tuân thủ yêu cầu, v.v.)
+>
+> Những yếu tố này sẽ ảnh hưởng đến nhiều vấn đề liên quan đến kiểm thử, bao gồm:
+>
+> - test strategy
+> - test technique được sử dụng
+> - mức độ tự động hóa kiểm thử
+> - mức độ coverage cần thiết
+> - mức độ chi tiết của testware
+> - test reporting
+> - v.v.
+
+### 1.4.3. Testware
+
+Testware is created as output work products from the test activities described in section 1.4.1. There is a significant variation in how different organizations produce, shape, name, organize and manage their work products. Proper configuration management (see section 5.4) ensures consistency and integrity of work products. The following list of work products is not exhaustive:
+
+- **Test planning work products** include: test plan, test schedule, risk register, entry criteria and exit criteria (see section 5.1). Risk register is a list of risks together with risk likelihood, risk impact and information about risk mitigation (see section 5.2). Test schedule risk register, entry criteria and exit criteria are often a part of the test plan.
+- **Test monitoring and test control** work products include: test progress reports (see section 5.3.2), documentation of control directives (see section 5.3) and information about risks (see section 5.2).
+- **Test analysis** work products include: (prioritized) test conditions (e.g., acceptance criteria, see section 4.5.2), and defect reports regarding defects in the test basis (if not fixed directly).
+- **Test design** work products include: (prioritized) test cases, test charters, coverage items, test data requirements and test environment requirements.
+- **Test implementation** work products include: test procedures, manual and automated test scripts, test suites, test data, test execution schedule, and test environment items. Examples of test environment items include: stubs, drivers, simulators, and service virtualizations.
+- **Test execution** work products include: test logs, and defect reports (see section 5.5).
+- **Test completion** work products include: test completion report (see section 5.3.2), action items for improvement of subsequent projects or iterations, documented lessons learned, and change requests (e.g., as product backlog items).
+
+> Testware là các sản phẩm công việc đầu ra được tạo ra từ các hoạt động kiểm thử được mô tả ở mục 1.4.1.
+>
+> Có sự khác biệt đáng kể giữa các tổ chức trong cách tạo ra, định dạng, đặt tên, tổ chức và quản lý các sản phẩm công việc này.
+>
+> Quản lý cấu hình (configuration management) phù hợp (xem mục 5.4) giúp đảm bảo tính nhất quán và toàn vẹn của các sản phẩm công việc.
+>
+> Danh sách dưới đây không phải là đầy đủ toàn bộ
+
+> Các sản phẩm công việc của **test planning** bao gồm:
+>
+> - test plan
+> - test schedule
+> - risk register
+> - entry criteria
+> - exit criteria (xem mục 5.1)
+>
+> Risk register là danh sách các rủi ro cùng với:
+>
+> - khả năng xảy ra rủi ro (risk likelihood)
+> - mức độ ảnh hưởng của rủi ro (risk impact)
+> - thông tin về biện pháp giảm thiểu rủi ro (risk mitigation) (xem mục 5.2)
+>
+> Test schedule, risk register, entry criteria và exit criteria thường là một phần của test plan.
+
+> Các sản phẩm công việc của **test monitoring và test control** bao gồm:
+>
+> - test progress report (xem mục 5.3.2)
+> - tài liệu về các control directive (xem mục 5.3)
+> - thông tin về rủi ro (xem mục 5.2)
+
+> Các sản phẩm công việc của **test analysis** bao gồm:
+>
+> - các test condition đã được ưu tiên (ví dụ: acceptance criteria, xem mục 4.5.2)
+> - defect report liên quan đến defect trong test basis (nếu defect không được sửa trực tiếp)
+
+> Các sản phẩm công việc của **test design** bao gồm:
+>
+> - các test case đã được ưu tiên
+> - test charter
+> - coverage item
+> - yêu cầu về test data
+> - yêu cầu về test environment
+
+> Các sản phẩm công việc của **test implementation** bao gồm:
+>
+> - test procedure
+> - manual test script
+> - automated test script
+> - test suite
+> - test data
+> - test execution schedule
+> - các thành phần của test environment
+>
+> Ví dụ về các thành phần của test environment bao gồm:
+>
+> - stub
+> - driver
+> - simulator
+> - service virtualization
+
+> Các sản phẩm công việc của **test execution** bao gồm:
+>
+> - test log
+> - defect report (xem mục 5.5)
+
+> Các sản phẩm công việc của **test completion** bao gồm:
+>
+> - test completion report (xem mục 5.3.2)
+> - action item nhằm cải tiến cho các dự án hoặc iteration tiếp theo
+> - các bài học kinh nghiệm đã được ghi nhận (documented lessons learned)
+> - change request (ví dụ: product backlog item)
+
+### 1.4.4. Traceability between the Test Basis and Testware
+
+> Khả năng truy vết giữa Test Basis và Testware
+
+To implement effective test monitoring and test control, it is important to establish and maintain traceability throughout the test process between the test basis elements, testware associated with these elements (e.g., test conditions, risks, test cases), test results, and defects.
+
+Accurate traceability supports coverage evaluation, so it is very useful if measurable coverage criteria are defined in the test basis. The coverage criteria can function as key performance indicators to drive the activities that show to what extent the test objectives have been achieved (see section 1.1.1). For example:
+
+- Traceability of test cases to requirements can verify that the requirements are covered by test
+  cases.
+- Traceability of test results to risks can be used to evaluate the level of residual risk in a test
+  object.
+
+In addition to evaluating coverage, good traceability makes it possible to determine the impact of changes, facilitates audits, and helps meet IT governance criteria. Good traceability also makes test progress reports and test completion reports more easily understandable by including the status of test basis elements. This can also assist in communicating the technical aspects of testing to stakeholders in an understandable manner. Traceability provides information to assess product quality, process capability, and project progress against business goals.
+
+> Để triển khai hiệu quả hoạt động test monitoring và test control, điều quan trọng là phải thiết lập và duy trì traceability xuyên suốt toàn bộ test process giữa:
+>
+> - các thành phần của test basis,
+> - testware liên quan tới các thành phần đó (ví dụ: test condition, risk, test case),
+> - test result,
+> - và defect.
+>
+> Traceability chính xác hỗ trợ cho việc đánh giá coverage, do đó sẽ rất hữu ích nếu các coverage criteria có thể đo lường được được định nghĩa trong test basis.
+>
+> Các coverage criteria có thể đóng vai trò là các key performance indicator (KPI) nhằm định hướng các hoạt động thể hiện mức độ mà các test objective đã được đạt tới (xem mục 1.1.1).
+> Ví dụ:
+>
+> - Traceability giữa test case và requirement có thể xác minh rằng các requirement đã được bao phủ bởi test case.
+> - Traceability giữa test result và risk có thể được sử dụng để đánh giá mức độ residual risk còn lại trong test object
+>
+> Ngoài việc đánh giá coverage, traceability tốt còn giúp:
+>
+> - xác định tác động của thay đổi,
+> - hỗ trợ audit,
+> - và giúp đáp ứng các tiêu chí quản trị CNTT (IT governance).
+>
+> Traceability tốt cũng giúp cho test progress report và test completion report dễ được hiểu hơn thông qua việc bao gồm trạng thái của các thành phần thuộc test basis.
+>
+> Điều này cũng có thể hỗ trợ trong việc truyền đạt các khía cạnh kỹ thuật của testing tới stakeholder theo cách dễ hiểu.
+>
+> Traceability cung cấp thông tin để đánh giá:
+>
+> - chất lượng sản phẩm,
+> - năng lực của quy trình,
+> - và tiến độ dự án so với các mục tiêu kinh doanh.
+
+### 1.4.5. Roles in Testing
+
+> Vai trò trong kiểm thử
+
+In this syllabus, two principal roles in testing are covered: a test management role and a testing role. The activities and tasks assigned to these two roles depend on factors such as the project and product context, the skills of the people in the roles, and the organization.
+
+The test management role takes overall responsibility for the test process, test team and leadership of the test activities. The test management role is mainly focused on the activities of test planning, test monitoring, test control and test completion. The way in which the test management role is carried out varies depending on the context. For example, in Agile software development, some of the test management tasks may be handled by the Agile team. Tasks that span multiple teams or the entire organization may be performed by test managers outside of the development team.
+
+The testing role takes overall responsibility for the engineering (technical) aspect of testing. The testing role is mainly focused on the activities of test analysis, test design, test implementation and test execution
+
+Different people may take on these roles at different times. For example, the test management role can be performed by a team leader, by a test manager, by a development manager, etc. It is also possible for one person to take on the roles of testing and test management at the same time.
+
+> Trong giáo trình này, hai vai trò chính trong kiểm thử được đề cập là vai trò quản lý kiểm thử (test management role) và vai trò kiểm thử (testing role). Các hoạt động và nhiệm vụ được giao cho hai vai trò này phụ thuộc vào nhiều yếu tố như bối cảnh của dự án và sản phẩm, kỹ năng của những người đảm nhận vai trò, và tổ chức.
+>
+> **Vai trò quản lý kiểm thử (Test Management Role)**
+>
+> Vai trò quản lý kiểm thử chịu trách nhiệm tổng thể đối với test process, test team và việc lãnh đạo các hoạt động kiểm thử.
+>
+> Vai trò này chủ yếu tập trung vào các hoạt động:
+>
+> - test planning,
+> - test monitoring,
+> - test control,
+> - test completion.
+>
+> Cách thức thực hiện vai trò quản lý kiểm thử sẽ khác nhau tùy theo ngữ cảnh.
+>
+> Ví dụ trong phát triển phần mềm Agile, một số nhiệm vụ quản lý kiểm thử có thể được đảm nhiệm bởi Agile team. Các nhiệm vụ liên quan đến nhiều team hoặc toàn bộ tổ chức có thể được thực hiện bởi test manager nằm ngoài development team.
+>
+> **Vai trò kiểm thử (Testing Role)**
+>
+> Vai trò kiểm thử chịu trách nhiệm tổng thể đối với các khía cạnh kỹ thuật (engineering/technical aspect) của kiểm thử.
+>
+> Vai trò này chủ yếu tập trung vào các hoạt động:
+>
+> - test analysis,
+> - test design,
+> - test implementation,
+> - test execution.
+>
+> Những vai trò này có thể được đảm nhiệm bởi những người khác nhau vào những thời điểm khác nhau.
+>
+> Ví dụ
+> Vai trò quản lý kiểm thử có thể được thực hiện bởi team leader, test manager, development manager, v.v. Ngoài ra, cũng có thể một người đồng thời đảm nhận cả vai trò kiểm thử và vai trò quản lý kiểm thử.
