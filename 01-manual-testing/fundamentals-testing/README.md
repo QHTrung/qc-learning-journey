@@ -587,3 +587,29 @@ A test process usually consists of the main groups of activities described below
 > - cải tiến cho các iteration, release hoặc dự án trong tương lai (xem mục 2.1.6)
 >
 > Một test completion report sẽ được tạo ra và truyền đạt tới các stakeholder.
+
+**Test process:**
+
+```mermaid
+flowchart TD
+    A[Test Planning]
+    B[Test Analysis]
+    C[Test Design]
+    D[Test Implementation]
+    E[Test Execution]
+    F[Test Completion]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+
+    G[Test Monitoring & Control]
+    G -.-> A
+    G -.-> B
+    G -.-> C
+    G -.-> D
+    G -.-> E
+    G -.-> F
+```
