@@ -5,7 +5,7 @@
 ### Table of contents
 
 - [1. Fundamentals of Testing](#1-fundamentals-of-testing)
-    - [Table of contents](#table-of-contents)
+  - [Table of contents](#table-of-contents)
   - [Keywords](#keywords)
   - [1.1 What is Testing?](#11-what-is-testing)
     - [1.1.1 Test Objectives](#111-test-objectives)
@@ -15,6 +15,8 @@
     - [1.2.2 Testing and Quality Assurance (QA)](#122-testing-and-quality-assurance-qa)
     - [1.2.3. Errors, Defects, Failures, and Root Causes](#123-errors-defects-failures-and-root-causes)
   - [1.3. Testing Principles](#13-testing-principles)
+  - [1.4. Test Activities, Testware and Test Roles](#14-test-activities-testware-and-test-roles)
+    - [1.4.1. Test Activities and Tasks](#141-test-activities-and-tasks)
 
 ## Keywords
 
@@ -237,13 +239,13 @@ A number of testing principles offering general guidelines applicable to all tes
    > - Sai password → pass
    > - Sai captcha → pass
    >
-   > Dù tất cả testcase đều pass, vẫn có thể tồn tại bug như:
+   > <br> Dù tất cả testcase đều pass, vẫn có thể tồn tại bug như:
    >
    > - Login fail khi username chứa emoji
    > - Login lỗi trên Safari
    > - SQL Injection chưa được xử lý
    >
-   > => Không tìm thấy bug ≠ Không có bug.
+   > <br> => Không tìm thấy bug ≠ Không có bug.
 
 2. **Exhaustive testing is impossible**. Testing everything is not feasible except in trivial cases (Manna 1978). Rather than attempting to test exhaustively, test techniques (see chapter 4), test case prioritization (see section 5.1.5), and risk-based testing (see section 5.2), should be used to focus test efforts.
    <br>
@@ -254,7 +256,7 @@ A number of testing principles offering general guidelines applicable to all tes
    > Test techniques - Prioritization - Risk-based testing
    > để tập trung effort vào những phần quan trọng nhất.
    >
-   > Ví dụ
+   > Ví dụ:
    > Form số điện thoại cho phép nhập:
    >
    > - 10 chữ số
@@ -268,12 +270,13 @@ A number of testing principles offering general guidelines applicable to all tes
    > - Nhiều device
    >
    > Số lượng combination gần như vô hạn.
-   > => Không thể test hết mọi input và mọi môi trường
+   > <br> => Không thể test hết mọi input và mọi môi trường
 
 3. **Early testing saves time and money**. Defects that are removed early in the process will not cause subsequent defects in derived work products. The cost of quality will be reduced since fewer failures will occur later in the SDLC (Boehm 1981). To find defects early, both static testing (see chapter 3) and dynamic testing (see chapter 4) should be started as early as possible
    <br>
 
    > **_Kiểm thử sớm giúp tiết kiệm thời gian và chi phí_**
+   >
    > Defect được phát hiện càng sớm thì càng ít ảnh hưởng đến các sản phẩm phía sau trong SDLC. Chi phí sửa lỗi ở giai đoạn đầu thường thấp hơn rất nhiều so với khi đã release.
    > Để phát hiện defect sớm, nên bắt đầu:
    >
@@ -291,7 +294,7 @@ A number of testing principles offering general guidelines applicable to all tes
    > - QA test xong
    > - App release production
    >
-   > => Có thể phải:
+   > <br> => Có thể phải:
    >
    > - sửa code
    > - sửa DB
@@ -299,12 +302,13 @@ A number of testing principles offering general guidelines applicable to all tes
    > - deploy lại
    > - ảnh hưởng user thật
    >
-   > => Chi phí tăng lên rất nhiều.
+   > <br> => Chi phí tăng lên rất nhiều.
 
 4. **Defects cluster together**. A small number of system components usually contain most of the defects discovered or are responsible for most of the operational failures (Enders 1975). This phenomenon is an illustration of the Pareto principle. Predicted defect clusters, and actual defect clusters observed during testing or in operation, are an important input for risk-based testing (see section 5.2).
    <br>
 
    > **_Defect thường tập trung theo cụm_**
+   >
    > Một số ít component thường chứa phần lớn defect hoặc gây ra phần lớn failure trong hệ thống (Pareto Principle).
    >
    > Ví dụ
@@ -322,6 +326,7 @@ A number of testing principles offering general guidelines applicable to all tes
    <br>
 
    > **_Test case sẽ “chai lì”_**
+   >
    > Nếu cùng một test được lặp đi lặp lại quá nhiều lần, nó sẽ ngày càng kém hiệu quả trong việc tìm defect mới.
    > Để tránh điều này:
    >
@@ -346,6 +351,7 @@ A number of testing principles offering general guidelines applicable to all tes
    <br>
 
    > **_Kiểm thử phụ thuộc vào ngữ cảnh_**
+   >
    > Không có một phương pháp testing nào phù hợp cho mọi hệ thống. Cách test sẽ khác nhau tùy:
    >
    > - domain
@@ -354,32 +360,32 @@ A number of testing principles offering general guidelines applicable to all tes
    > - technology
    >
    > Ví dụ
-   > Banking system
-   > Cần tập trung:
+   >
+   > Banking system, cần tập trung:
    >
    > - security
    > - transaction accuracy
    > - audit log
    >
-   > Game mobile
-   > Cần tập trung:
+   > Game mobile, cần tập trung:
    >
    > - performance
    > - UX
    > - compatibility device
    >
-   > => Mỗi loại sản phẩm cần strategy khác nhau.
+   > <br> => Mỗi loại sản phẩm cần strategy khác nhau.
 
 7. **Absence-of-defects fallacy**. It is a fallacy (i.e., a misconception) to expect that software verification will ensure the success of a system. Thoroughly testing all the specified requirements and fixing all the defects found could still produce a system that does not fulfill the users’ needs and expectations, that does not help in achieving the customer’s business goals, and that is inferior compared to other competing systems. In addition to verification, validation should also be carried out (Boehm 1981)
    <br>
    > **_Không có defect không đồng nghĩa sản phẩm thành công_**
+   >
    > Đây là một ngộ nhận phổ biến. Dù software có pass tất cả requirement, fix toàn bộ defect thì vẫn có thể thất bại nếu:
    >
    > - không đáp ứng nhu cầu user
    > - không đạt business goal
    > - kém hơn đối thủ
    >
-   > Ngoài verification còn cần validation.
+   > <br> Ngoài verification còn cần validation.
    > Ví dụ
    > Một app đặt đồ ăn:
    >
@@ -387,10 +393,197 @@ A number of testing principles offering general guidelines applicable to all tes
    > - Không bug
    > - API ổn định
    > - Test pass hết
-   >   Nhưng:
+   >
+   > Nhưng:
+   >
    > - UI khó dùng
    > - Đặt món quá nhiều bước
    > - App chậm hơn đối thủ
    >
    > => Người dùng vẫn bỏ app.
-   > Phần mềm “đúng requirement” chưa chắc là “đúng nhu cầu thực tế”.
+   > <br> Phần mềm “đúng requirement” chưa chắc là “đúng nhu cầu thực tế”.
+
+## 1.4. Test Activities, Testware and Test Roles
+
+> Các hoạt động kiểm thử, tài liệu và công cụ kiểm thử và các vai trò trong kiểm thử
+
+Testing is context dependent, but, at a high level, there are common sets of test activities without which testing is less likely to achieve test objectives. These sets of test activities form a test process. The test process can be tailored to a given situation based on various factors. Which test activities are included in this test process, how they are implemented, and when they occur is normally decided as part of the test planning for the specific situation (see section 5.1).
+
+The following sections describe the general aspects of this test process in terms of test activities and tasks, the impact of context, testware, traceability between the test basis and testware, and testing roles.
+
+The ISO/IEC/IEEE 29119-2 standard provides further information about test processes
+
+> Kiểm thử phụ thuộc vào ngữ cảnh, tuy nhiên ở mức độ tổng quát vẫn tồn tại những nhóm hoạt động kiểm thử chung. Nếu thiếu các hoạt động này, khả năng đạt được mục tiêu kiểm thử sẽ thấp hơn. Những nhóm hoạt động đó tạo thành một quy trình kiểm thử (test process).
+>
+> Quy trình kiểm thử có thể được điều chỉnh để phù hợp với từng tình huống cụ thể dựa trên nhiều yếu tố khác nhau. Những hoạt động kiểm thử nào được đưa vào quy trình, cách chúng được thực hiện và thời điểm chúng diễn ra thường được quyết định trong quá trình lập kế hoạch kiểm thử (test planning) cho từng tình huống cụ thể (xem mục 5.1).
+>
+> Các phần tiếp theo sẽ mô tả những khía cạnh tổng quát của quy trình kiểm thử này, bao gồm các hoạt động và nhiệm vụ kiểm thử, ảnh hưởng của ngữ cảnh, testware, traceability giữa test basis và testware, các vai trò trong kiểm thử
+>
+> Tiêu chuẩn ISO/IEC/IEEE 29119-2 cung cấp thêm thông tin về các quy trình kiểm thử.
+
+### 1.4.1. Test Activities and Tasks
+
+A test process usually consists of the main groups of activities described below. Although many of these activities may appear to follow a logical sequence, they are often implemented iteratively or in parallel. These testing activities usually need to be tailored to the system and the project.
+
+> Một quy trình kiểm thử (test process) thường bao gồm các nhóm hoạt động chính được mô tả dưới đây. Mặc dù nhiều hoạt động này có vẻ diễn ra theo một trình tự logic, **_trên thực tế chúng thường được thực hiện lặp lại (iterative) hoặc song song_**. Các hoạt động kiểm thử này thường cần được điều chỉnh để phù hợp với hệ thống và dự án cụ thể.
+
+**Test planning** consists of defining the test objectives and then selecting an approach that best achieves the objectives within the constraints imposed by the overall context. Test planning is further explained in section 5.1.
+
+> **_Test planning (Lập kế hoạch kiểm thử)_**
+>
+> Test planning bao gồm việc xác định các mục tiêu kiểm thử, sau đó lựa chọn phương pháp tiếp cận phù hợp nhất để đạt được các mục tiêu đó trong phạm vi các ràng buộc của bối cảnh tổng thể.
+>
+> Nội dung về test planning được giải thích chi tiết hơn trong mục 5.1.
+>
+> Ví dụ
+>
+> Xác định:
+>
+> - test scope
+> - resource
+> - timeline
+> - risk
+> - strategy
+>
+> Quyết định:
+>
+> - manual hay automation
+> - test trên browser nào
+> - có cần performance test không
+
+**Test monitoring and test control.** Test monitoring involves the ongoing checking of all test activities and the comparison of actual progress against the plan. Test control involves taking the actions necessary to meet the test objectives. Test monitoring and test control are further explained in section 5.3.
+
+> **_Giám sát và kiểm soát kiểm thử_**
+>
+> _Test monitoring_ là hoạt động liên tục theo dõi tất cả các hoạt động kiểm thử và so sánh tiến độ thực tế với kế hoạch.
+>
+> _Test control_ là việc thực hiện các hành động cần thiết để đạt được mục tiêu kiểm thử.
+>
+> Nội dung này được giải thích thêm trong mục 5.3.
+>
+> Ví dụ
+>
+> Theo dõi:
+>
+> - số testcase đã chạy
+> - pass/fail rate
+> - defect trend
+>
+> Nếu test bị chậm:
+>
+> - tăng thêm tester
+> - giảm scope
+> - ưu tiên testcase critical
+
+**Test analysis** includes analyzing the test basis to identify testable features. Associated test conditions are defined and prioritized, taking the related risks and risk levels into account (see section 5.2). The test basis and the test object are also evaluated to identify defects they may contain and to assess their testability. Test analysis is often supported by the use of test techniques (see chapter 4). Test analysis answers the question “what to test?” in terms of measurable coverage criteria
+
+> **_Phân tích kiểm thử_**
+>
+> Test analysis bao gồm việc phân tích test basis để xác định các feature có thể kiểm thử.
+>
+> Các test condition liên quan sẽ được xác định và ưu tiên dựa trên risk và mức độ risk.
+>
+> Ngoài ra, test basis và test object cũng được đánh giá nhằm tìm defect và đánh giá khả năng test (testability)
+>
+> Test analysis thường được hỗ trợ bằng các test technique.
+>
+> Test analysis trả lời câu hỏi: “Cần test cái gì?” theo các tiêu chí coverage có thể đo lường được.
+>
+> Ví dụ
+>
+> Requirement: User có thể reset password bằng email
+>
+> Tester phân tích:
+>
+> - Email hợp lệ
+> - Email không tồn tại
+> - Link expired
+> - Spam multiple request
+> - Security risk
+>
+> => Đây là các test condition.
+
+**Test design** includes elaborating the test conditions into test cases and other testware (e.g., test charters). This activity often involves the identification of coverage items, which serve as a guide to specify test case inputs. Test techniques (see chapter 4) can be used to support this activity. Test design also includes defining the test data requirements, designing the test environment and identifying the necessary infrastructure and tools. Test design answers the question “how to test?”.
+
+> **_Thiết kế kiểm thử_**
+>
+> Test design bao gồm việc phát triển các test condition thành test case và testware khác (ví dụ: test charter)
+>
+> Hoạt động này thường bao gồm xác định coverage item và thiết kế input cho testcase
+>
+> Test technique có thể được sử dụng để hỗ trợ.
+>
+> Ngoài ra, test design còn bao gồm xác định yêu cầu test data, thiết kế test environment và xác định infrastructure và tools cần thiết
+>
+> Test design trả lời câu hỏi: “Test như thế nào?”
+>
+> Ví dụ
+>
+> Test case:
+>
+> - Input: email hợp lệ
+> - Expected: gửi mail reset thành công
+
+**Test implementation** includes creating or acquiring the testware necessary for test execution (e.g., test data). Test cases can be organized into test procedures, which are often assembled into test suites. Manual and automated test scripts are created. Test procedures are prioritized and arranged within a test execution schedule for efficient test execution (see section 5.1.5). The test environment is built and verified to be set up correctly.
+
+> **_Triển khai kiểm thử_**
+>
+> Test implementation bao gồm việc tạo hoặc chuẩn bị testware cần thiết cho test execution.
+>
+> Ví dụ: test data, test script, test suite
+>
+> Test case có thể được tổ chức thành:
+>
+> - test procedure
+> - test suite
+>
+> Các test script manual hoặc automation sẽ được tạo.
+>
+> Ngoài ra:
+>
+> - testcase được prioritize
+> - sắp xếp lịch chạy test
+> - build và verify test environment
+>
+> Ví dụ
+>
+> - Tạo account test
+> - Seed data DB
+> - Setup staging environment
+> - Viết automation script Selenium/Postman
+
+**Test execution** includes running the tests in accordance with the test execution schedule (test runs). Test execution may be manual or automated. Test execution can take many forms, including continuous testing or pair testing sessions. Actual test results are compared with the expected results. The test results are logged. Anomalies are analyzed to identify their likely causes. This analysis allows us to report the anomalies based on the failures observed (see section 5.5).
+
+> **_Thực thi kiểm thử_** bao gồm việc chạy các test theo test execution schedule (test runs).
+>
+> Test execution có thể được thực hiện thủ công hoặc tự động.
+>
+> Test execution có thể tồn tại dưới nhiều hình thức khác nhau, bao gồm:
+>
+> - continuous testing
+> - pair testing sessions
+>
+> Kết quả kiểm thử thực tế được so sánh với kết quả mong đợi.
+>
+> Các test result được ghi nhận lại.
+>
+> Các anomaly được phân tích để xác định nguyên nhân có khả năng gây ra chúng.
+>
+> Việc phân tích này cho phép báo cáo anomaly dựa trên các failure quan sát được (xem mục 5.5).
+
+**Test completion** usually occurs at project milestones (e.g., release, end of iteration, test level completion). For any unresolved defects, change requests or product backlog items are created. Any testware that may be useful in the future is identified and archived or handed over to the appropriate teams. The test environment is shut down to an agreed state. The test activities are analyzed to identify lessons learned and improvements for future iterations, releases, or projects (see section 2.1.6). A test completion report is created and communicated to the stakeholders.
+
+> **_Hoàn tất kiểm thử_** thường diễn ra tại các cột mốc của dự án (ví dụ: release, kết thúc iteration, hoàn thành test level).
+>
+> Đối với các defect chưa được giải quyết, change request hoặc product backlog item sẽ được tạo ra.
+>
+> Những testware có thể hữu ích trong tương lai sẽ được xác định và lưu trữ hoặc bàn giao cho các nhóm phù hợp.
+>
+> Test environment được đưa về trạng thái đã được thống nhất.
+>
+> Các hoạt động kiểm thử được phân tích nhằm:
+>
+> - xác định bài học kinh nghiệm
+> - cải tiến cho các iteration, release hoặc dự án trong tương lai (xem mục 2.1.6)
+>
+> Một test completion report sẽ được tạo ra và truyền đạt tới các stakeholder.
