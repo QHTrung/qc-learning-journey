@@ -21,6 +21,10 @@
     - [1.4.3. Testware](#143-testware)
     - [1.4.4. Traceability between the Test Basis and Testware](#144-traceability-between-the-test-basis-and-testware)
     - [1.4.5. Roles in Testing](#145-roles-in-testing)
+  - [1.5. Essential Skills and Good Practices in Testing](#15-essential-skills-and-good-practices-in-testing)
+    - [1.5.1. Generic Skills Required for Testing](#151-generic-skills-required-for-testing)
+    - [1.5.2. Whole Team Approach](#152-whole-team-approach)
+    - [1.5.3. Independence of Testing](#153-independence-of-testing)
 
 ## Keywords
 
@@ -834,3 +838,98 @@ Different people may take on these roles at different times. For example, the te
 >
 > Ví dụ
 > Vai trò quản lý kiểm thử có thể được thực hiện bởi team leader, test manager, development manager, v.v. Ngoài ra, cũng có thể một người đồng thời đảm nhận cả vai trò kiểm thử và vai trò quản lý kiểm thử.
+
+## 1.5. Essential Skills and Good Practices in Testing
+
+> Các kỹ năng thiết yếu và thực hành tốt trong kiểm thử
+
+Skill is the ability to do something well that comes from one’s knowledge, practice and aptitude. Good testers should possess some essential skills to do their job well. Good testers should be effective team players and should be able to perform testing on different levels of test independence
+
+> Kỹ năng là khả năng thực hiện tốt một công việc, được hình thành từ kiến thức, quá trình thực hành và năng lực tự nhiên của một người. Những tester giỏi nên sở hữu một số kỹ năng thiết yếu để thực hiện tốt công việc của mình. Tester giỏi cũng nên là những thành viên làm việc nhóm hiệu quả và có khả năng thực hiện kiểm thử ở nhiều mức độ độc lập kiểm thử (test independence) khác nhau.
+
+### 1.5.1. Generic Skills Required for Testing
+
+While being generic, the following skills are particularly relevant for testers:
+
+- Testing knowledge (to increase effectiveness of testing, e.g., by using test techniques)
+- Thoroughness, carefulness, curiosity, attention to details, being methodical (to identify defects, especially the ones that are difficult to find)
+- Good communication skills, active listening, being a team player (to interact effectively with all stakeholders, to convey information to others, to be understood, and to report and discuss defects)
+- Analytical thinking, critical thinking, creativity (to increase effectiveness of testing)
+- Technical knowledge (to increase efficiency of testing, e.g., by using appropriate test tools)
+- Domain knowledge (to be able to understand and to communicate with end users/business representatives)
+
+Testers are often the bearers of bad news. It is a common human trait to blame the bearer of bad news. This makes communication skills crucial for testers. Communicating test results may be perceived as criticism of the product and of its author. Confirmation bias can make it difficult to accept information that disagrees with currently held beliefs. Some people may perceive testing as a destructive activity, even though it contributes greatly to project success and product quality. To try to improve this view, information about defects and failures should be communicated in a constructive way.
+
+> Mặc dù mang tính tổng quát, những kỹ năng dưới đây đặc biệt quan trọng đối với tester:
+>
+> - Kiến thức về kiểm thử (giúp nâng cao hiệu quả kiểm thử, ví dụ: thông qua việc sử dụng các test technique)
+> - Sự cẩn thận, tỉ mỉ, tò mò, chú ý đến chi tiết, làm việc có phương pháp (giúp phát hiện defect, đặc biệt là những defect khó tìm)
+> - Kỹ năng giao tiếp tốt, lắng nghe chủ động, khả năng làm việc nhóm (giúp tương tác hiệu quả với tất cả stakeholder, truyền đạt thông tin cho người khác, được người khác hiểu đúng, cũng như báo cáo và thảo luận về defect)
+> - Tư duy phân tích, tư duy phản biện, tính sáng tạo (giúp nâng cao hiệu quả kiểm thử)
+> - Kiến thức kỹ thuật (giúp nâng cao hiệu suất kiểm thử, ví dụ: bằng cách sử dụng các test tool phù hợp)
+> - Kiến thức về domain (giúp hiểu và giao tiếp được với end user hoặc đại diện phía business)
+>
+> Tester thường là người mang đến “tin xấu”. Đây là một đặc điểm phổ biến của con người khi có xu hướng đổ lỗi cho người mang tin xấu. Vì vậy, kỹ năng giao tiếp là cực kỳ quan trọng đối với tester. Việc truyền đạt test result có thể bị xem như sự chỉ trích đối với sản phẩm hoặc người tạo ra sản phẩm đó. Confirmation bias (thiên kiến xác nhận) có thể khiến con người khó chấp nhận những thông tin trái với niềm tin mà họ đang có. Một số người có thể xem testing là một hoạt động mang tính phá hoại, mặc dù trên thực tế nó đóng góp rất lớn vào sự thành công của dự án và chất lượng sản phẩm. Để cải thiện cách nhìn nhận này, thông tin về defect và failure nên được truyền đạt theo cách mang tính xây dựng.
+
+### 1.5.2. Whole Team Approach
+
+> Phương pháp tiếp cận toàn đội
+
+One of the important skills for a tester is the ability to work effectively in a team context and to contribute positively to the team goals. The whole team approach – a practice coming from Extreme Programming (see section 2.1) – builds upon this skill.
+
+In the whole team approach any team member with the necessary knowledge and skills can perform any task, and everyone is responsible for quality. The team members share the same workspace (physical or virtual), as co-location facilitates communication and interaction. The whole team approach improves team dynamics, enhances communication and collaboration within the team, and creates synergy by allowing the various skill sets within the team to be leveraged for the benefit of the project.
+
+Testers work closely with other team members to ensure that the desired quality levels are achieved. This includes collaborating with business representatives to help them create suitable acceptance tests and working with developers to agree on the test strategy and decide on test automation approaches. Testers can thus transfer testing knowledge to other team members and influence the development of the product.
+
+Depending on the context, the whole team approach may not always be appropriate. For instance, in some situations, such as safety-critical, a high level of test independence may be needed.
+
+> Một trong những kỹ năng quan trọng của tester là khả năng làm việc hiệu quả trong môi trường nhóm và đóng góp tích cực vào các mục tiêu chung của team. Whole team approach – một thực hành xuất phát từ Extreme Programming (xem mục 2.1) – được xây dựng dựa trên kỹ năng này.
+>
+> Trong whole team approach, bất kỳ thành viên nào trong team có đủ kiến thức và kỹ năng đều có thể thực hiện bất kỳ nhiệm vụ nào, và mọi người đều cùng chịu trách nhiệm về chất lượng.
+>
+> Các thành viên trong team chia sẻ cùng một không gian làm việc (vật lý hoặc trực tuyến), vì việc cùng làm việc chung sẽ tạo điều kiện thuận lợi cho giao tiếp và tương tác.
+> Whole team approach giúp:
+>
+> - cải thiện động lực làm việc của team,
+> - tăng cường giao tiếp và hợp tác trong nhóm,
+> - và tạo ra sự cộng hưởng bằng cách tận dụng các bộ kỹ năng khác nhau của các thành viên vì lợi ích của dự án
+>
+> Tester làm việc chặt chẽ với các thành viên khác trong team để đảm bảo đạt được mức chất lượng mong muốn.
+>
+> Điều này bao gồm:
+>
+> - hợp tác với đại diện business để hỗ trợ họ tạo ra các acceptance test phù hợp,
+> - làm việc với developer để thống nhất test strategy,
+> - và quyết định các phương pháp test automation.
+>
+> Nhờ đó, tester có thể chia sẻ kiến thức kiểm thử cho các thành viên khác trong team và ảnh hưởng tới quá trình phát triển sản phẩm.
+>
+> Tùy thuộc vào ngữ cảnh, whole team approach không phải lúc nào cũng phù hợp.
+>
+> Ví dụ, trong một số tình huống như hệ thống safety-critical, có thể cần mức độ test independence cao.
+
+### 1.5.3. Independence of Testing
+
+> Tính độc lập trong kiểm thử
+
+A certain degree of independence makes the tester more effective at finding defects due to differences between the author’s and the tester’s cognitive biases (cf. Salman 1995). Independence is not, however, a replacement for familiarity, e.g., developers can efficiently find many defects in their own code.
+
+Work products can be tested by their author (no independence), by the author's peers from the same team (some independence), by testers from outside the author's team but within the organization (high independence), or by testers from outside the organization (very high independence). For most projects, it is usually best to carry out testing with multiple levels of independence (e.g., developers performing component testing and component integration testing, test team performing system and system integration testing, and business representatives performing acceptance testing).
+
+The main benefit of independence of testing is that independent testers are likely to recognize different kinds of failures and defects compared to developers because of their different backgrounds, technical perspectives, and biases. Moreover, an independent tester can verify, challenge, or disprove assumptions made by stakeholders during specification and implementation of the system.
+
+However, there are also some drawbacks. Independent testers may be isolated from the development team, which may lead to a lack of collaboration, communication problems, or an adversarial relationship with the development team. Developers may lose a sense of responsibility for quality. Independent testers may be seen as a bottleneck or be blamed for delays in release
+
+> Một mức độ độc lập nhất định trong kiểm thử sẽ giúp tester hiệu quả hơn trong việc phát hiện defect, bởi vì tester và tác giả của sản phẩm thường có sự khác biệt về cognitive bias (thiên kiến nhận thức) (xem Salman 1995). Nói cách khác, người tạo ra sản phẩm thường có xu hướng nhìn nhận và suy nghĩ theo cách khác với người kiểm thử, vì vậy tester độc lập có thể dễ dàng nhận ra những vấn đề mà tác giả không nhận thấy.
+>
+> Tuy nhiên, tính độc lập không có nghĩa là thay thế hoàn toàn sự hiểu biết và mức độ quen thuộc với hệ thống. Ví dụ, developer vẫn có thể tìm thấy rất nhiều defect trong chính đoạn code của mình một cách hiệu quả, bởi vì họ hiểu rất rõ logic, kiến trúc và cách hệ thống hoạt động.
+>
+> Các work product có thể được kiểm thử ở nhiều mức độ độc lập khác nhau. Ở mức thấp nhất, sản phẩm được kiểm thử bởi chính tác giả tạo ra nó, tức là gần như không có tính độc lập. Cao hơn một chút là việc kiểm thử được thực hiện bởi đồng nghiệp của tác giả trong cùng một team, khi đó đã có một mức độ độc lập nhất định. Mức độ độc lập cao hơn nữa là khi tester nằm ngoài team của tác giả nhưng vẫn thuộc cùng một tổ chức thực hiện kiểm thử. Cuối cùng, mức độ độc lập cao nhất là khi việc kiểm thử được thực hiện bởi tester hoặc tổ chức bên ngoài công ty.
+>
+> Trong phần lớn các dự án, cách tiếp cận hiệu quả nhất thường là kết hợp nhiều mức độ độc lập kiểm thử khác nhau. Ví dụ, developer có thể thực hiện component testing và component integration testing vì họ hiểu rõ code và có thể phát hiện nhanh các lỗi kỹ thuật ở mức thấp. Sau đó, test team sẽ thực hiện system testing và system integration testing để đánh giá hệ thống ở góc nhìn rộng hơn. Cuối cùng, đại diện phía business hoặc người dùng sẽ thực hiện acceptance testing nhằm xác nhận rằng hệ thống đáp ứng đúng nhu cầu thực tế.
+>
+> Lợi ích lớn nhất của tính độc lập trong kiểm thử là các tester độc lập thường phát hiện ra những loại failure và defect khác với developer. Điều này xuất phát từ sự khác biệt về nền tảng, góc nhìn kỹ thuật và các bias cá nhân. Một developer thường tập trung vào việc “xây dựng hệ thống hoạt động đúng”, trong khi tester lại có xu hướng “tìm cách làm cho hệ thống thất bại”. Chính sự khác biệt trong cách suy nghĩ này giúp tăng khả năng phát hiện defect.
+>
+> Ngoài ra, tester độc lập còn có khả năng xác minh, phản biện hoặc bác bỏ những giả định mà stakeholder đã đưa ra trong quá trình đặc tả và triển khai hệ thống. Ví dụ, developer có thể cho rằng người dùng luôn nhập dữ liệu hợp lệ, nhưng tester độc lập sẽ đặt câu hỏi rằng điều gì sẽ xảy ra nếu người dùng nhập dữ liệu bất thường hoặc cố tình nhập sai.
+>
+> Tuy nhiên, tính độc lập trong kiểm thử cũng tồn tại một số nhược điểm. Khi tester quá tách biệt khỏi development team, có thể xảy ra tình trạng thiếu hợp tác, giao tiếp không hiệu quả hoặc thậm chí hình thành mối quan hệ đối đầu giữa tester và developer. Trong một số trường hợp, developer có thể dần mất cảm giác trách nhiệm đối với chất lượng sản phẩm vì cho rằng việc đảm bảo chất lượng đã là trách nhiệm của tester. Ngoài ra, tester độc lập đôi khi còn bị xem là “nút thắt cổ chai” của dự án hoặc bị đổ lỗi khi quá trình release bị chậm trễ.
