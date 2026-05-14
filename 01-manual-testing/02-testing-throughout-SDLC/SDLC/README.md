@@ -2,9 +2,11 @@
 
 ### Table of contents
 
-[1. Định nghĩa SDLC](#1-định-nghĩa-sdlc)
-[2. Các giai đoạn của SDLC ](#2-các-giai-đoạn-của-sdlc)
-[3. Các mô hình SDLC phổ biến](#3-các-mô-hình-sdlc-phổ-biến)
+- [Software Development Life Cycle (SDLC)](#software-development-life-cycle-sdlc)
+  - [Table of contents](#table-of-contents)
+  - [1. Định nghĩa SDLC](#1-định-nghĩa-sdlc)
+  - [2. Các giai đoạn của SDLC](#2-các-giai-đoạn-của-sdlc)
+  - [3. Các mô hình SDLC phổ biến](#3-các-mô-hình-sdlc-phổ-biến)
 
 ## 1. Định nghĩa SDLC
 

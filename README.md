@@ -2,6 +2,8 @@
 
 This is repository document my QC Engineer learning journey.
 
+![QC Journey](/qc-journey.png)
+
 ## Curent Focus
 
 - **Phase 01**: Deep Manual Testing
