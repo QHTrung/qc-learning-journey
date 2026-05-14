@@ -64,6 +64,8 @@ Some activities within software development processes can also be described by m
 > Các mô hình phát triển gia tăng (incremental development models), chẳng hạn như:
 >
 > - Unified Process.
+>
+> [Tham khảo thêm về SDLC](/01-manual-testing/02-testing-throughout-SDLC/SDLC/README.md)
 
 > Một số hoạt động trong quy trình phát triển phần mềm cũng có thể được mô tả thông qua các phương pháp phát triển phần mềm chi tiết hơn và các thực hành Agile.
 >
