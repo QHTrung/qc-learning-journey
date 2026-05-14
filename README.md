@@ -16,8 +16,9 @@ This is repository document my QC Engineer learning journey.
 
 #### **Phase 01**: Deep Manual Testing
 
-[1. Fundamentals of Testing](/01-manual-testing/fundamentals-testing/README.md)
-Updating...
+- [1. Fundamentals of Testing](/01-manual-testing/fundamentals-testing/README.md)
+- [2. Testing throughout the SDLC](/01-manual-testing/02-testing-throughout-SDLC/README.md)
+- Updating...
 
 ## Resources
 
