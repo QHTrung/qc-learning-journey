@@ -10,6 +10,7 @@
     - [3.1 Waterfall Model](#31-waterfall-model)
     - [3.2 V-Model](#32-v-model)
     - [3.3 Iterative Model (Mô hình lặp)](#33-iterative-model-mô-hình-lặp)
+    - [3.4 SDLC - Spiral Model (Mô hình xoắn ốc)](#34-sdlc---spiral-model-mô-hình-xoắn-ốc)
 
 ## 1. Định nghĩa SDLC
 
@@ -288,3 +289,85 @@ Nhược điểm của Iterative và Incremental SDLC Model bao gồm:
 - Khó xác định rõ thời điểm kết thúc dự án, điều này tạo ra risk.
 - Cần resource có trình độ cao để thực hiện risk analysis.
 - Tiến độ dự án phụ thuộc nhiều vào phase risk analysis.
+
+### 3.4 SDLC - Spiral Model (Mô hình xoắn ốc)
+
+Spiral Model kết hợp ý tưởng của iterative development với các đặc điểm có hệ thống và được kiểm soát của waterfall model. Spiral Model là sự kết hợp giữa iterative development process model và sequential linear development model, tức waterfall model, với sự nhấn mạnh rất cao vào risk analysis. Mô hình này cho phép release sản phẩm theo từng increment hoặc cải tiến dần sản phẩm qua mỗi vòng lặp quanh hình xoắn ốc.
+
+**Thiết kế của Spiral Model**
+
+Spiral Model bao gồm bốn phase. Một software project sẽ lặp đi lặp lại qua các phase này trong các iteration được gọi là Spiral
+
+**1. Xác định mục tiêu (Objective Identification)**
+
+- Nhiệm vụ: Phân tích các yêu cầu cụ thể, mục tiêu hiệu suất và các ràng buộc (ngân sách, thời gian) cho vòng lặp hiện tại.
+
+**2. Phân tích rủi ro & Tạo mẫu (Risk Analysis & Prototypes)**
+
+- Đánh giá: Xác định và xử lý các rủi ro kỹ thuật, bảo mật hoặc hiệu năng.
+
+- Nguyên mẫu: Xây dựng bản mẫu (prototype) để xác thực tính khả thi và giúp người dùng hình dung sản phẩm sớm.
+
+**3. Phát triển & Kiểm thử (Development & Testing)**
+
+- Thực thi: Triển khai thiết kế kiến trúc, lập trình (coding) và tích hợp hệ thống.
+
+- Xác thực: Thực hiện các bước kiểm thử (từ Unit Test đến UAT) để đảm bảo chất lượng phần mềm trước khi bàn giao.
+
+**4. Lập kế hoạch giai đoạn tiếp theo (Next Phase Planning)**
+
+- Đánh giá: Xem xét lại tiến độ và kết quả của vòng lặp vừa thực hiện cùng khách hàng.
+
+- Chuẩn bị: Lên kế hoạch cho các tính năng mới và quy mô của vòng lặp tiếp theo dựa trên phản hồi thực tế.
+
+Quy trình này sẽ lặp lại theo hình xoắn ốc, giúp sản phẩm được hoàn thiện dần và rủi ro được kiểm soát chặt chẽ qua từng vòng.
+
+![Spiral Model](./spiral-model.jpeg)
+
+**Ứng dụng của Spiral Model**
+
+Spiral Model được sử dụng rộng rãi trong ngành phần mềm vì nó phù hợp với quy trình phát triển tự nhiên của sản phẩm — tức là học hỏi và cải tiến dần theo thời gian — đồng thời giúp giảm thiểu risk cho cả customer và development team.
+
+Spiral Model thường được sử dụng trong các trường hợp:
+
+- có giới hạn về budget và risk evaluation là quan trọng,
+- dự án có mức risk từ trung bình đến cao,
+- dự án dài hạn với requirement có thể thay đổi theo thời gian,
+- customer chưa chắc chắn hoàn toàn về requirement,
+- requirement phức tạp và cần đánh giá thêm để làm rõ,
+- sản phẩm mới cần release theo từng phase để lấy feedback,
+- dự kiến sẽ có thay đổi lớn trong quá trình phát triển sản phẩm.
+
+**Ưu điểm của Spiral Model**
+
+Một ưu điểm lớn của Spiral Model là cho phép bổ sung các thành phần của sản phẩm khi chúng trở nên rõ ràng hoặc sẵn sàng. Điều này giúp tránh xung đột với requirement và design trước đó.
+
+Ngoài ra:
+
+- mô hình này phù hợp với các dự án có nhiều build và release,
+- cho phép chuyển đổi có tổ chức sang maintenance activity,
+- thúc đẩy sự tham gia sớm của user trong quá trình phát triển hệ thống.
+
+Các ưu điểm khác bao gồm:
+
+- requirement thay đổi có thể được accommodate,
+- hỗ trợ extensive use of prototypes,
+- requirement được thu thập chính xác hơn,
+- user có thể thấy hệ thống từ sớm,
+- development có thể chia thành nhiều phần nhỏ,
+- các phần có risk cao có thể được phát triển trước để quản lý risk tốt hơn.
+
+**Nhược điểm của Spiral Model**
+
+Spiral Model yêu cầu quản lý rất chặt chẽ để có thể hoàn thành sản phẩm thành công.
+
+Ngoài ra còn tồn tại risk rằng spiral có thể tiếp tục vô thời hạn nếu việc kiểm soát thay đổi không được thực hiện tốt. Vì vậy, việc quản lý change request và kiểm soát phạm vi thay đổi là rất quan trọng.
+
+Các nhược điểm khác bao gồm:
+
+- management phức tạp hơn,
+- khó xác định sớm thời điểm kết thúc dự án,
+- không phù hợp với dự án nhỏ hoặc low-risk project,
+- chi phí có thể cao đối với dự án nhỏ,
+- process khá phức tạp,
+- cần expertise về risk assessment.
