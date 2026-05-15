@@ -3,14 +3,17 @@
 ### Table of contents
 
 - [Software Development Life Cycle (SDLC)](#software-development-life-cycle-sdlc)
-    - [Table of contents](#table-of-contents)
+  - [Table of contents](#table-of-contents)
   - [1. Định nghĩa SDLC](#1-định-nghĩa-sdlc)
   - [2. Các giai đoạn của SDLC](#2-các-giai-đoạn-của-sdlc)
   - [3. Các mô hình SDLC phổ biến](#3-các-mô-hình-sdlc-phổ-biến)
     - [3.1 Waterfall Model](#31-waterfall-model)
     - [3.2 V-Model](#32-v-model)
     - [3.3 Iterative Model (Mô hình lặp)](#33-iterative-model-mô-hình-lặp)
-    - [3.4 SDLC - Spiral Model (Mô hình xoắn ốc)](#34-sdlc---spiral-model-mô-hình-xoắn-ốc)
+    - [3.4 Spiral Model (Mô hình xoắn ốc)](#34-spiral-model-mô-hình-xoắn-ốc)
+    - [3.5 Agile Model](#35-agile-model)
+      - [3.5.1 Scrum](#351-scrum)
+      - [3.5.2 Kanban](#352-kanban)
 
 ## 1. Định nghĩa SDLC
 
@@ -40,14 +43,14 @@ Quy trình này thường bao gồm **7 giai đoạn cơ bản** sau:
 
 ## 3. Các mô hình SDLC phổ biến
 
-- [Waterfall Model (Thác nước)](#31-waterfall-model)
-- [V-Model (Mô hình chữ V)](#32-v-model)
-- [Iterative Model (Mô hình lặp)](#33-iterative-model-mô-hình-lặp)
+- Waterfall Model (Thác nước)
+- V-Model (Mô hình chữ V)
+- Iterative Model (Mô hình lặp)
 - Spiral Model (Mô hình xoắn ốc)
 - Big Bang Model
 - RAD Model (Phát triển ứng dụng nhanh)
 - Software Prototype Model
-- Agile Model (Linh hoạt)
+- Agile Model
 
 ### 3.1 Waterfall Model
 
@@ -290,7 +293,7 @@ Nhược điểm của Iterative và Incremental SDLC Model bao gồm:
 - Cần resource có trình độ cao để thực hiện risk analysis.
 - Tiến độ dự án phụ thuộc nhiều vào phase risk analysis.
 
-### 3.4 SDLC - Spiral Model (Mô hình xoắn ốc)
+### 3.4 Spiral Model (Mô hình xoắn ốc)
 
 Spiral Model kết hợp ý tưởng của iterative development với các đặc điểm có hệ thống và được kiểm soát của waterfall model. Spiral Model là sự kết hợp giữa iterative development process model và sequential linear development model, tức waterfall model, với sự nhấn mạnh rất cao vào risk analysis. Mô hình này cho phép release sản phẩm theo từng increment hoặc cải tiến dần sản phẩm qua mỗi vòng lặp quanh hình xoắn ốc.
 
@@ -371,3 +374,162 @@ Các nhược điểm khác bao gồm:
 - chi phí có thể cao đối với dự án nhỏ,
 - process khá phức tạp,
 - cần expertise về risk assessment.
+
+### 3.5 Agile Model
+
+Agile Software Development là mô hình phát triển phần mềm theo hướng linh hoạt, chia nhỏ công việc thành nhiều phần nhỏ và phát hành liên tục thay vì làm toàn bộ rồi mới release.
+
+Mục tiêu của Agile:
+
+- Phản hồi nhanh với thay đổi
+- Tăng tốc độ phát triển
+- Giao tiếp thường xuyên với khách hàng
+- Cải thiện chất lượng sản phẩm liên tục
+
+Agile không phải là một quy trình cố định mà là **một tư duy/phương pháp luận.**
+Trong Agile có nhiều framework như:
+
+- Scrum
+- Kanban
+- XP (Extreme Programming)
+- Lean
+- SAFe...
+
+Hai framework phổ biến nhất hiện nay là Scrum và Kanban.
+
+#### 3.5.1 Scrum
+
+Scrum là framework Agile chia công việc thành các vòng lặp ngắn gọi là **_Sprint_**.
+
+Mỗi Sprint thường kéo dài:
+
+- 1 tuần
+- 2 tuần
+- hoặc 4 tuần
+
+Cuối Sprint phải có sản phẩm chạy được hoặc có giá trị.
+
+---
+
+**Scrum Team**
+
+**1. Product Owner (PO)**
+
+Người đại diện khách hàng/business có trách nhiệm:
+
+- Quản lý yêu cầu
+- Ưu tiên tính năng
+- Viết User Story
+- Quyết định cái gì cần làm trước
+
+**2. Scrum Master (SM)**
+
+Người hỗ trợ team làm đúng Scrum có trách nhiệm:
+
+- Remove blocker
+- Điều phối meeting
+- Bảo vệ team khỏi scope ngoài
+- Cải thiện process
+
+**3. Development Team**
+
+Bao gồm:
+
+- Dev
+- QA/QC
+- BA
+- Designer
+- DevOps...
+
+---
+
+**Các công cụ (artifacts) Scrum**
+
+**1. Product backlog**
+Product Backlog là danh sách toàn bộ yêu cầu, tính năng, bug hoặc cải tiến của sản phẩm. Đây là nơi chứa tất cả những gì cần làm cho dự án và được quản lý bởi Product Owner. Các item trong Product Backlog thường được viết dưới dạng User Story và có độ ưu tiên khác nhau. Backlog không cố định mà luôn thay đổi theo nhu cầu business hoặc phản hồi từ khách hàng.
+
+**2. Sprint backlog**
+Sprint Backlog là tập hợp các công việc được chọn từ Product Backlog để thực hiện trong một Sprint. Sau buổi Sprint Planning, team sẽ quyết định những task nào có thể hoàn thành trong Sprint hiện tại và đưa vào Sprint Backlog.
+
+**3. Burndown chart**
+Đây là biểu đồ hiển thị xu hướng của dự án dựa trên lượng thời gian cần thiết còn lại để hoàn tất công việc.
+
+Burndown Chart có thể được dùng để theo dõi tiến độ của Sprint (được gọi là Sprint Burndown Chart) hoặc của cả dự án (Project Burndown Chart).
+
+Biểu đồ burndown không phải là một thành tố tiêu chuẩn của Scrum theo định nghĩa mới, nhưng vẫn được sử dụng rộng rãi do tính hữu ích của nó.
+
+---
+
+**Scrum Workflow**
+
+**1. Product Backlog**
+
+Danh sách toàn bộ yêu cầu/tính năng.
+
+**2. Sprint Planning**
+
+Team chọn task từ backlog để làm trong Sprint.
+
+Output:
+
+- Sprint Goal
+- Sprint Backlog
+
+**3. Sprint**
+
+Thời gian thực hiện task.
+
+Ví dụ:
+
+> Ngày 1: Planning
+>
+> Ngày 2-13: Development + Testing
+>
+> Ngày 14: Review + Retrospective
+
+**4. Daily Scrum (Daily Standup)**
+
+Meeting ngắn ~15 phút mỗi ngày.
+
+Mỗi người trả lời:
+
+- Hôm qua làm gì?
+- Hôm nay làm gì?
+- Có blocker không?
+
+**5. Sprint Review**
+
+Demo sản phẩm cuối Sprint cho stakeholder.
+
+**6. Sprint Retrospective**
+
+Team review process để cải thiện.
+
+Ví dụ:
+
+- Điều gì tốt?
+- Điều gì chưa tốt?
+- Cải thiện gì Sprint sau?
+
+![Agile Scrum](./agile-scrum.jpg)
+
+Scrum còn có khái niệm quan trọng là Definition of Done
+
+**DoD (Definition of Done - Định nghĩa về sự Hoàn thành)** là một bản cam kết chung của toàn đội (Scrum Team) về các tiêu chuẩn chất lượng mà một hạng mục công việc (Product Backlog Item) phải đạt được trước khi được coi là chính thức "Xong".
+
+Mục tiêu lớn nhất của DoD là tạo ra sự minh bạch và đảm bảo chất lượng đồng nhất, tránh tình trạng "xong nhưng vẫn còn lỗi".
+
+Tùy vào mỗi dự án, DoD sẽ khác nhau, nhưng thông thường một DoD chuẩn sẽ bao gồm:
+
+- Về Code: Code đã được review (Peer Review), tuân thủ coding standards và đã được đẩy lên hệ thống quản lý phiên bản (Git).
+
+- Về Kiểm thử (Testing):
+  - Hoàn thành Unit Test với tỷ lệ bao phủ (coverage) nhất định.
+  - Vượt qua Integration Test (Kiểm thử tích hợp).
+  - Vượt qua các bài kiểm thử hồi quy (Regression Test) để đảm bảo không làm hỏng tính năng cũ.
+
+- Về Tài liệu: Tài liệu hướng dẫn sử dụng hoặc tài liệu kỹ thuật đã được cập nhật.
+
+- Về Môi trường: Tính năng đã được triển khai (Deploy) lên môi trường Staging hoặc QA để sẵn sàng cho việc nghiệm thu.
+
+#### 3.5.2 Kanban
