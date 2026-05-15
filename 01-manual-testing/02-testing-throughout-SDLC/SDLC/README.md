@@ -3,7 +3,7 @@
 ### Table of contents
 
 - [Software Development Life Cycle (SDLC)](#software-development-life-cycle-sdlc)
-  - [Table of contents](#table-of-contents)
+    - [Table of contents](#table-of-contents)
   - [1. Định nghĩa SDLC](#1-định-nghĩa-sdlc)
   - [2. Các giai đoạn của SDLC](#2-các-giai-đoạn-của-sdlc)
   - [3. Các mô hình SDLC phổ biến](#3-các-mô-hình-sdlc-phổ-biến)
@@ -14,6 +14,7 @@
     - [3.5 Agile Model](#35-agile-model)
       - [3.5.1 Scrum](#351-scrum)
       - [3.5.2 Kanban](#352-kanban)
+      - [3.5.3 So sánh Scrum/Kanban](#353-so-sánh-scrumkanban)
 
 ## 1. Định nghĩa SDLC
 
@@ -533,3 +534,108 @@ Tùy vào mỗi dự án, DoD sẽ khác nhau, nhưng thông thường một DoD
 - Về Môi trường: Tính năng đã được triển khai (Deploy) lên môi trường Staging hoặc QA để sẵn sàng cho việc nghiệm thu.
 
 #### 3.5.2 Kanban
+
+Kanban là framework trong Agile dùng để quản lý và trực quan hóa luồng công việc (workflow).
+
+Mục tiêu:
+
+- Tối ưu flow làm việc
+- Giảm bottleneck
+- Tăng hiệu suất team
+- Deliver liên tục
+
+Khác với Scrum:
+
+- Không chia Sprint cố định
+- Task hoàn thành là có thể release ngay
+
+**Các nguyên lý chính của Kanban**
+
+**1. Visualize Workflow**
+
+Hiển thị toàn bộ công việc trên board, giúp team dễ theo dõi trạng thái task.
+
+**2. Limit WIP (Work In Progress)**
+
+Giới hạn số lượng task đang làm.
+Mục đích:
+
+- Tránh overload
+- Giảm multitasking
+- Tăng focus
+
+**3. Manage Flow**
+
+Theo dõi luồng công việc để tránh bị nghẽn.
+Ví dụ:
+
+- Quá nhiều task ở Testing
+- QA không test kịp
+- Cần hỗ trợ hoặc giảm task mới
+
+**4. Continuous Improvement**
+
+Cải tiến liên tục workflow và process.
+Ví dụ:
+
+- Tối ưu thời gian test
+- Giảm bug reopen
+- Cải thiện handoff giữa Dev và QA
+
+---
+
+**Workflow Kanban**
+
+```mermaid
+flowchart TD
+    A[Backlog] --> B[Ready]
+    B --> C[Development]
+    C --> D[Code Review]
+    D --> E[Testing]
+    E --> F[Done]
+```
+
+---
+
+**Các Metrics trong Kanban**
+
+**Cycle Time**
+
+Thời gian từ lúc bắt đầu làm đến khi hoàn thành task.
+
+> Task bắt đầu: 01/05
+> Task Done: 04/05
+> Cycle Time = 3 ngày
+
+**Lead Time**
+
+Thời gian từ lúc tạo request đến lúc hoàn thành.
+
+**Throughput**
+
+Số lượng task hoàn thành trong khoảng thời gian nhất định.
+
+> Ví dụ: 20 task/tuần
+
+#### 3.5.3 So sánh Scrum/Kanban
+
+| Tiêu chí             | Scrum                                | Kanban                                    |
+| -------------------- | ------------------------------------ | ----------------------------------------- |
+| Khái niệm            | Framework Agile làm việc theo Sprint | Framework Agile quản lý workflow liên tục |
+| Chu kỳ làm việc      | Có Sprint cố định (1–4 tuần)         | Không có Sprint                           |
+| Cách hoạt động       | Team commit task trong Sprint        | Task được pull liên tục                   |
+| Release              | Thường release cuối Sprint           | Release bất cứ lúc nào                    |
+| Thay đổi requirement | Hạn chế thay đổi giữa Sprint         | Linh hoạt thay đổi bất kỳ lúc nào         |
+| Board                | Scrum Board                          | Kanban Board                              |
+| Quản lý công việc    | Theo Sprint Backlog                  | Theo workflow liên tục                    |
+| WIP Limit            | Không bắt buộc                       | Có WIP Limit                              |
+| Meeting              | Nhiều meeting                        | Ít meeting                                |
+| Các meeting phổ biến | Planning, Daily, Review, Retro       | Thường chỉ sync ngắn nếu cần              |
+| Role                 | Có PO, Scrum Master, Dev Team        | Không bắt buộc role cố định               |
+| Tracking             | Velocity, Burndown Chart             | Cycle Time, Lead Time                     |
+| Mục tiêu chính       | Hoàn thành Sprint Goal               | Tối ưu flow công việc                     |
+| Phù hợp              | Product development                  | Support, maintenance                      |
+| Ưu điểm              | Dễ estimate, quản lý roadmap tốt     | Linh hoạt, dễ áp dụng                     |
+| Nhược điểm           | Nhiều process, khó đổi scope         | Khó estimate timeline                     |
+| QA làm việc          | Test theo Sprint                     | Test liên tục theo flow                   |
+| Ví dụ thực tế        | Làm app banking mới                  | Support bug production                    |
