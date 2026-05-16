@@ -5,7 +5,7 @@
 ### Table of contents
 
 - [2. Testing Throughout the Software Development Lifecycle](#2-testing-throughout-the-software-development-lifecycle)
-  - [Table of contents](#table-of-contents)
+    - [Table of contents](#table-of-contents)
   - [Keywords](#keywords)
   - [2.1. Testing in the Context of a Software Development Lifecycle (SDLC)](#21-testing-in-the-context-of-a-software-development-lifecycle-sdlc)
     - [2.1.1. Impact of the Software Development Lifecycle on Testing](#211-impact-of-the-software-development-lifecycle-on-testing)
@@ -14,6 +14,10 @@
     - [2.1.4. DevOps and Testing](#214-devops-and-testing)
     - [2.1.5. Shift Left](#215-shift-left)
     - [2.1.6. Retrospectives and Process Improvement](#216-retrospectives-and-process-improvement)
+  - [2.2. Test Levels and Test Types](#22-test-levels-and-test-types)
+    - [2.2.1 Test Levels](#221-test-levels)
+    - [2.2.2. Test Types](#222-test-types)
+    - [2.2.3. Confirmation Testing and Regression Testing](#223-confirmation-testing-and-regression-testing)
 
 ## Keywords
 
@@ -310,3 +314,147 @@ Typical benefits for testing include:
 > - Tăng sự gắn kết trong team và thúc đẩy học hỏi (ví dụ: nhờ có cơ hội nêu ra vấn đề và đề xuất các điểm cải tiến).
 > - Cải thiện chất lượng của test basis (ví dụ: các thiếu sót về phạm vi và chất lượng của requirement có thể được xác định và giải quyết).
 > - Tăng cường sự hợp tác giữa development và testing (ví dụ: thông qua việc collaboration được review và tối ưu thường xuyên).
+
+## 2.2. Test Levels and Test Types
+
+Test levels are groups of test activities that are organized and managed together. Each test level is an instance of the test process, performed in relation to software at a given phase of development, from individual components to complete systems or, where applicable, systems of systems.
+
+Test levels are related to other activities within the SDLC. In sequential SDLC models, the test levels are often defined such that the exit criteria of one level are part of the entry criteria for the next level. In some iterative models, this may not apply. Development activities may span through multiple test levels. Test levels may overlap in time.
+
+Test types are groups of test activities related to specific quality characteristics and most of those test activities can be performed at every test level.
+
+> Cấp độ kiểm thử (Test levels) là các nhóm hoạt động kiểm thử được tổ chức và quản lý cùng nhau. Mỗi cấp độ kiểm thử là một thể hiện (instance) của quy trình kiểm thử, được thực hiện đối với phần mềm ở một giai đoạn phát triển nhất định, từ các thành phần riêng lẻ cho đến các hệ thống hoàn chỉnh hoặc các hệ thống của hệ thống (systems of systems) nếu có.
+>
+> Các cấp độ kiểm thử có mối quan hệ với các hoạt động khác trong vòng đời phát triển phần mềm (SDLC). Trong các mô hình SDLC tuần tự, các cấp độ kiểm thử thường được định nghĩa sao cho tiêu chí thoát (exit criteria) của một cấp độ sẽ là một phần của tiêu chí vào (entry criteria) cho cấp độ kế tiếp. Trong một số mô hình lặp (iterative models), điều này có thể không áp dụng. Các hoạt động phát triển có thể kéo dài qua nhiều cấp độ kiểm thử. Các cấp độ kiểm thử có thể trùng lặp nhau về mặt thời gian.
+>
+> Loại kiểm thử (Test types) là các nhóm hoạt động kiểm thử liên quan đến các đặc tính chất lượng cụ thể, và hầu hết các hoạt động kiểm thử đó đều có thể được thực hiện ở mọi cấp độ kiểm thử.
+
+### 2.2.1 Test Levels
+
+> Các cấp độ kiểm thử
+
+In this syllabus, the following five test levels are described:
+
+- **Component testing (also known as unit testing)** focuses on testing components in isolation. It often requires specific support, such as test harnesses or unit test frameworks. Component testing is normally performed by developers in their development environments.
+
+- **Component integration testing (also known as unit integration testing)** focuses on testing the interfaces and interactions between components. Component integration testing is heavily dependent on the integration strategy like bottom-up, top-down or big-bang.
+
+- **System testing** focuses on the overall behavior and capabilities of an entire system or product, often including functional testing of end-to-end tasks and the non-functional testing of quality characteristics. For some non-functional quality characteristics, it is preferable to test them on a complete system in a representative test environment (e.g., usability). Using simulations of subsystems is also possible. System testing may be performed by an independent test team, and is related to specifications for the system.
+
+- **System integration testing** focuses on testing the interfaces of the system under test and other systems and external services. System integration testing requires suitable test environments preferably similar to the operational environment.
+
+- **Acceptance testing** focuses on validation and on demonstrating readiness for deployment, which means that the system fulfills the user’s business needs. Ideally, acceptance testing should be performed by the intended users. The main forms of acceptance testing are: user acceptance testing (UAT), operational acceptance testing, contractual acceptance testing and regulatory acceptance testing, alpha testing and beta testing.
+
+Test levels are distinguished by the following non-exhaustive list of attributes, to avoid overlapping of test activities:
+
+- Test object
+- Test objectives
+- Test basis
+- Defects and failures
+- Approach and responsibilities
+
+> Trong giáo trình này, năm cấp độ kiểm thử sau đây được mô tả:
+>
+> **Kiểm thử thành phần (Component testing - còn gọi là kiểm thử đơn vị / unit testing)**: Tập trung vào việc kiểm thử các thành phần một cách cô lập. Hoạt động này thường đòi hỏi sự hỗ trợ đặc biệt, chẳng hạn như các khung kiểm thử đơn vị (unit test frameworks) hoặc công cụ điều khiển kiểm thử (test harnesses). Kiểm thử thành phần thường do các lập trình viên thực hiện trong môi trường phát triển của họ.
+>
+> **Kiểm thử tích hợp thành phần (Component integration testing - còn gọi là kiểm thử tích hợp đơn vị / unit integration testing)**: Tập trung vào việc kiểm thử các giao diện và sự tương tác giữa các thành phần. Kiểm thử tích hợp thành phần phụ thuộc rất nhiều vào chiến lược tích hợp, chẳng hạn như từ dưới lên (bottom-up), từ trên xuống (top-down) hoặc tích hợp tổng thể (big-bang).
+>
+> **Kiểm thử hệ thống (System testing)**: Tập trung vào hành vi và khả năng tổng thể của toàn bộ hệ thống hoặc sản phẩm, thường bao gồm kiểm thử chức năng cho các tác vụ đầu-cuối (end-to-end) và kiểm thử phi chức năng cho các đặc tính chất lượng. Đối với một số đặc tính chất lượng phi chức năng, việc kiểm thử chúng trên một hệ thống hoàn chỉnh trong một môi trường kiểm thử mô phỏng thực tế (ví dụ: kiểm thử độ khả dụng / usability) sẽ tốt hơn. Việc sử dụng các mô phỏng của các hệ thống con cũng có thể được áp dụng. Kiểm thử hệ thống có thể được thực hiện bởi một đội ngũ kiểm thử độc lập và gắn liền với các tài liệu tả đặc tả của hệ thống.
+>
+> **Kiểm thử tích hợp hệ thống (System integration testing)**: Tập trung vào việc kiểm thử các giao diện giữa hệ thống đang được kiểm thử với các hệ thống khác và các dịch vụ bên ngoài. Kiểm thử tích hợp hệ thống đòi hỏi các môi trường kiểm thử phù hợp, tốt nhất là tương tự như môi trường vận hành thực tế.
+>
+> **Kiểm thử chấp nhận (Acceptance testing)**: Tập trung vào việc xác nhận (validation) và chứng minh sự sẵn sàng cho việc triển khai, điều này có nghĩa là hệ thống đáp ứng được các nhu cầu kinh doanh của người dùng. Lý tưởng nhất, kiểm thử chấp nhận nên được thực hiện bởi những người dùng mục tiêu. Các hình thức chính của kiểm thử chấp nhận bao gồm: kiểm thử chấp nhận người dùng (UAT), kiểm thử chấp nhận vận hành, kiểm thử chấp nhận theo hợp đồng, kiểm thử chấp nhận theo quy định pháp lý, kiểm thử alpha (alpha testing) và kiểm thử beta (beta testing).
+>
+> Các cấp độ kiểm thử được phân biệt bởi danh sách các thuộc tính (không giới hạn) sau đây nhằm tránh sự trùng lặp giữa các hoạt động kiểm thử:
+>
+> - Đối tượng kiểm thử (Test object)
+> - Mục tiêu kiểm thử (Test objectives)
+> - Cơ sở kiểm thử (Test basis)
+> - Khuyết tật và lỗi hỏng (Defects and failures)
+> - Cách tiếp cận và trách nhiệm (Approach and responsibilities)
+
+### 2.2.2. Test Types
+
+> Các loại kiểm thử
+
+A lot of test types exist and can be applied in projects. In this syllabus, the following four test types are addressed:
+
+**Functional testing** evaluates the functions that a component or system should perform. The functions are “what” the test object should do. The main objective of functional testing is checking the functional completeness, functional correctness and functional appropriateness.
+
+**Non-functional testing** evaluates attributes other than functional characteristics of a component or system. Non-functional testing is the testing of “how well the system behaves”. The main objective of nonfunctional testing is checking the non-functional quality characteristics. The ISO/IEC 25010 standard provides the following classification of the non-functional quality characteristics:
+
+- Performance efficiency
+- Compatibility
+- Usability (also known as interaction capability)
+- Reliability
+- Security
+- Maintainability
+- Portability (also known as flexibility)
+- Safety
+
+It is sometimes appropriate for non-functional testing to start early in the SDLC (e.g., as part of reviews or component testing). Many non-functional tests are derived from functional tests as they use the same functional tests, but check that while performing the function, a non-functional constraint is satisfied (e.g., checking that a function performs within a specified time, or a function can be ported to a new platform). The late discovery of non-functional defects can pose a serious threat to the success of a project. Nonfunctional testing sometimes needs a very specific test environment, such as a usability lab for usability testing.
+
+**Black-box testing** (see section 4.2) is specification-based and derives tests from documentation not related to the internal structure of the test object. The main objective of black-box testing is checking the system's behavior against its specifications.
+
+**White-box testing** (see section 4.3) is structure-based and derives tests from the system's implementation or internal structure (e.g., code, architecture, work flows, and data flows). The main objective of white-box testing is to cover the underlying structure by the tests to an acceptable level.
+
+All the four above mentioned test types can be applied to all test levels, although the focus will be different at each level. Different test techniques can be used to derive test conditions and test cases for all the mentioned test types.
+
+> Có rất nhiều loại kiểm thử tồn tại và có thể được áp dụng vào các dự án. Trong giáo trình này, bốn loại kiểm thử sau đây sẽ được đề cập:
+>
+> **Kiểm thử chức năng (Functional testing)**: Đánh giá các chức năng mà một thành phần hoặc hệ thống phải thực hiện. Các chức năng này chính là những gì ("what") mà đối tượng kiểm thử nên làm. Mục tiêu chính của kiểm thử chức năng là kiểm tra tính đầy đủ của chức năng (functional completeness), tính chính xác của chức năng (functional correctness) và tính phù hợp của chức năng (functional appropriateness).
+>
+> **Kiểm thử phi chức năng (Non-functional testing)**: Đánh giá các thuộc tính khác ngoài các đặc tính chức năng của một thành phần hoặc hệ thống. Kiểm thử phi chức năng là việc kiểm thử xem "hệ thống vận hành tốt đến mức nào" ("how well the system behaves"). Mục tiêu chính của kiểm thử phi chức năng là kiểm tra các đặc tính chất lượng phi chức năng. Tiêu chuẩn ISO/IEC 25010 cung cấp phân loại các đặc tính chất lượng phi chức năng như sau:
+>
+> - Hiệu quả năng suất (Performance efficiency)
+> - Tính tương thích (Compatibility)
+> - Tính khả dụng (Usability - còn gọi là năng lực tương tác / interaction capability)
+> - Tính đáng tin cậy (Reliability)
+> - Tính bảo mật (Security)
+> - Tính khả bảo trì (Maintainability)
+> - Tính khả chuyển (Portability - còn gọi là tính linh hoạt / flexibility)
+> - Tính an toàn (Safety)
+>
+> Trong một số trường hợp, việc bắt đầu kiểm thử phi chức năng sớm trong vòng đời phát triển phần mềm (SDLC) là rất phù hợp (ví dụ: như một phần của hoạt động duyệt tài liệu / reviews hoặc kiểm thử thành phần). Nhiều kiểm thử phi chức năng được dẫn xuất từ các kiểm thử chức năng vì chúng sử dụng cùng các bài kiểm thử chức năng đó, nhưng nhằm mục đích kiểm tra xem trong khi thực hiện chức năng, một ràng buộc phi chức năng có được thỏa mãn hay không (ví dụ: kiểm tra xem một chức năng có thực hiện trong khoảng thời gian quy định hay không, hoặc một chức năng có thể chuyển sang một nền tảng mới hay không).
+>
+> Việc phát hiện muộn các khuyết tật phi chức năng có thể gây ra mối đe dọa nghiêm trọng cho sự thành công của dự án. Kiểm thử phi chức năng đôi khi cần một môi trường kiểm thử rất đặc thù, chẳng hạn như một phòng thí nghiệm khả dụng (usability lab) dành cho việc kiểm thử độ khả dụng.
+>
+> **Kiểm thử hộp đen (Black-box testing** - xem mục 4.2): Là phương pháp dựa trên đặc tả (specification-based) và dẫn xuất các bài kiểm thử từ tài liệu không liên quan đến cấu trúc bên trong của đối tượng kiểm thử. Mục tiêu chính của kiểm thừ hộp đen là kiểm tra hành vi của hệ thống so với các tài liệu đặc tả của nó.
+>
+> **Kiểm thử hộp trắng (White-box testing** - xem mục 4.3): Là phương pháp dựa trên cấu trúc (structure-based) và dẫn xuất các bài kiểm thử từ việc triển khai hoặc cấu trúc bên trong của hệ thống (ví dụ: mã nguồn, kiến trúc, luồng công việc / work flows và luồng dữ liệu / data flows). Mục tiêu chính của kiểm thử hộp trắng là bao phủ cấu trúc nền tảng bằng các bài kiểm thử đạt đến một mức độ chấp nhận được
+>
+> Tất cả bốn loại kiểm thử nêu trên đều có thể được áp dụng cho mọi cấp độ kiểm thử (test levels), mặc dù trọng tâm ở mỗi cấp độ sẽ khác nhau. Các kỹ thuật kiểm thử khác nhau có thể được sử dụng để dẫn xuất ra các điều kiện kiểm thử (test conditions) và kịch bản kiểm thử (test cases) cho tất cả các loại kiểm thử đã đề cập.
+
+### 2.2.3. Confirmation Testing and Regression Testing
+
+> Kiểm thử xác nhận và Kiểm thử hồi quy
+
+Changes are typically made to a component or system to either enhance it by adding a new feature or to fix it by removing a defect. Testing should then also include confirmation testing and regression testing.
+
+C**onfirmation testing** confirms that an original defect has been successfully fixed. Depending on the risk, one can test the fixed version of the software in several ways, including:
+
+- executing all tests that previously have failed due to the defect, or, also by
+- adding new tests to cover any changes that were needed to fix the defect
+
+However, when time or money is short when fixing defects, confirmation testing might be restricted to simply exercising the test steps that should reproduce the failure caused by the defect and checking that the failure does not occur.
+
+**Regression testing** confirms that no adverse consequences have been caused by a change, including a fix that has already been confirmation tested. These adverse consequences could affect the same component where the change was made, other components in the same system or even other connected systems. Regression testing may not be restricted to the test object itself but can also be related to the environment. It is advisable first to perform an impact analysis to recognize the extent of the regression testing. Impact analysis shows which parts of the software could be affected.
+
+Regression test suites are run many times and generally the number of regression test cases will increase with each iteration or release, so regression testing is a strong candidate for automation. Test automation should start early in the project. Where CI is used, such as in DevOps (see section 2.1.4), it is good practice to also include automated regression tests. Depending on the situation, this may include regression tests on different test levels.
+
+Confirmation testing and/or regression testing for the test object are needed on all test levels if defects are fixed and/or changes are made on these test levels.
+
+> Các thay đổi thường được thực hiện đối với một thành phần hoặc hệ thống để cải tiến nó bằng cách thêm tính năng mới hoặc để sửa lỗi bằng cách loại bỏ một khuyết tật. Khi đó, việc kiểm thử cũng phải bao gồm cả kiểm thử xác nhận và kiểm thử hồi quy.
+>
+> **Kiểm thử xác nhận (Confirmation testing - còn gọi là re-testing)**: Xác nhận rằng khuyết tật ban đầu đã được sửa thành công. Tùy thuộc vào mức độ rủi ro, người ta có thể kiểm thử phiên bản phần mềm đã sửa lỗi theo nhiều cách, bao gồm:
+>
+> - Thực hiện lại tất cả các bài kiểm thử từng bị thất bại (failed) trước đó do khuyết tật gây ra, hoặc bằng cách:
+> - Thêm các bài kiểm thử mới để bao phủ bất kỳ thay đổi nào cần thiết cho việc sửa khuyết tật đó.
+>
+> Tuy nhiên, khi thời gian hoặc ngân sách bị hạn chế trong quá trình sửa lỗi, việc kiểm thử xác nhận có thể bị giới hạn ở việc chỉ thực hiện đơn giản các bước kiểm thử vốn dĩ sẽ tái hiện lại lỗi hỏng (failure) do khuyết tật gây ra và kiểm tra xem lỗi hỏng đó còn xuất hiện nữa hay không.
+>
+> **Kiểm thử hồi quy (Regression testing)**: Xác nhận rằng không có hệ quả tiêu cực nào gây ra bởi một sự thay đổi, bao gồm cả một bản sửa lỗi đã được kiểm thử xác nhận trước đó. Những hệ quả tiêu cực này có thể ảnh hưởng đến chính thành phần nơi thay đổi được thực hiện, các thành phần khác trong cùng một hệ thống, hoặc thậm chí là các hệ thống kết nối khác. Kiểm thử hồi quy có thể không chỉ giới hạn ở chính đối tượng kiểm thử mà còn có thể liên quan đến môi trường. Việc thực hiện một phân tích tác động (impact analysis) trước tiên là rất nên làm để nhận diện phạm vi của việc kiểm thử hồi quy. Phân tích tác động sẽ chỉ ra những phần nào của phần mềm có thể bị ảnh hưởng.
+>
+> Các bộ kịch bản kiểm thử hồi quy (regression test suites) được chạy rất nhiều lần và nhìn chung số lượng kịch bản kiểm thử hồi quy (regression test cases) sẽ tăng lên sau mỗi vòng lặp hoặc mỗi phiên bản phát hành, vì vậy kiểm thử hồi quy là một ứng cử viên sáng giá cho việc tự động hóa (automation). Tự động hóa kiểm thử nên được bắt đầu sớm trong dự án. Ở những nơi sử dụng tích hợp liên tục (CI), chẳng hạn như trong DevOps (xem mục 2.1.4), việc đưa các bài kiểm thử hồi quy tự động vào quy trình cũng là một thực hành tốt. Tùy thuộc vào tình huống, điều này có thể bao gồm các bài kiểm thử hồi quy ở các cấp độ kiểm thử khác nhau.
+>
+> Kiểm thử xác nhận và/hoặc kiểm thử hồi quy cho đối tượng kiểm thử là cần thiết ở tất cả các cấp độ kiểm thử nếu các khuyết tật được sửa và/hoặc các thay đổi được thực hiện ở các cấp độ kiểm thử đó.
