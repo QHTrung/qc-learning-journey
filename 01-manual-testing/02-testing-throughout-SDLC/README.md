@@ -18,6 +18,7 @@
     - [2.2.1 Test Levels](#221-test-levels)
     - [2.2.2. Test Types](#222-test-types)
     - [2.2.3. Confirmation Testing and Regression Testing](#223-confirmation-testing-and-regression-testing)
+  - [2.3. Maintenance Testing](#23-maintenance-testing)
 
 ## Keywords
 
@@ -458,3 +459,37 @@ Confirmation testing and/or regression testing for the test object are needed on
 > Các bộ kịch bản kiểm thử hồi quy (regression test suites) được chạy rất nhiều lần và nhìn chung số lượng kịch bản kiểm thử hồi quy (regression test cases) sẽ tăng lên sau mỗi vòng lặp hoặc mỗi phiên bản phát hành, vì vậy kiểm thử hồi quy là một ứng cử viên sáng giá cho việc tự động hóa (automation). Tự động hóa kiểm thử nên được bắt đầu sớm trong dự án. Ở những nơi sử dụng tích hợp liên tục (CI), chẳng hạn như trong DevOps (xem mục 2.1.4), việc đưa các bài kiểm thử hồi quy tự động vào quy trình cũng là một thực hành tốt. Tùy thuộc vào tình huống, điều này có thể bao gồm các bài kiểm thử hồi quy ở các cấp độ kiểm thử khác nhau.
 >
 > Kiểm thử xác nhận và/hoặc kiểm thử hồi quy cho đối tượng kiểm thử là cần thiết ở tất cả các cấp độ kiểm thử nếu các khuyết tật được sửa và/hoặc các thay đổi được thực hiện ở các cấp độ kiểm thử đó.
+
+## 2.3. Maintenance Testing
+
+> Kiểm thử bảo trì
+
+There are different categories of maintenance, it can be corrective, adaptive to changes in the environment or improve performance or maintainability (see ISO/IEC 14764 for details), so maintenance can involve planned releases/deployments and unplanned releases/deployments (hot fixes). Impact analysis may be done before a change is made, to help decide if the change should be made, based on the potential consequences in other areas of the system. Testing the changes to an operational system includes both evaluating the success of the implementation of the change and the checking for possible regressions in parts of the system that remain unchanged (which is usually most of the system).
+
+The scope of maintenance testing typically depends on:
+
+- The degree of risk of the change
+- The size of the existing system
+- The size of the change
+
+The triggers for maintenance and maintenance testing can be classified as follows:
+
+- Modifications, such as planned enhancements (i.e., release-based), corrective changes or hot fixes.
+
+- Upgrades or migrations of the operational environment, such as from one platform to another, which can require tests associated with the new environment as well as of the changed software, or tests of data conversion when data from another application is migrated into the system being maintained.
+
+- Retirement, such as when an application reaches the end of its life. When a system is retired, this can require testing of data archiving if long data retention periods are required. Testing of restore and retrieval procedures after archiving may also be needed in the event that certain data is required during the archiving period.
+
+> Có nhiều danh mục bảo trì khác nhau, nó có thể là bảo trì sửa lỗi (corrective), bảo trì thích ứng (adaptive) với các thay đổi của môi trường, hoặc bảo trì để cải tiến hiệu năng hoặc tính khả bảo trì (xem tiêu chuẩn ISO/IEC 14764 để biết thêm chi tiết). Do đó, bảo trì có thể bao gồm các phiên bản phát hành/triển khai theo kế hoạch và các phiên bản phát hành/triển khai không theo kế hoạch (hot fixes). Phân tích tác động (impact analysis) có thể được thực hiện trước khi đưa ra thay đổi, nhằm giúp quyết định xem có nên thực hiện thay đổi đó hay không dựa trên các hệ quả tiềm ẩn đối với các vùng khác của hệ thống. Việc kiểm thử các thay đổi đối với một hệ thống đang vận hành bao gồm cả việc đánh giá sự thành công của việc triển khai thay đổi đó và việc kiểm tra các lỗi hồi quy có thể xảy ra ở những phần hệ thống không thay đổi (vốn thường là phần lớn của hệ thống).
+>
+> Phạm vi của kiểm thử bảo trì thông thường phụ thuộc vào:
+>
+> - Mức độ rủi ro của sự thay đổi
+> - Quy mô của hệ thống hiện tại
+> - Quy mô của sự thay đổi
+>
+> Các tác nhân kích hoạt (triggers) cho việc bảo trì và kiểm thử bảo trì có thể được phân loại như sau:
+>
+> - Các sửa đổi (Modifications): Chẳng hạn như các cải tiến theo kế hoạch (tức là theo từng phiên bản phát hành), các thay đổi sửa lỗi hoặc các bản sửa lỗi khẩn cấp (hot fixes).
+> - Nâng cấp hoặc chuyển dịch (Upgrades or migrations): Của môi trường vận hành, chẳng hạn như chuyển từ nền tảng này sang nền tảng khác; việc này có thể đòi hỏi các bài kiểm thử liên quan đến môi trường mới cũng như phần mềm đã thay đổi, hoặc kiểm thử chuyển đổi dữ liệu (data conversion) khi dữ liệu từ một ứng dụng khác được chuyển dịch vào hệ thống đang được bảo trì.
+> - Ngừng hoạt động (Retirement): Chẳng hạn như khi một ứng dụng hết vòng đời sử dụng. Khi một hệ thống ngừng hoạt động, điều này có thể đòi hỏi việc kiểm thử lưu trữ dữ liệu (data archiving) nếu có yêu cầu về thời gian lưu trữ dữ liệu dài hạn. Việc kiểm thử các quy trình khôi phục (restore) và truy xuất (retrieval) sau khi lưu trữ cũng có thể cần thiết trong trường hợp một số dữ liệu nhất định được yêu cầu trong suốt giai đoạn lưu trữ.
