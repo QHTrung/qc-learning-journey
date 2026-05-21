@@ -3,7 +3,7 @@
 ### Table of contents
 
 - [4. Test Analysis and Design](#4-test-analysis-and-design)
-    - [Table of contents](#table-of-contents)
+  - [Table of contents](#table-of-contents)
   - [Keywords](#keywords)
   - [4.1. Test Techniques Overview](#41-test-techniques-overview)
   - [4.2. Black-Box Test Techniques](#42-black-box-test-techniques)
@@ -159,21 +159,22 @@ In 3-value BVA (Koomen 2006, O’Regan 2019), for each boundary value there are 
 >   Nguyên tắc của BVA 2 giá trị tại mỗi cột mốc là lấy: Chính giá trị biên và Giá trị láng giềng sát sườn thuộc phân vùng kế cận (hiểu đơn giản là 1 giá trị Hợp lệ và 1 giá trị Không hợp lệ nằm ngay sát nhau).
 >   <br>
 >   - **_Mốc biên 10,000_**
->     Chọn giá trị **10,000** (Hợp lệ)
->     Chọn giá trị **9,999** (Láng giềng thuộc phân vùng ngoài - Không hợp lệ)
->     <br>
+>     - Chọn giá trị **10,000** (Hợp lệ)
+>     - Chọn giá trị **9,999** (Láng giềng thuộc phân vùng ngoài - Không hợp lệ)
+>       <br>
 >   - **_Mốc biên 50,000,000_**
->     Chọn giá trị 50,000,000 (Hợp lệ)
->     Chọn giá trị 50,000,001 (Láng giềng thuộc phân vùng ngoài - Không hợp lệ)
->     <br>
+>     - Chọn giá trị 50,000,000 (Hợp lệ)
+>     - Chọn giá trị 50,000,001 (Láng giềng thuộc phân vùng ngoài - Không hợp lệ)
+>       <br>
 > - **3-Value BVA**
 >   Nguyên tắc của BVA 3 giá trị tại mỗi cột mốc là lấy: Chính giá trị biên và Cả 2 giá trị láng giềng trái/phải của nó (Bất kể láng giềng đó thuộc phân vùng nào).
 >   <br>
 >   - **_Mốc biên 10,000_**
->     Chọn 3 giá trị liền kề là: 9,999 | 10,000 | 10,001
->     <br>
+>     - Chọn 3 giá trị liền kề là: 9,999 | 10,000 | 10,001
+>       <br>
+>
 >   - **_Mốc biên 50,000,000_**
->     Chọn 3 giá trị liền kề là: 49,999,999 | 50,000,000 | 50,000,001
+>     - Chọn 3 giá trị liền kề là: 49,999,999 | 50,000,000 | 50,000,001
 >
 > **Cách tính nhanh The number of Boundary Value (N)**
 >
@@ -185,5 +186,7 @@ In 3-value BVA (Koomen 2006, O’Regan 2019), for each boundary value there are 
 > - 10,000 - 50,000,000
 > - lớn hơn 50,000,000
 >
-> Áp dụng công thức 2-value N = (3x2)-2 = 4 (giá trị)
-> Áp dụng công thức 3-value N = (3x3)-3 = 6 (giá trị)
+> Áp dụng công thức:
+>
+> - 2-value N = (3x2)-2 = 4 (giá trị)
+> - 3-value N = (3x3)-3 = 6 (giá trị)
