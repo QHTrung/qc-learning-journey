@@ -90,7 +90,7 @@ Many test items include multiple sets of partitions (e.g., test items with more 
 >
 > Nhiều mục kiểm thử bao gồm nhiều tập hợp phân vùng khác nhau (ví dụ: các mục kiểm thử có nhiều hơn một tham số đầu vào), điều này có nghĩa là một kịch bản kiểm thử sẽ bao phủ các phân vùng từ các tập hợp phân vùng khác nhau. Tiêu chí bao phủ đơn giản nhất trong trường hợp có nhiều tập hợp phân vùng được gọi là độ bao phủ Mỗi lựa chọn (Each Choice coverage) (Ammann 2016). Độ bao phủ Mỗi lựa chọn yêu cầu các kịch bản kiểm thử phải thực thi mỗi phân vùng từ mỗi tập hợp phân vùng ít nhất một lần. Độ bao phủ Mỗi lựa chọn không tính đến các tổ hợp (combinations) của các phân vùng.
 
-> Bài toán ví dụ: Tính năng Thanh toán bằng Mã QR (QR Pay)
+> **Bài toán ví dụ**: Tính năng Thanh toán bằng Mã QR (QR Pay)
 > Giả sử hệ thống cổng thanh toán có một tính năng nhận diện giao dịch QR Pay từ Merchant với hai tham số đầu vào cần kiểm thử:
 >
 > - Số tiền thanh toán (Amount): Quy định từ 10,000 VND đến 50,000,000 VND cho một giao dịch.
@@ -147,3 +147,43 @@ In 3-value BVA (Koomen 2006, O’Regan 2019), for each boundary value there are 
 > Trong BVA 3 giá trị (Koomen 2006, O’Regan 2019): Đối với mỗi giá trị biên sẽ có ba hạng mục bao phủ: chính giá trị biên đó và cả hai người láng giềng của nó. Do đó, trong BVA 3 giá trị, một số hạng mục bao phủ có thể không phải là giá trị biên. Để đạt độ bao phủ 100% với BVA 3 giá trị, các kịch bản kiểm thử phải thực thi tất cả các hạng mục bao phủ, tức là các giá trị biên đã xác định và các láng giềng của chúng. Độ bao phủ được đo bằng số lượng giá trị biên và các láng giềng của chúng đã được thực thi, chia cho tổng số giá trị biên và các láng giềng đã được xác định, và được thể hiện dưới dạng phần trăm.
 >
 > BVA 3 giá trị nghiêm ngặt hơn BVA 2 giá trị vì nó có thể phát hiện các khuyết tật bị BVA 2 giá trị bỏ sót. Ví dụ, nếu câu lệnh điều kiện if (x <= 10) ... bị triển khai sai thành if (x == 10) ..., không có dữ liệu kiểm thử nào được tạo ra từ BVA 2 giá trị ($x = 10$, $x = 11$) có thể phát hiện được khuyết tật này. Tuy nhiên, giá trị $x = 9$ được tạo ra từ BVA 3 giá trị có nhiều khả năng sẽ phát hiện được nó.
+
+> **Bài toán ví dụ**: Giới hạn số tiền nạp ví điện tử
+> Giả sử hệ thống MMS (Merchant Management System) quy định số tiền cho một lần nạp tiền vào ví điện tử (với kiểu dữ liệu là số nguyên Integer) phải tuân theo điều kiện: Từ _10,000 VND_ đến _50,000,000 VND_.
+>
+> Giải bài toán bằng 2-value BVA và 3-value BVA
+>
+> Bài toán này có 2 cột mốc biên là 10,000 và 50,000,000
+>
+> - **2-Value BVA**
+>   Nguyên tắc của BVA 2 giá trị tại mỗi cột mốc là lấy: Chính giá trị biên và Giá trị láng giềng sát sườn thuộc phân vùng kế cận (hiểu đơn giản là 1 giá trị Hợp lệ và 1 giá trị Không hợp lệ nằm ngay sát nhau).
+>   <br>
+>   - **_Mốc biên 10,000_**
+>     Chọn giá trị **10,000** (Hợp lệ)
+>     Chọn giá trị **9,999** (Láng giềng thuộc phân vùng ngoài - Không hợp lệ)
+>     <br>
+>   - **_Mốc biên 50,000,000_**
+>     Chọn giá trị 50,000,000 (Hợp lệ)
+>     Chọn giá trị 50,000,001 (Láng giềng thuộc phân vùng ngoài - Không hợp lệ)
+>     <br>
+> - **3-Value BVA**
+>   Nguyên tắc của BVA 3 giá trị tại mỗi cột mốc là lấy: Chính giá trị biên và Cả 2 giá trị láng giềng trái/phải của nó (Bất kể láng giềng đó thuộc phân vùng nào).
+>   <br>
+>   - **_Mốc biên 10,000_**
+>     Chọn 3 giá trị liền kề là: 9,999 | 10,000 | 10,001
+>     <br>
+>   - **_Mốc biên 50,000,000_**
+>     Chọn 3 giá trị liền kề là: 49,999,999 | 50,000,000 | 50,000,001
+>
+> **Cách tính nhanh The number of Boundary Value (N)**
+>
+> k-value N = [Number of Equivalence Partitioning * k] - k
+>
+> Ví dụ bài toán trên còn 3 phân vùng tương đương:
+>
+> - nhỏ hơn 10,000
+> - 10,000 - 50,000,000
+> - lớn hơn 50,000,000
+>
+> Áp dụng công thức 2-value N = (3x2)-2 = 4 (giá trị)
+> Áp dụng công thức 3-value N = (3x3)-3 = 6 (giá trị)
