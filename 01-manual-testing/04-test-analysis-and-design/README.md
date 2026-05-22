@@ -3,12 +3,13 @@
 ### Table of contents
 
 - [4. Test Analysis and Design](#4-test-analysis-and-design)
-  - [Table of contents](#table-of-contents)
+    - [Table of contents](#table-of-contents)
   - [Keywords](#keywords)
   - [4.1. Test Techniques Overview](#41-test-techniques-overview)
   - [4.2. Black-Box Test Techniques](#42-black-box-test-techniques)
     - [4.2.1. Equivalence Partitioning](#421-equivalence-partitioning)
     - [4.2.2 Boundary Value Analysis](#422-boundary-value-analysis)
+    - [4.2.3. Decision Table Testing](#423-decision-table-testing)
 
 ## Keywords
 
@@ -172,7 +173,6 @@ In 3-value BVA (Koomen 2006, O’Regan 2019), for each boundary value there are 
 >   - **_Mốc biên 10,000_**
 >     - Chọn 3 giá trị liền kề là: 9,999 | 10,000 | 10,001
 >       <br>
->
 >   - **_Mốc biên 50,000,000_**
 >     - Chọn 3 giá trị liền kề là: 49,999,999 | 50,000,000 | 50,000,001
 >
@@ -190,3 +190,43 @@ In 3-value BVA (Koomen 2006, O’Regan 2019), for each boundary value there are 
 >
 > - 2-value N = (3x2)-2 = 4 (giá trị)
 > - 3-value N = (3x3)-3 = 6 (giá trị)
+
+### 4.2.3. Decision Table Testing
+
+> Kiểm thử Bảng quyết định
+
+Decision tables are used for testing the implementation of requirements that specify how different combinations of conditions result in different outcomes. Decision tables are an effective way of recording complex logic, such as business rules.
+
+When creating decision tables, the conditions and the resulting actions of the system are defined. These form the rows of the table. Each column corresponds to a decision rule that defines a unique combination of conditions, along with the associated actions. In limited-entry decision tables all the values of the conditions and actions (except for irrelevant or infeasible ones; see below) are shown as Boolean values (true or false). Alternatively, in extended-entry decision tables some or all the conditions and actions may also take on multiple values (e.g., ranges of numbers, equivalence partitions, discrete values).
+
+The notation for conditions is as follows: “T” (true) means that the condition is satisfied. “F” (false) means that the condition is not satisfied. “–” means that the value of the condition is irrelevant for the action outcome. “N/A” means that the condition is infeasible for a given rule. For actions: “X” means that the action should occur. Blank means that the action should not occur. Other notations may also be used.
+
+A full decision table has enough columns to cover every combination of conditions. The table can be simplified by deleting columns containing infeasible combinations of conditions. The table can also be minimized by merging columns, in which some conditions do not affect the outcome, into a single column. Decision table minimization algorithms are out of scope of this syllabus.
+
+In decision table testing, the coverage items are the columns containing feasible combinations of conditions. To achieve 100% coverage with this technique, test cases must exercise all these columns. Coverage is measured as the number of exercised columns, divided by the total number of feasible columns, and is expressed as a percentage.
+
+The strength of decision table testing is that it provides a systematic approach to identify all the combinations of conditions, some of which might otherwise be overlooked. It also helps to find any gaps or contradictions in the requirements. If there are many conditions, exercising all the decision rules may be time consuming, since the number of rules grows exponentially with the number of conditions. In such a case, to reduce the number of rules that need to be exercised, a minimized decision table or a riskbased approach may be used.
+
+> **Bảng quyết định (Decision tables)** được sử dụng để kiểm thử việc triển khai các yêu cầu có quy định rõ cách thức các tổ hợp điều kiện khác nhau dẫn đến các kết quả đầu ra khác nhau. Bảng quyết định là một phương thức hiệu quả để ghi lại các logic phức tạp, chẳng hạn như các quy tắc kinh doanh (business rules).
+>
+> Khi tạo bảng quyết định, các điều kiện (conditions) và các hành động kết quả (actions) của hệ thống sẽ được xác định. Chúng tạo thành các hàng của bảng. Mỗi cột tương ứng với một quy tắc quyết định (decision rule), định nghĩa một tổ hợp điều kiện duy nhất cùng với các hành động liên quan. Trong các bảng quyết định lối vào giới hạn (limited-entry decision tables), tất cả các giá trị của điều kiện và hành động (ngoại trừ các giá trị không liên quan hoặc không khả thi; xem bên dưới) được hiển thị dưới dạng giá trị Boolean (đúng/true hoặc sai/false). Ngược lại, trong các bảng quyết định lối vào mở rộng (extended-entry decision tables), một số hoặc tất cả các điều kiện và hành động cũng có thể nhận nhiều giá trị khác nhau (ví dụ: các khoảng số, các vùng tương đương, các giá trị rời rạc).
+>
+> Ký hiệu dành cho các điều kiện được quy định như sau:
+>
+> - “T” (true): có nghĩa là điều kiện được thỏa mãn.
+> - “F” (false): có nghĩa là điều kiện không được thỏa mãn.
+> - “–”: có nghĩa là giá trị của điều kiện không liên quan (irrelevant) đến kết quả của hành động.
+> - “N/A”: có nghĩa là điều kiện đó không khả thi (infeasible) đối với một quy tắc cho trước.
+>
+> Đối với các hành động:
+>
+> - “X”: có nghĩa là hành động đó phải xảy ra.
+> - Để trống (Blank): có nghĩa là hành động đó không được xảy ra.
+>
+> (Các ký hiệu khác cũng có thể được sử dụng).
+>
+> Một bảng quyết định đầy đủ (full decision table) sẽ có đủ số lượng cột để bao phủ mọi tổ hợp của các điều kiện. Bảng có thể được đơn giản hóa bằng cách xóa bỏ các cột chứa các tổ hợp điều kiện không khả thi. Bảng cũng có thể được tối giảm (minimized) bằng cách gộp các cột (trong đó một số điều kiện không ảnh hưởng đến kết quả đầu ra) thành một cột duy nhất. Các thuật toán tối giảm bảng quyết định nằm ngoài phạm vi của giáo trình này.
+>
+> Trong kiểm thử bảng quyết định, các hạng mục bao phủ (coverage items) chính là các cột chứa các tổ hợp điều kiện khả thi. Để đạt được độ bao phủ 100% (100% coverage) với kỹ thuật này, các kịch bản kiểm thử phải thực thi qua tất cả các cột này. Độ bao phủ được đo bằng số lượng cột được thực thi, chia cho tổng số cột khả thi, và được thể hiện dưới dạng phần trăm.
+>
+> Điểm mạnh của kiểm thử bảng quyết định là nó cung cấp một cách tiếp cận có hệ thống để nhận diện tất cả các tổ hợp điều kiện, mà một vài trong số đó có thể bị bỏ sót nếu dùng cách khác. Nó cũng giúp tìm ra bất kỳ khoảng trống (gaps) hoặc sự mâu thuẫn (contradictions) nào trong tài liệu yêu cầu. Nếu có quá nhiều điều kiện, việc thực thi tất cả các quy tắc quyết định có thể gây tốn thời gian, vì số lượng quy tắc sẽ tăng theo cấp số nhân dựa trên số lượng điều kiện. Trong trường hợp đó, để giảm số lượng quy tắc cần thực thi, một bảng quyết định đã tối giảm hoặc một cách tiếp cận dựa trên rủi ro (risk-based approach) có thể được áp dụng.
