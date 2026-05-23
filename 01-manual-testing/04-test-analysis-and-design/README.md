@@ -3,7 +3,7 @@
 ### Table of contents
 
 - [4. Test Analysis and Design](#4-test-analysis-and-design)
-    - [Table of contents](#table-of-contents)
+  - [Table of contents](#table-of-contents)
   - [Keywords](#keywords)
   - [4.1. Test Techniques Overview](#41-test-techniques-overview)
   - [4.2. Black-Box Test Techniques](#42-black-box-test-techniques)
@@ -230,3 +230,18 @@ The strength of decision table testing is that it provides a systematic approach
 > Trong kiểm thử bảng quyết định, các hạng mục bao phủ (coverage items) chính là các cột chứa các tổ hợp điều kiện khả thi. Để đạt được độ bao phủ 100% (100% coverage) với kỹ thuật này, các kịch bản kiểm thử phải thực thi qua tất cả các cột này. Độ bao phủ được đo bằng số lượng cột được thực thi, chia cho tổng số cột khả thi, và được thể hiện dưới dạng phần trăm.
 >
 > Điểm mạnh của kiểm thử bảng quyết định là nó cung cấp một cách tiếp cận có hệ thống để nhận diện tất cả các tổ hợp điều kiện, mà một vài trong số đó có thể bị bỏ sót nếu dùng cách khác. Nó cũng giúp tìm ra bất kỳ khoảng trống (gaps) hoặc sự mâu thuẫn (contradictions) nào trong tài liệu yêu cầu. Nếu có quá nhiều điều kiện, việc thực thi tất cả các quy tắc quyết định có thể gây tốn thời gian, vì số lượng quy tắc sẽ tăng theo cấp số nhân dựa trên số lượng điều kiện. Trong trường hợp đó, để giảm số lượng quy tắc cần thực thi, một bảng quyết định đã tối giảm hoặc một cách tiếp cận dựa trên rủi ro (risk-based approach) có thể được áp dụng.
+
+> **Bài toán ví dụ**: Phí dịch vụ xử lý giao dịch Merchant
+> Mỗi giao dịch thanh toán qua cổng thanh toán (Payment Gateway) sẽ bị thu một khoản phí cố định (Transaction Fee).
+>
+> - Phí tiêu chuẩn: 10,000 VND / giao dịch.
+> - Merchant Startup (Hoạt động dưới 3 tháng): 3,000 VND / giao dịch.
+> - Merchant Global (Toàn cầu- Đăng ký quốc tế): 4,000 VND / giao dịch.
+>
+> Các chương trình khuyến mãi/giảm phí dịch vụ:
+>
+> - Giờ vàng thanh toán: 5,000 VND cho mọi giao dịch phát sinh từ 12h00 đến 13h00 hàng ngày.
+> - Ngày hội Visa: 7,000 VND cho giao dịch dùng thẻ Visa vào ngày Thứ 6.
+> - Ngày hội Mastercard: 6,000 VND cho giao dịch dùng thẻ Mastercard vào ngày Thứ 7.
+>
+> _Chú ý (Quy tắc hệ thống): Trong trường hợp giao dịch thỏa măn nhiều điều kiện ưu đãi/giảm phí, hệ thống sẽ tự động tính mức phí rẻ nhất để hỗ trợ đối tác._
