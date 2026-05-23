@@ -3,7 +3,7 @@
 ### Table of contents
 
 - [4. Test Analysis and Design](#4-test-analysis-and-design)
-  - [Table of contents](#table-of-contents)
+    - [Table of contents](#table-of-contents)
   - [Keywords](#keywords)
   - [4.1. Test Techniques Overview](#41-test-techniques-overview)
   - [4.2. Black-Box Test Techniques](#42-black-box-test-techniques)
@@ -245,3 +245,20 @@ The strength of decision table testing is that it provides a systematic approach
 > - Ngày hội Mastercard: 6,000 VND cho giao dịch dùng thẻ Mastercard vào ngày Thứ 7.
 >
 > _Chú ý (Quy tắc hệ thống): Trong trường hợp giao dịch thỏa măn nhiều điều kiện ưu đãi/giảm phí, hệ thống sẽ tự động tính mức phí rẻ nhất để hỗ trợ đối tác._
+
+> **Giải bài toán bằng Decision Table Testing:**
+> Conditions:
+>
+> - Loại Merchant: Startup, Global, Standard (3)
+> - Khung giờ giao dịch: 12h-13h, Khác (2)
+> - Thứ: Thứ 6, Thứ 7, Khác (3)
+> - Loại thẻ: Visa, Mastercard, Khác (3)
+>
+> Actions:
+>
+> - A1: Thu phí: 3,000 VND
+> - A2: Thu phí: 4,000 VND
+> - A3: Thu phí: 5,000 VND
+> - A4: Thu phí: 6,000 VND
+> - A5: Thu phí: 7,000 VND
+> - A6: Thu phí: 10,000 VND
