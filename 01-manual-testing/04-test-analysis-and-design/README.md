@@ -3,7 +3,7 @@
 ### Table of contents
 
 - [4. Test Analysis and Design](#4-test-analysis-and-design)
-  - [Table of contents](#table-of-contents)
+    - [Table of contents](#table-of-contents)
   - [Keywords](#keywords)
   - [4.1. Test Techniques Overview](#41-test-techniques-overview)
   - [4.2. Black-Box Test Techniques](#42-black-box-test-techniques)
@@ -264,6 +264,4 @@ The strength of decision table testing is that it provides a systematic approach
 > - A6: Thu phí: 10,000 VND
 >
 > Nếu tổ hợp các conditions lại thì ta sẽ có 3 x 2 x 3 x 3 = 54 (cases)
-> Kết quả:
->
-> <video src="./decision-table-testing-how-to-solve.mp4" controls width="100%"></video>
+> [Kết quả sau khi tối ưu bảng quyết định](https://drive.google.com/file/d/1aKptwU5TH1QBScsileKFnYx1-VX8zV2j/view?usp=drive_link)
