@@ -247,6 +247,7 @@ The strength of decision table testing is that it provides a systematic approach
 > _Chú ý (Quy tắc hệ thống): Trong trường hợp giao dịch thỏa măn nhiều điều kiện ưu đãi/giảm phí, hệ thống sẽ tự động tính mức phí rẻ nhất để hỗ trợ đối tác._
 
 > **Giải bài toán bằng Decision Table Testing:**
+>
 > Conditions:
 >
 > - Loại Merchant: Startup, Global, Standard (3)
@@ -263,5 +264,10 @@ The strength of decision table testing is that it provides a systematic approach
 > - A5: Thu phí: 7,000 VND
 > - A6: Thu phí: 10,000 VND
 >
-> Nếu tổ hợp các conditions lại thì ta sẽ có 3 x 2 x 3 x 3 = 54 (cases)
-> [Kết quả sau khi tối ưu bảng quyết định](https://drive.google.com/file/d/1aKptwU5TH1QBScsileKFnYx1-VX8zV2j/view?usp=drive_link)
+> Nếu tổ hợp các conditions lại thì ta sẽ có 3 x 2 x 3 x 3 = 54 (cases) nhưng sau khi tối ưu thì chỉ còn 12 (cases)
+>
+> [Quá trình tối ưu bảng quyết định](https://drive.google.com/file/d/1aKptwU5TH1QBScsileKFnYx1-VX8zV2j/view?usp=drive_link)
+>
+> Kết quả sau khi tối ưu:
+>
+> ![Decision Table Result](./decision-table-result.png)
