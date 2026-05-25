@@ -3,7 +3,7 @@
 ### Table of contents
 
 - [4. Test Analysis and Design](#4-test-analysis-and-design)
-    - [Table of contents](#table-of-contents)
+  - [Table of contents](#table-of-contents)
   - [Keywords](#keywords)
   - [4.1. Test Techniques Overview](#41-test-techniques-overview)
   - [4.2. Black-Box Test Techniques](#42-black-box-test-techniques)
@@ -306,3 +306,5 @@ All states coverage is weaker than valid transitions coverage, because it can ty
 > - **Độ bao phủ tất cả các chuyển đổi (All transitions coverage)**: Các hạng mục bao phủ là tất cả các bước chuyển đổi được hiển thị trong một bảng trạng thái. Để đạt được độ bao phủ tất cả các chuyển đổi 100%, các kịch bản kiểm thử phải thực thi tất cả các bước chuyển đổi hợp lệ và cố gắng thực thi các bước chuyển đổi không hợp lệ. Việc chỉ kiểm thử một chuyển đổi không hợp lệ trong một kịch bản kiểm thử duy nhất giúp tránh hiện tượng che giấu khuyết tật (defect masking), tức là tình huống mà một khuyết tật này ngăn cản việc phát hiện ra một khuyết tật khác. Độ bao phủ được đo bằng số lượng các chuyển đổi hợp lệ và không hợp lệ đã được thực thi hoặc được cố gắng bao phủ bởi các kịch bản kiểm thử đã chạy, chia cho tổng số các chuyển đổi hợp lệ và không hợp lệ, và được thể hiện dưới dạng phần trăm.
 >
 > Độ bao phủ tất cả các trạng thái thì yếu hơn độ bao phủ các chuyển đổi hợp lệ, bởi vì thông thường nó có thể đạt được mà không cần phải thực thi tất cả các bước chuyển đổi. Độ bao phủ các chuyển đổi hợp lệ là tiêu chí bao phủ được sử dụng rộng rãi nhất. Việc đạt được toàn bộ độ bao phủ các chuyển đổi hợp lệ đảm bảo sẽ đạt được toàn bộ độ bao phủ tất cả các trạng thái. Việc đạt được toàn bộ độ bao phủ tất cả các chuyển đổi đảm bảo đạt được cả độ bao phủ tất cả các trạng thái và độ bao phủ các chuyển đổi hợp lệ, và nên là một yêu cầu tối thiểu đối với các phần mềm quan trọng mang tính sống còn hoặc có độ an toàn cao (mission and safety-critical software).
+
+![State Transition Testing](./state-transition-overview.png)
