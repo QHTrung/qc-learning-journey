@@ -10,6 +10,7 @@
     - [4.2.1. Equivalence Partitioning](#421-equivalence-partitioning)
     - [4.2.2 Boundary Value Analysis](#422-boundary-value-analysis)
     - [4.2.3. Decision Table Testing](#423-decision-table-testing)
+    - [4.2.4 State Transition Testing](#424-state-transition-testing)
 
 ## Keywords
 
@@ -271,3 +272,37 @@ The strength of decision table testing is that it provides a systematic approach
 > Kết quả sau khi tối ưu:
 >
 > ![Decision Table Result](./decision-table-result.png)
+
+### 4.2.4 State Transition Testing
+
+> Kiểm thử chuyển đổi trạng thái
+
+A state diagram models the behavior of a system by showing its possible states and valid state transitions. A transition is initiated by an event, which may be additionally qualified by a guard condition. The transitions are assumed to be instantaneous and may sometimes result in the software taking action. The common transition labeling syntax is as follows: “event [guard condition] / action”. Guard conditions and actions can be omitted if they do not exist or are irrelevant for the tester.
+
+A state table is a model equivalent to a state diagram. Its rows represent states, and its columns represent events (together with guard conditions if they exist). Table entries (cells) represent transitions, and contain the target state, as well as the resulting actions, if defined. In contrast to the state diagram, the state table explicitly shows invalid transitions, which are represented by empty cells.
+
+A test case based on a state diagram or state table is usually represented as a sequence of events, which results in a sequence of state changes (and actions, if needed). One test case may, and usually will, cover several transitions between states.
+
+There exist many coverage criteria for state transition testing. This syllabus discusses three of them.
+
+**In all states coverage**, the coverage items are the states. To achieve 100% all states coverage, test cases must ensure that all the states are exercised. Coverage is measured as the number of exercised states divided by the total number of states and is expressed as a percentage.
+
+**In valid transitions coverage** (also called 0-switch coverage), the coverage items are single valid transitions. To achieve 100% valid transitions coverage, test cases must exercise all the valid transitions. Coverage is measured as the number of exercised valid transitions divided by the total number of valid transitions and is expressed as a percentage.
+
+**In all transitions coverage,** the coverage items are all the transitions shown in a state table. To achieve 100% all transitions coverage, test cases must exercise all the valid transitions and attempt to execute invalid transitions. Testing only one invalid transition in a single test case helps to avoid defect masking, i.e., a situation in which one defect prevents the detection of another. Coverage is measured as the number of valid and invalid transitions exercised or attempted to be covered by executed test cases, divided by the total number of valid and invalid transitions, and is expressed as a percentage.
+
+All states coverage is weaker than valid transitions coverage, because it can typically be achieved without exercising all the transitions. Valid transitions coverage is the most widely used coverage criterion. Achieving full valid transitions coverage guarantees full all states coverage. Achieving full all transitions coverage guarantees both full all states coverage and full valid transitions coverage and should be a minimum requirement for mission and safety-critical software.
+
+> Một biểu đồ trạng thái (state diagram) mô hình hóa hành vi của một hệ thống bằng cách hiển thị các trạng thái có thể có của nó và các bước chuyển đổi trạng thái hợp lệ (valid state transitions). Một bước chuyển đổi được kích hoạt bởi một sự kiện (event), sự kiện này có thể được bổ sung thêm điều kiện ràng buộc bởi một điều kiện bảo vệ (guard condition). Các bước chuyển đổi được giả định là diễn ra tức thì và đôi khi có thể dẫn đến việc phần mềm thực hiện một hành động (action). Cú pháp nhãn chuyển đổi phổ biến như sau: “sự kiện [điều kiện bảo vệ] / hành động”. Các điều kiện bảo vệ và hành động có thể được bỏ qua nếu chúng không tồn tại hoặc không liên quan đến kiểm thử viên.
+>
+> Một bảng trạng thái (state table) là một mô hình tương đương với biểu đồ trạng thái. Các hàng của nó đại diện cho các trạng thái, và các cột của nó đại diện cho các sự kiện (cùng với các điều kiện bảo vệ nếu có). Các ô trong bảng (cells) đại diện cho các bước chuyển đổi, chứa trạng thái mục tiêu cũng như các hành động kết quả nếu có định nghĩa. Trái ngược với biểu đồ trạng thái, bảng trạng thái hiển thị một cách rõ ràng các bước chuyển đổi không hợp lệ (invalid transitions), được đại diện bằng các ô trống.
+>
+> Một kịch bản kiểm thử (test case) dựa trên biểu đồ trạng thái hoặc bảng trạng thái thường được biểu diễn dưới dạng một chuỗi các sự kiện, dẫn đến một chuỗi các thay đổi trạng thái (và các hành động, nếu cần). Một kịch bản kiểm thử có thể, và thường sẽ, bao phủ nhiều bước chuyển đổi giữa các trạng thái.
+>
+> Có nhiều tiêu chí bao phủ đối với kiểm thử chuyển đổi trạng thái. Giáo trình này thảo luận về ba tiêu chí trong số đó:
+>
+> - **Độ bao phủ tất cả các trạng thái (All states coverage)**: Các hạng mục bao phủ chính là các trạng thái. Để đạt được độ bao phủ tất cả các trạng thái 100%, các kịch bản kiểm thử phải đảm bảo rằng tất cả các trạng thái đều được thực thi. Độ bao phủ được đo bằng số lượng trạng thái được thực thi chia cho tổng số trạng thái và được thể hiện dưới dạng phần trăm.
+> - **Độ bao phủ các chuyển đổi hợp lệ (Valid transitions coverage** - còn gọi là 0-switch coverage): Các hạng mục bao phủ là từng bước chuyển đổi hợp lệ đơn lẻ. Để đạt được độ bao phủ các chuyển đổi hợp lệ 100%, các kịch bản kiểm thử phải thực thi tất cả các bước chuyển đổi hợp lệ. Độ bao phủ được đo bằng số lượng các chuyển đổi hợp lệ được thực thi chia cho tổng số các chuyển đổi hợp lệ và được thể hiện dưới dạng phần trăm.
+> - **Độ bao phủ tất cả các chuyển đổi (All transitions coverage)**: Các hạng mục bao phủ là tất cả các bước chuyển đổi được hiển thị trong một bảng trạng thái. Để đạt được độ bao phủ tất cả các chuyển đổi 100%, các kịch bản kiểm thử phải thực thi tất cả các bước chuyển đổi hợp lệ và cố gắng thực thi các bước chuyển đổi không hợp lệ. Việc chỉ kiểm thử một chuyển đổi không hợp lệ trong một kịch bản kiểm thử duy nhất giúp tránh hiện tượng che giấu khuyết tật (defect masking), tức là tình huống mà một khuyết tật này ngăn cản việc phát hiện ra một khuyết tật khác. Độ bao phủ được đo bằng số lượng các chuyển đổi hợp lệ và không hợp lệ đã được thực thi hoặc được cố gắng bao phủ bởi các kịch bản kiểm thử đã chạy, chia cho tổng số các chuyển đổi hợp lệ và không hợp lệ, và được thể hiện dưới dạng phần trăm.
+>
+> Độ bao phủ tất cả các trạng thái thì yếu hơn độ bao phủ các chuyển đổi hợp lệ, bởi vì thông thường nó có thể đạt được mà không cần phải thực thi tất cả các bước chuyển đổi. Độ bao phủ các chuyển đổi hợp lệ là tiêu chí bao phủ được sử dụng rộng rãi nhất. Việc đạt được toàn bộ độ bao phủ các chuyển đổi hợp lệ đảm bảo sẽ đạt được toàn bộ độ bao phủ tất cả các trạng thái. Việc đạt được toàn bộ độ bao phủ tất cả các chuyển đổi đảm bảo đạt được cả độ bao phủ tất cả các trạng thái và độ bao phủ các chuyển đổi hợp lệ, và nên là một yêu cầu tối thiểu đối với các phần mềm quan trọng mang tính sống còn hoặc có độ an toàn cao (mission and safety-critical software).
