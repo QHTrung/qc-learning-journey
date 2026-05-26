@@ -271,7 +271,7 @@ The strength of decision table testing is that it provides a systematic approach
 >
 > Kết quả sau khi tối ưu:
 >
-> ![Decision Table Result](./decision-table-result.png)
+> ![Decision Table Result](./images/decision-table-result.png)
 
 ### 4.2.4 State Transition Testing
 
@@ -307,7 +307,7 @@ All states coverage is weaker than valid transitions coverage, because it can ty
 >
 > Độ bao phủ tất cả các trạng thái thì yếu hơn độ bao phủ các chuyển đổi hợp lệ, bởi vì thông thường nó có thể đạt được mà không cần phải thực thi tất cả các bước chuyển đổi. Độ bao phủ các chuyển đổi hợp lệ là tiêu chí bao phủ được sử dụng rộng rãi nhất. Việc đạt được toàn bộ độ bao phủ các chuyển đổi hợp lệ đảm bảo sẽ đạt được toàn bộ độ bao phủ tất cả các trạng thái. Việc đạt được toàn bộ độ bao phủ tất cả các chuyển đổi đảm bảo đạt được cả độ bao phủ tất cả các trạng thái và độ bao phủ các chuyển đổi hợp lệ, và nên là một yêu cầu tối thiểu đối với các phần mềm quan trọng mang tính sống còn hoặc có độ an toàn cao (mission and safety-critical software).
 
-![State Transition Testing](./state-transition-overview.png)
+![State Transition Testing](./images/state-transition-overview.png)
 
 > **Ví dụ bài toán nghiệp vụ**: Vòng đời giao dịch QR Pay
 >
@@ -319,7 +319,7 @@ All states coverage is weaker than valid transitions coverage, because it can ty
 > - **S4: Đã hủy (Canceled)**: Khách chủ động bấm "Hủy giao dịch" hoặc thoát App trước khi nhập OTP. (Trạng thái cuối).
 > - **S5: Thất bại (Failed)**: Khách nhập sai OTP quá số lần hoặc hệ thống ngân hàng bị lỗi kết nối timeout. (Trạng thái cuối).
 >
-> ![State Transition Diagram Model](./state-diagram-model-exam.jpeg)
+> ![State Transition Diagram Model](./images/state-diagram-model-exam.jpeg)
 >
 > **All state coverage** thì ta viết TC sao cho đi qua các state:
 >
@@ -336,8 +336,36 @@ All states coverage is weaker than valid transitions coverage, because it can ty
 >
 > **All transition coverage** thì ta viết TC phải thực thi tất cả các bước chuyển đổi hợp lệ và cố gắng thực thi các bước chuyển đổi không hợp lệ.
 >
-> ![State Table Example](./state-table-exam.png)
+> ![State Table Example](./images/state-table-exam.png)
 >
 > (S: State, E: Event, A: Action, -: illegal transition)
 >
 > Ví dụ: Đang ở trạng thái Thành công S3 mà hệ thống lại nhận được sự kiện Nhập OTP E2 là những _chuyển đổi không hợp lệ_. Nếu test luồng này mà hệ thống vẫn đổi trạng thái hoặc trừ thêm tiền $\rightarrow$ Hệ thống dính Bug logic nghiêm trọng!
+
+Với những sơ đồ có sự di chuyển lặp lại liên tục như hình dưới thì rất khó xác định điểm dừng. Trong trường hợp này các bạn cần áp dụng một hình thức kiểm thử khác, đó là **N-Switch testing** và **N-Switch coverage** (độ bao phủ N-Switch).
+![N-Switch Testing Example](./images/n-switch.png)
+
+**N-Switch testing** là một dạng kiểm thử dựa vào chuyển đổi trạng thái. Nhưng ở đây bạn chỉ tập trung vào các thứ tự di chuyển khác nhau đi qua _N+1_ chuyển đổi (transition).
+
+> **0-switch coverage**
+>
+> Viết TC cho mỗi transition. Cứ (0+1) transition là 1 testcase
+>
+> - TC1: S1 (TV Off) (E1 Power On) &rarr; S2 (TV Stand By)
+> - TC2: S2 (TV Stand By) (E2 Power Off) &rarr; S1 (TV Off)
+> - TC3: S2 (TV Stand By) (E3 RC On) &rarr; S3 (TV Play)
+> - TC4: S3 (TV Play) (E4 RC Off) &rarr; S2 (TV Stand By)
+> - TC5: S3 (TV Play) (E5 Power Off) &rarr; S1 (TV Off)
+>
+> **1-switch coverage**
+>
+> Viết TC cho mỗi transition. Cứ (1+1) transition là 1 testcase
+>
+> - TC1: S1 (E1) - S2 (E2)
+> - TC2: S1 (E1) - S2 (E3)
+> - TC3: S2 (E3) - S3 (E4)
+> - TC4: S2 (E3) - S3 (E5)
+> - TC5: S2 (E2) - S1 (E1)
+> - TC6: S3 (E5) - S1 (E1)
+> - TC7: S3 (E4) - S2 (E3)
+> - TC8: S3 (E4) - S2 (E2)
