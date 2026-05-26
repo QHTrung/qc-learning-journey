@@ -308,3 +308,15 @@ All states coverage is weaker than valid transitions coverage, because it can ty
 > Độ bao phủ tất cả các trạng thái thì yếu hơn độ bao phủ các chuyển đổi hợp lệ, bởi vì thông thường nó có thể đạt được mà không cần phải thực thi tất cả các bước chuyển đổi. Độ bao phủ các chuyển đổi hợp lệ là tiêu chí bao phủ được sử dụng rộng rãi nhất. Việc đạt được toàn bộ độ bao phủ các chuyển đổi hợp lệ đảm bảo sẽ đạt được toàn bộ độ bao phủ tất cả các trạng thái. Việc đạt được toàn bộ độ bao phủ tất cả các chuyển đổi đảm bảo đạt được cả độ bao phủ tất cả các trạng thái và độ bao phủ các chuyển đổi hợp lệ, và nên là một yêu cầu tối thiểu đối với các phần mềm quan trọng mang tính sống còn hoặc có độ an toàn cao (mission and safety-critical software).
 
 ![State Transition Testing](./state-transition-overview.png)
+
+> **Ví dụ bài toán nghiệp vụ**: Vòng đời giao dịch QR Pay
+>
+> Một giao dịch QR Pay trên hệ thống MMS có các trạng thái sau:
+>
+> - **S1: Khởi tạo (Created)**: Khách vừa quét mã QR thành công, hệ thống hiển thị thông tin đơn hàng trên App.
+> - **S2: Chờ thanh toán (Pending)**: Khách đã bấm nút "Thanh toán", hệ thống đang gửi yêu cầu xác thực OTP/Biometric sang Ngân hàng phát hành.
+> - **S3: Thành công (Success)**: Khách xác thực thành công, tài khoản bị trừ tiền, Merchant nhận được tiền. (Trạng thái cuối).
+> - **S4: Đã hủy (Canceled)**: Khách chủ động bấm "Hủy giao dịch" hoặc thoát App trước khi nhập OTP. (Trạng thái cuối).
+> - **S5: Thất bại (Failed)**: Khách nhập sai OTP quá số lần hoặc hệ thống ngân hàng bị lỗi kết nối timeout. (Trạng thái cuối).
+>
+> ![State Transition Diagram Model](./state-diagram-model-exam.jpeg)
