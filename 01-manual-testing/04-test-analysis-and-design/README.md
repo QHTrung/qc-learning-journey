@@ -320,3 +320,24 @@ All states coverage is weaker than valid transitions coverage, because it can ty
 > - **S5: Thất bại (Failed)**: Khách nhập sai OTP quá số lần hoặc hệ thống ngân hàng bị lỗi kết nối timeout. (Trạng thái cuối).
 >
 > ![State Transition Diagram Model](./state-diagram-model-exam.jpeg)
+>
+> **All state coverage** thì ta viết TC sao cho đi qua các state:
+>
+> - TC1: S1 (T1) &rarr; S2 (T2) &rarr; S3
+> - TC2: S1 (T1) &rarr; S2 (T3) &rarr; S5
+> - TC3: S1 (T5) &rarr; S4
+>
+> **Valid transition coverage** (phổ biến nhất) thì ta viết TC phải thực thi tất cả các bước chuyển đổi hợp lệ:
+>
+> - TC1: S1 (T1) &rarr; S2 (T2) &rarr; S3
+> - TC2: S1 (T1) &rarr; S2 (T3) &rarr; S5
+> - TC3: S1 (T1) &rarr; S2 (T4) &rarr; S5
+> - TC4: S1 (T5) &rarr; S4
+>
+> **All transition coverage** thì ta viết TC phải thực thi tất cả các bước chuyển đổi hợp lệ và cố gắng thực thi các bước chuyển đổi không hợp lệ.
+>
+> ![State Table Example](./state-table-exam.png)
+>
+> (S: State, E: Event, A: Action, -: illegal transition)
+>
+> Ví dụ: Đang ở trạng thái Thành công S3 mà hệ thống lại nhận được sự kiện Nhập OTP E2 là những _chuyển đổi không hợp lệ_. Nếu test luồng này mà hệ thống vẫn đổi trạng thái hoặc trừ thêm tiền $\rightarrow$ Hệ thống dính Bug logic nghiêm trọng!
