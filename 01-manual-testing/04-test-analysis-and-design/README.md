@@ -14,6 +14,8 @@
     - [4.2.5 Pairwise Testing](#425-pairwise-testing)
       - [Tổng quan về Kiểm thử cặp (Pairwise Testing)](#tổng-quan-về-kiểm-thử-cặp-pairwise-testing)
       - [Quy trình thực hiện Kiểm thử cặp thủ công](#quy-trình-thực-hiện-kiểm-thử-cặp-thủ-công)
+      - [Lợi ích của việc sử dụng Kiểm thử cặp](#lợi-ích-của-việc-sử-dụng-kiểm-thử-cặp)
+      - [Những thách thức của Kiểm thử cặp thủ công](#những-thách-thức-của-kiểm-thử-cặp-thủ-công)
 
 ## Keywords
 
@@ -394,3 +396,31 @@ Nghiên cứu cho thấy hầu hết các khuyết tật (defects) trong phần 
 - **Thiết kế kịch bản chi tiết**: Xây dựng các test case toàn diện dựa trên các cặp vừa tạo để đảm bảo tính rõ ràng và đầy đủ.
 
 - **Thực thi và Phân tích**: Tiến hành chạy kiểm thử thủ công, ghi chép tỉ mỉ kết quả để phân tích và phát hiện khuyết tật.
+
+#### Lợi ích của việc sử dụng Kiểm thử cặp
+
+- Giảm thiểu số lượng kịch bản (Reduced test cases): Giảm đáng kể số lượng kịch bản kiểm thử cần thiết để đạt độ bao phủ toàn diện, từ đó đẩy nhanh tốc độ thực thi và cắt giảm chi phí.
+
+- Tăng khả năng phát hiện lỗi (Increased defect detection): Tập trung vào sự tương tác giữa các cặp tham số đầu vào, giúp phát hiện các khuyết tật dễ bị bỏ sót bởi các phương pháp kiểm thử khác.
+
+- Mở rộng độ bao phủ (Enhanced test coverage): Đảm bảo tất cả các cặp tham số đầu vào đều được kiểm tra kỹ lưỡng, củng cố mức độ tin cậy vào chất lượng phần mềm.
+
+- Khả năng mở rộng (Scalability): Dễ dàng thích ứng với cả các hệ thống nhỏ lẫn các hệ thống lớn có vô số tham số đầu vào phức tạp.
+
+#### Những thách thức của Kiểm thử cặp thủ công
+
+Mặc dù kiểm thử cặp bằng phương pháp thủ công mang lại hiệu quả cao, kỹ thuật này vẫn đối mặt với một số thách thức lớn sau:
+
+- **Tốn thời gian (Time-consuming)**: Việc tự tạo và thực thi các kịch bản kiểm thử cho tất cả các cặp tham số đầu vào bằng tay tiêu tốn rất nhiều thời gian, đặc biệt là đối với các hệ thống sở hữu lượng tham số lớn.
+
+- **Dễ sai sót (Error-prone)**: Quy trình thủ công này rất dễ bị ảnh hưởng bởi sai sót của con người, dẫn đến việc bỏ sót các tổ hợp quan trọng hoặc thiết kế sai lệch các kịch bản kiểm thử.
+
+- **Thiếu tính nhất quán (Lack of consistency)**: Việc duy trì tính đồng bộ và nhất quán giữa các kịch bản kiểm thử được tạo thủ công là điều vô cùng khó khăn, đặc biệt là trong các dự án có quy mô lớn.
+
+Để giải quyết triệt để các thách thức trên, chúng ta có thể cân nhắc áp dụng các biện pháp sau vào quy trình làm việc của đội ngũ QA/QC
+
+- **Tự động hóa bằng công cụ**: Tận dụng tối đa các công cụ tự động hóa để tạo tổ hợp cặp (như PICT, AllPairs) bất cứ khi nào khả thi nhằm giải phóng sức lao động.
+
+- **Chuẩn hóa quy trình**: Thiết lập các giao thức kiểm thử (testing protocols) rõ ràng, cụ thể cho toàn đội ngũ.
+
+- **Đánh giá nghiêm ngặt (Review)**: Triển khai các quy trình rà soát và kiểm duyệt kịch bản (Test Case Review) kỹ lưỡng nhằm giảm thiểu tối đa sai sót và đảm bảo tính nhất quán trong suốt vòng đời phát triển phần mềm.
