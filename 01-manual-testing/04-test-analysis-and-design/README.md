@@ -12,10 +12,11 @@
     - [4.2.3. Decision Table Testing](#423-decision-table-testing)
     - [4.2.4 State Transition Testing](#424-state-transition-testing)
     - [4.2.5 Pairwise Testing](#425-pairwise-testing)
-      - [Tổng quan về Kiểm thử cặp (Pairwise Testing)](#tổng-quan-về-kiểm-thử-cặp-pairwise-testing)
-      - [Quy trình thực hiện Kiểm thử cặp thủ công](#quy-trình-thực-hiện-kiểm-thử-cặp-thủ-công)
-      - [Lợi ích của việc sử dụng Kiểm thử cặp](#lợi-ích-của-việc-sử-dụng-kiểm-thử-cặp)
-      - [Những thách thức của Kiểm thử cặp thủ công](#những-thách-thức-của-kiểm-thử-cặp-thủ-công)
+      - [A. Tổng quan về Pairwise Testing](#a-tổng-quan-về-pairwise-testing)
+      - [B. Quy trình thực hiện Pairwise Manual Testing](#b-quy-trình-thực-hiện-pairwise-manual-testing)
+      - [C. Lợi ích của việc sử dụng Pairwise Testing](#c-lợi-ích-của-việc-sử-dụng-pairwise-testing)
+      - [D. Những thách thức của Pairwise Manual Testing](#d-những-thách-thức-của-pairwise-manual-testing)
+      - [F. Mảng trực giao (Orthogonal Arrays) trong Pairwise Testing](#f-mảng-trực-giao-orthogonal-arrays-trong-pairwise-testing)
 
 ## Keywords
 
@@ -377,13 +378,13 @@ Với những sơ đồ có sự di chuyển lặp lại liên tục như hình 
 
 ### 4.2.5 Pairwise Testing
 
-#### Tổng quan về Kiểm thử cặp (Pairwise Testing)
+#### A. Tổng quan về Pairwise Testing
 
 Kiểm thử cặp (Pairwise testing), còn được gọi là kiểm thử tất cả các cặp (all-pairs testing), là một phương pháp kiểm thử phần mềm thực hiện kiểm tra mọi tổ hợp cặp có thể có của các tham số đầu vào. Phương pháp tiếp cận này đặc biệt hữu ích khi việc kiểm thử toàn bộ (exhaustive testing) trở nên bất khả thi do số lượng kịch bản kiểm thử tiềm năng quá lớn.
 
 Nghiên cứu cho thấy hầu hết các khuyết tật (defects) trong phần mềm đều bị gây ra bởi sự tương tác giữa một cặp gồm hai biến số. Bằng cách tập trung vào việc kiểm thử các cặp tham số, kỹ thuật này giúp tối ưu hóa quy trình, nâng cao hiệu suất và tăng cường khả năng phát hiện lỗi mà không làm giảm chất lượng kiểm thử.
 
-#### Quy trình thực hiện Kiểm thử cặp thủ công
+#### B. Quy trình thực hiện Pairwise Manual Testing
 
 Để tiến hành kiểm thử chức năng thủ công bằng phương pháp này, chúng ta có thể tuân theo các bước sau:
 
@@ -397,7 +398,7 @@ Nghiên cứu cho thấy hầu hết các khuyết tật (defects) trong phần 
 
 - **Thực thi và Phân tích**: Tiến hành chạy kiểm thử thủ công, ghi chép tỉ mỉ kết quả để phân tích và phát hiện khuyết tật.
 
-#### Lợi ích của việc sử dụng Kiểm thử cặp
+#### C. Lợi ích của việc sử dụng Pairwise Testing
 
 - Giảm thiểu số lượng kịch bản (Reduced test cases): Giảm đáng kể số lượng kịch bản kiểm thử cần thiết để đạt độ bao phủ toàn diện, từ đó đẩy nhanh tốc độ thực thi và cắt giảm chi phí.
 
@@ -407,7 +408,7 @@ Nghiên cứu cho thấy hầu hết các khuyết tật (defects) trong phần 
 
 - Khả năng mở rộng (Scalability): Dễ dàng thích ứng với cả các hệ thống nhỏ lẫn các hệ thống lớn có vô số tham số đầu vào phức tạp.
 
-#### Những thách thức của Kiểm thử cặp thủ công
+#### D. Những thách thức của Pairwise Manual Testing
 
 Mặc dù kiểm thử cặp bằng phương pháp thủ công mang lại hiệu quả cao, kỹ thuật này vẫn đối mặt với một số thách thức lớn sau:
 
@@ -424,3 +425,7 @@ Mặc dù kiểm thử cặp bằng phương pháp thủ công mang lại hiệu
 - **Chuẩn hóa quy trình**: Thiết lập các giao thức kiểm thử (testing protocols) rõ ràng, cụ thể cho toàn đội ngũ.
 
 - **Đánh giá nghiêm ngặt (Review)**: Triển khai các quy trình rà soát và kiểm duyệt kịch bản (Test Case Review) kỹ lưỡng nhằm giảm thiểu tối đa sai sót và đảm bảo tính nhất quán trong suốt vòng đời phát triển phần mềm.
+
+#### F. Mảng trực giao (Orthogonal Arrays) trong Pairwise Testing
+
+**Mảng trực giao (Orthogonal arrays)** là một khái niệm toán học được ứng dụng trong kiểm thử cặp để thiết kế kịch bản một cách hệ thống và hiệu quả. Chúng giúp giảm thiểu sai sót do con người, duy trì tính nhất quán bằng cách đảm bảo rằng mỗi cặp tham số đầu vào được kiểm tra chính xác một lần trên toàn bộ tập hợp kịch bản.
