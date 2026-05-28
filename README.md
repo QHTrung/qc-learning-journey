@@ -29,4 +29,5 @@ This is repository document my QC Engineer learning journey.
 - [Certified Tester Foundation Level (CTFL) v4.0
   ](https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf)
 - [Tutorialspoint](https://www.tutorialspoint.com/sdlc/sdlc_overview.htm)
+- [Pairwise Testing Explained with Tools & Examples by Patrícia Duarte Mateus](https://www.testrail.com/blog/pairwise-testing/)
 - Updating...
