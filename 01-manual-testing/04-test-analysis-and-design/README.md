@@ -3,7 +3,7 @@
 ### Table of contents
 
 - [4. Test Analysis and Design](#4-test-analysis-and-design)
-  - [Table of contents](#table-of-contents)
+    - [Table of contents](#table-of-contents)
   - [Keywords](#keywords)
   - [4.1. Test Techniques Overview](#41-test-techniques-overview)
   - [4.2. Black-Box Test Techniques](#42-black-box-test-techniques)
@@ -429,3 +429,22 @@ Mặc dù kiểm thử cặp bằng phương pháp thủ công mang lại hiệu
 #### F. Mảng trực giao (Orthogonal Arrays) trong Pairwise Testing
 
 **Mảng trực giao (Orthogonal arrays)** là một khái niệm toán học được ứng dụng trong kiểm thử cặp để thiết kế kịch bản một cách hệ thống và hiệu quả. Chúng giúp giảm thiểu sai sót do con người, duy trì tính nhất quán bằng cách đảm bảo rằng mỗi cặp tham số đầu vào được kiểm tra chính xác một lần trên toàn bộ tập hợp kịch bản.
+
+> **Bài toán ví dụ: Tính năng Thanh toán hóa đơn Điện/Nước qua App**
+>
+> Hệ thống cần xử lý giao dịch thanh toán hóa đơn với 3 Tham số đầu vào (Parameters).
+>
+> Param 1: Mã hóa đơn có các giá trị sau:
+>
+> - Valid: Điện, Nước
+> - Invalid: Mã rác
+>
+> Param 2: Kênh thanh toán có các giá trị sau:
+>
+> - Valid: Ví điện tử (Wallet), Thẻ NAPAS, Thẻ Quốc tế (Visa)
+> - Invalid: Thẻ hết hạn
+>
+> Param 3: Khuyến mãi (Voucher) có các giá trị sau:
+>
+> - Valid: Không dùng, Giảm 10k, Giảm 20k
+> - Invalid: Voucher hết hạn
