@@ -448,3 +448,34 @@ Mặc dù kiểm thử cặp bằng phương pháp thủ công mang lại hiệu
 >
 > - Valid: Không dùng, Giảm 10k, Giảm 20k
 > - Invalid: Voucher hết hạn
+>
+> Nếu kiểm thử toàn bộ exhaustive testing thì sẽ cần 2 &times; 3 &times; 3 = 18 cases (với các giá trị Valid). Nếu giải bằng Pairwise để tối ưu hóa để mỗi cặp giá trị gặp nhau ít nhất 1 lần thì số kịch bản kiểm thử sẽ giảm đi đáng kể:
+>
+> B1: All Valid (Lấy tất cả giá trị valid kết hợp với nhau)
+>
+> - TC1: Điện, Ví điện tử, Không dùng
+> - TC2: Điện, Thẻ NAPAS, Giảm 10k
+> - TC3: Điện, Thẻ VISA, Giảm 20k
+> - TC4: Nước, Ví điện tử, Giảm 10k
+> - TC5: Nước, Thẻ NAPAS, Giảm 20k
+> - TC6: Nước, Thẻ VISA, Không dùng
+> - TC7: Điện, Ví điện tử, giảm 20k
+> - TC8: Nước, Thẻ VISA, Giảm 10k
+> - TC9: Nước, Thẻ NAPAS, Không dùng
+>
+> B2: Each Invalid (1 giá trị invalid bắt cặp với các giá trị valid)
+>
+> - TC10: Mã rác, Ví điện tử, Không dùng
+> - TC11: Điện, Thẻ hết hạn, Giảm 10k
+> - TC12: Nước, Thẻ NAPAS, Voucher hết hạn
+>
+> B3: All Invalid (Lấy tất cả giá trị invalid kết hợp với nhau)
+>
+> - TC13: Mã rác, Thẻ hết hạn, Voucher hết hạn
+>
+> Kết quả:
+>
+> - Kiểm thử tổ hợp Valid (Dùng Pairwise): 9 kịch bản (Thay vì 18).
+> - Kiểm thử logic lỗi (Rời rạc): 3 kịch bản.
+> - Kiểm thử hiển thị UI (Gom lỗi): 1 kịch bản.
+> - TỔNG CỘNG: 13 kịch bản kiểm thử tinh gọn, bao phủ hoàn hảo mọi ngóc ngách của tính năng mà không bị chồng chéo, sót lỗi.
