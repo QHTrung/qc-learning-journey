@@ -17,6 +17,9 @@
       - [C. Lợi ích của việc sử dụng Pairwise Testing](#c-lợi-ích-của-việc-sử-dụng-pairwise-testing)
       - [D. Những thách thức của Pairwise Manual Testing](#d-những-thách-thức-của-pairwise-manual-testing)
       - [F. Mảng trực giao (Orthogonal Arrays) trong Pairwise Testing](#f-mảng-trực-giao-orthogonal-arrays-trong-pairwise-testing)
+  - [4.3. White-Box Test Techniques](#43-white-box-test-techniques)
+    - [4.3.1. Statement Testing and Statement Coverage](#431-statement-testing-and-statement-coverage)
+    - [4.3.2. Branch Testing and Branch Coverage](#432-branch-testing-and-branch-coverage)
 
 ## Keywords
 
@@ -479,3 +482,53 @@ Mặc dù kiểm thử cặp bằng phương pháp thủ công mang lại hiệu
 > - Kiểm thử logic lỗi (Rời rạc): 3 kịch bản.
 > - Kiểm thử hiển thị UI (Gom lỗi): 1 kịch bản.
 > - TỔNG CỘNG: 13 kịch bản kiểm thử tinh gọn, bao phủ hoàn hảo mọi ngóc ngách của tính năng mà không bị chồng chéo, sót lỗi.
+
+## 4.3. White-Box Test Techniques
+
+> Kỹ thuật kiểm thử hộp trắng
+
+Because of their popularity and simplicity, this section focuses on two code-related white-box test techniques:
+
+- Statement testing
+- Branch testing
+
+There are more rigorous white-box test techniques that are used in some safety-critical, mission-critical, or high-integrity environments to achieve more thorough code coverage. There are also white-box test techniques used in higher test levels (e.g., API testing), or using coverage not related to code (e.g., neuron coverage in neural network testing). These techniques are not discussed in this syllabus.
+
+> Do tính phổ biến và sự đơn giản của chúng, phần này tập trung vào hai kỹ thuật kiểm thử hộp trắng liên quan đến mã nguồn (code-related):
+>
+> - Kiểm thử câu lệnh (Statement testing)
+> - Kiểm thử nhánh (Branch testing)
+>
+> Có những kỹ thuật kiểm thử hộp trắng nghiêm ngặt hơn được sử dụng trong một số môi trường quan trọng mang tính sống còn (safety-critical, mission-critical) hoặc đòi hỏi tính toàn vẹn cao (high-integrity environments) để đạt được độ bao phủ mã nguồn triệt để hơn. Ngoài ra, còn có các kỹ thuật kiểm thử hộp trắng được sử dụng ở các mức độ kiểm thử cao hơn (ví dụ: kiểm thử API), hoặc sử dụng độ bao phủ không liên quan đến mã nguồn (ví dụ: độ bao phủ nơ-ron trong kiểm thử mạng nơ-ron nhân tạo). Các kỹ thuật này không được thảo luận trong phạm vi giáo trình này.
+
+### 4.3.1. Statement Testing and Statement Coverage
+
+> Kiểm thử câu lệnh và Độ bao phủ câu lệnh
+
+In statement testing, the coverage items are executable statements. The aim is to design test cases that exercise statements in the code until an acceptable level of coverage is achieved. Coverage is measured as the number of statements exercised by the test cases divided by the total number of executable statements in the code, and is expressed as a percentage.
+
+When 100% statement coverage is achieved, it ensures that all executable statements in the code have been exercised at least once. In particular, this means that each statement with a defect will be executed, which may cause a failure demonstrating the presence of the defect. However, exercising a statement with a test case will not detect defects in all cases. For example, it may not detect defects that are data dependent (e.g., a division by zero that only fails when a denominator is set to zero). Also, 100% statement coverage does not ensure that all the decision logic has been tested as, for instance, it may not exercise all the branches (see chapter 4.3.2) in the code.
+
+> In kiểm thử câu lệnh (statement testing), các hạng mục bao phủ (coverage items) chính là các câu lệnh có thể thực thi (executable statements). Mục tiêu là thiết kế các kịch bản kiểm thử (test cases) để thực thi các câu lệnh trong mã nguồn cho đến khi đạt được một mức độ bao phủ chấp nhận được. Độ bao phủ được đo bằng số lượng câu lệnh được thực thi bởi các kịch bản kiểm thử chia cho tổng số câu lệnh có thể thực thi trong mã nguồn, và được thể hiện dưới dạng phần trăm.
+>
+> Khi đạt được độ bao phủ câu lệnh 100%, nó đảm bảo rằng tất cả các câu lệnh có thể thực thi trong mã nguồn đã được thực thi ít nhất một lần. Đặc biệt, điều này có nghĩa là mỗi câu lệnh chứa khuyết tật (defect) sẽ được chạy qua, điều này có thể gây ra một lỗi (failure) nhằm chứng minh sự hiện diện của khuyết tật đó. Tuy nhiên, việc thực thi một câu lệnh bằng một kịch bản kiểm thử sẽ không thể phát hiện ra khuyết tật trong mọi trường hợp. Ví dụ, nó có thể không phát hiện được các khuyết tật phụ thuộc vào dữ liệu (data dependent) (ví dụ: một phép chia cho số không (division by zero) mà chỉ lỗi khi mẫu số được thiết lập bằng 0). Ngoài ra, độ bao phủ câu lệnh 100% không đảm bảo rằng tất cả các logic quyết định (decision logic) đã được kiểm thử, vì chẳng hạn, nó có thể không thực thi được tất cả các nhánh (branches) (xem chương 4.3.2) trong mã nguồn.
+
+### 4.3.2. Branch Testing and Branch Coverage
+
+> Kiểm thử nhánh và Độ bao phủ nhán
+
+A branch is a transfer of control between two nodes in the control flow graph, which shows the possible sequences in which source code statements are executed in the test object. Each transfer of control can be either unconditional (i.e., straight-line code) or conditional (i.e., a decision outcome).
+
+In branch testing the coverage items are branches and the aim is to design test cases to exercise branches in the code until an acceptable level of coverage is achieved. Coverage is measured as the number of branches exercised by the test cases divided by the total number of branches and is expressed as a percentage.
+
+When 100% branch coverage is achieved, all branches in the code, unconditional and conditional, are exercised by test cases. Conditional branches typically correspond to a true or false outcome from an “if...then” decision, an outcome from a switch/case statement, or a decision to exit or continue in a loop. However, exercising a branch with a test case will not detect defects in all cases. For example, it may not detect defects requiring the execution of a specific path in a code.
+
+Branch coverage subsumes statement coverage. This means that any set of test cases achieving 100% branch coverage also achieves 100% statement coverage (but not vice versa).
+
+> Một nhánh (branch) là sự chuyển giao quyền điều khiển (transfer of control) giữa hai nút (nodes) trong đồ thị luồng điều khiển (control flow graph), đồ thị này hiển thị các chuỗi khả thi mà các câu lệnh mã nguồn được thực thi trong đối tượng kiểm thử. Mỗi sự chuyển giao quyền điều khiển có thể là không điều kiện (unconditional - tức là mã nguồn đi theo đường thẳng) hoặc có điều kiện (conditional - tức là kết quả của một quyết định).
+>
+> Trong kiểm thử nhánh (branch testing), các hạng mục bao phủ (coverage items) chính là các nhánh và mục tiêu là thiết kế các kịch bản kiểm thử (test cases) để thực thi các nhánh trong mã nguồn cho đến khi đạt được một mức độ bao phủ chấp nhận được. Độ bao phủ được đo bằng số lượng nhánh được thực thi bởi các kịch bản kiểm thử chia cho tổng số nhánh trong mã nguồn, và được thể hiện dưới dạng phần trăm.
+>
+> Khi đạt được độ bao phủ nhánh 100%, tất cả các nhánh trong mã nguồn, bao gồm cả không điều kiện và có điều kiện, đều được thực thi bởi các kịch bản kiểm thử. Các nhánh có điều kiện thường tương ứng với kết quả Đúng (True) hoặc Sai (False) từ một quyết định “if...then”, một kết quả từ câu lệnh "switch/case", hoặc một quyết định thoát khỏi hay tiếp tục vòng lặp. Tuy nhiên, việc thực thi một nhánh bằng một kịch bản kiểm thử sẽ không thể phát hiện ra khuyết tật trong mọi trường hợp. Ví dụ, nó có thể không phát hiện được các khuyết tật đòi hỏi phải thực thi một đường dẫn (path) cụ thể trong mã nguồn.
+>
+> Độ bao phủ nhánh bao hàm (subsumes) độ bao phủ câu lệnh. Điều này có nghĩa là bất kỳ tập hợp kịch bản kiểm thử nào đạt được độ bao phủ nhánh 100% thì cũng đồng thời đạt được độ bao phủ câu lệnh 100% (nhưng điều ngược lại thì không đúng).
