@@ -20,6 +20,7 @@
   - [4.3. White-Box Test Techniques](#43-white-box-test-techniques)
     - [4.3.1. Statement Testing and Statement Coverage](#431-statement-testing-and-statement-coverage)
     - [4.3.2. Branch Testing and Branch Coverage](#432-branch-testing-and-branch-coverage)
+    - [4.3.3. The Value of White-box Testing](#433-the-value-of-white-box-testing)
 
 ## Keywords
 
@@ -532,3 +533,19 @@ Branch coverage subsumes statement coverage. This means that any set of test cas
 > Khi đạt được độ bao phủ nhánh 100%, tất cả các nhánh trong mã nguồn, bao gồm cả không điều kiện và có điều kiện, đều được thực thi bởi các kịch bản kiểm thử. Các nhánh có điều kiện thường tương ứng với kết quả Đúng (True) hoặc Sai (False) từ một quyết định “if...then”, một kết quả từ câu lệnh "switch/case", hoặc một quyết định thoát khỏi hay tiếp tục vòng lặp. Tuy nhiên, việc thực thi một nhánh bằng một kịch bản kiểm thử sẽ không thể phát hiện ra khuyết tật trong mọi trường hợp. Ví dụ, nó có thể không phát hiện được các khuyết tật đòi hỏi phải thực thi một đường dẫn (path) cụ thể trong mã nguồn.
 >
 > Độ bao phủ nhánh bao hàm (subsumes) độ bao phủ câu lệnh. Điều này có nghĩa là bất kỳ tập hợp kịch bản kiểm thử nào đạt được độ bao phủ nhánh 100% thì cũng đồng thời đạt được độ bao phủ câu lệnh 100% (nhưng điều ngược lại thì không đúng).
+
+### 4.3.3. The Value of White-box Testing
+
+> Giá trị của kiểm thử hộp trắng
+
+A fundamental strength that all white-box test techniques share is that the entire software implementation is taken into account during testing, which facilitates defect detection even when the software specification is vague, outdated or incomplete. A corresponding weakness is that if the software does not implement one or more requirements, white-box testing may not detect the resulting defects of omission (Watson 1996).
+
+White-box test techniques can be used in static testing (e.g., during dry runs of code). They are well suited to reviewing code not yet ready for execution (Hetzel 1988), pseudocode and other high-level or top-down logic which can be modeled with a control flow graph.
+
+Performing only black-box testing does not provide a measure of actual code coverage. White-box coverage measures provide an objective measurement of coverage and the necessary information to allow additional tests to be generated to increase this coverage, and subsequently increase confidence in the code.
+
+> Một điểm mạnh căn bản mà tất cả các kỹ thuật kiểm thử hộp trắng đều chia sẻ là toàn bộ việc triển khai thực tế của phần mềm (software implementation) đều được xem xét trong quá trình kiểm thử, điều này tạo điều kiện thuận lợi cho việc phát hiện khuyết tật ngay cả khi tài liệu tả đặc tả phần mềm (software specification) bị mơ hồ, lỗi thời hoặc không đầy đủ. Một điểm yếu tương ứng là nếu phần mềm không triển khai một hoặc nhiều yêu cầu, kiểm thử hộp trắng có thể không phát hiện được các khuyết tật do bỏ sót (defects of omission) (Watson 1996).
+>
+> Các kỹ thuật kiểm thử hộp trắng có thể được sử dụng trong kiểm thử tĩnh (static testing) (ví dụ: trong các buổi chạy thử mã nguồn trên giấy - dry runs of code). Chúng rất phù hợp để xem xét (review) mã nguồn chưa sẵn sàng để thực thi (Hetzel 1988), mã giả (pseudocode) và các logic cấp cao hoặc từ trên xuống (top-down logic) khác vốn có thể được mô hình hóa bằng đồ thị luồng điều khiển (control flow graph).
+>
+> Việc chỉ thực hiện kiểm thử hộp đen (black-box testing) không cung cấp một thước đo về độ bao phủ mã nguồn thực tế (actual code coverage). Các phép đo độ bao phủ hộp trắng cung cấp một phép đo khách quan về độ bao phủ và các thông tin cần thiết để cho phép tạo thêm các kiểm thử bổ sung nhằm tăng độ bao phủ này, và từ đó nâng cao mức độ tin cậy vào mã nguồn.
