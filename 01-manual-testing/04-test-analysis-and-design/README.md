@@ -24,6 +24,7 @@
   - [4.4. Experience-based Test Techniques](#44-experience-based-test-techniques)
     - [4.4.1. Error Guessing](#441-error-guessing)
     - [4.4.2. Exploratory Testing](#442-exploratory-testing)
+    - [4.4.3. Checklist-Based Testing](#443-checklist-based-testing)
 
 ## Keywords
 
@@ -605,3 +606,23 @@ Exploratory testing can incorporate the use of other test techniques (e.g., equi
 > Kiểm thử khám phá đặc biệt hữu ích khi có ít hoặc không có đủ tài liệu đặc tả, hoặc khi có áp lực lớn về mặt thời gian đối với việc kiểm thử. Kiểm thử khám phá cũng hữu ích để bổ trợ cho các kỹ thuật kiểm thử chính thống (formal test techniques) khác. Kiểm thử khám phá sẽ hiệu quả hơn nếu kiểm thử viên là người có kinh nghiệm, có kiến thức chuyên môn về domain nghiệp vụ và có mức độ cao về các kỹ năng thiết yếu, chẳng hạn như kỹ năng phân tích, sự tò mò và tính sáng tạo (xem phần 1.5.1).
 >
 > Kiểm thử khám phá có thể tích hợp việc sử dụng các kỹ thuật kiểm thử khác (ví dụ: phân chia vùng tương đương). Xem thêm thông tin về kiểm thử khám phá trong (Kaner 1999, Whittaker 2009, Hendrickson 2013).
+
+### 4.4.3. Checklist-Based Testing
+
+> Kiểm thử dựa trên bảng kiểm
+
+In checklist-based testing, a tester designs, implements, and executes tests to cover test conditions from a checklist. Checklists can be built based on experience, knowledge about what is important for the user, or an understanding of why and how software fails. Checklists should not contain items that can be checked automatically, items better suited as entry criteria, exit criteria, or items that are too general (Brykczynski 1999).
+
+Checklist items are often phrased in the form of a question. It should be possible to check each item separately and directly. These items may refer to requirements, graphical interface properties, quality characteristics or other forms of test conditions. Checklists can be created to support various test types, including functional and non-functional testing (e.g., 10 heuristics for usability testing (Nielsen 1994)).
+
+Some checklist entries may gradually become less effective over time because the developers will learn to avoid making the same errors. New entries may also need to be added to reflect newly found high severity defects. Therefore, checklists should be regularly updated based on defect analysis. However, care should be taken to avoid letting the checklist become too long (Gawande 2009).
+
+In the absence of detailed test cases, checklist-based testing can provide guidelines and some degree of consistency for the testing. If the checklists are high-level, some variability in the actual testing is likely to occur, resulting in potentially greater coverage but less repeatability.
+
+> Trong kiểm thử dựa trên bảng kiểm (checklist-based testing), kiểm thử viên thiết kế, triển khai và thực thi các bài kiểm thử để bao phủ các điều kiện kiểm thử (test conditions) từ một bảng kiểm (checklist). Các bảng kiểm có thể được xây dựng dựa trên kinh nghiệm, kiến thức về những điều quan trọng đối với người dùng, hoặc sự thấu hiểu về lý do và cách thức phần mềm bị lỗi. Bảng kiểm không nên chứa các hạng mục có thể kiểm tra một cách tự động, các hạng mục phù hợp hơn để làm tiêu chí bắt đầu (entry criteria), tiêu chí kết thúc (exit criteria), hoặc các hạng mục quá chung chung (Brykczynski 1999).
+>
+> Các hạng mục trong bảng kiểm thường được diễn đạt dưới dạng một câu hỏi. Mỗi hạng mục cần phải có khả năng kiểm tra một cách độc lập và trực tiếp. Những hạng mục này có thể đề cập đến các yêu cầu (requirements), các đặc tính của giao diện đồ họa (graphical interface properties), các đặc tính chất lượng (quality characteristics) hoặc các dạng điều kiện kiểm thử khác. Bảng kiểm có thể được tạo ra để hỗ trợ cho nhiều loại kiểm thử khác nhau, bao gồm cả kiểm thử chức năng và kiểm thử phi chức năng (ví dụ: 10 nguyên lý kiểm thử định tính - 10 heuristics cho kiểm thử độ khả dụng (Nielsen 1994)).
+>
+> Một số mục trong bảng kiểm có thể giảm dần hiệu quả theo thời gian vì các lập trình viên sẽ học được cách tránh mắc phải những lỗi tương tự. Các mục mới cũng có thể cần phải được bổ sung để phản ánh những khuyết tật có mức độ nghiêm trọng cao (high severity defects) mới được tìm thấy. Do đó, các bảng kiểm nên được cập nhật thường xuyên dựa trên việc phân tích khuyết tật (defect analysis). Tuy nhiên, cần cẩn trọng để tránh để bảng kiểm trở nên quá dài (Gawande 2009).
+>
+> Trong trường hợp thiếu các kịch bản kiểm thử chi tiết (detailed test cases), kiểm thử viên có thể sử dụng kiểm thử dựa trên bảng kiểm để cung cấp các hướng dẫn và một mức độ nhất quán nhất định cho việc kiểm thử. Nếu các bảng kiểm ở mức độ vĩ mô/cấp cao (high-level), một số biến động trong việc kiểm thử thực tế có khả năng sẽ xảy ra, dẫn đến việc có tiềm năng đạt độ bao phủ lớn hơn nhưng khả năng lặp lại (repeatability) sẽ thấp hơn.
