@@ -3,7 +3,7 @@
 ### Table of contents
 
 - [4. Test Analysis and Design](#4-test-analysis-and-design)
-    - [Table of contents](#table-of-contents)
+  - [Table of contents](#table-of-contents)
   - [Keywords](#keywords)
   - [4.1. Test Techniques Overview](#41-test-techniques-overview)
   - [4.2. Black-Box Test Techniques](#42-black-box-test-techniques)
@@ -21,6 +21,9 @@
     - [4.3.1. Statement Testing and Statement Coverage](#431-statement-testing-and-statement-coverage)
     - [4.3.2. Branch Testing and Branch Coverage](#432-branch-testing-and-branch-coverage)
     - [4.3.3. The Value of White-box Testing](#433-the-value-of-white-box-testing)
+  - [4.4. Experience-based Test Techniques](#44-experience-based-test-techniques)
+    - [4.4.1. Error Guessing](#441-error-guessing)
+    - [4.4.2. Exploratory Testing](#442-exploratory-testing)
 
 ## Keywords
 
@@ -549,3 +552,56 @@ Performing only black-box testing does not provide a measure of actual code cove
 > Các kỹ thuật kiểm thử hộp trắng có thể được sử dụng trong kiểm thử tĩnh (static testing) (ví dụ: trong các buổi chạy thử mã nguồn trên giấy - dry runs of code). Chúng rất phù hợp để xem xét (review) mã nguồn chưa sẵn sàng để thực thi (Hetzel 1988), mã giả (pseudocode) và các logic cấp cao hoặc từ trên xuống (top-down logic) khác vốn có thể được mô hình hóa bằng đồ thị luồng điều khiển (control flow graph).
 >
 > Việc chỉ thực hiện kiểm thử hộp đen (black-box testing) không cung cấp một thước đo về độ bao phủ mã nguồn thực tế (actual code coverage). Các phép đo độ bao phủ hộp trắng cung cấp một phép đo khách quan về độ bao phủ và các thông tin cần thiết để cho phép tạo thêm các kiểm thử bổ sung nhằm tăng độ bao phủ này, và từ đó nâng cao mức độ tin cậy vào mã nguồn.
+
+## 4.4. Experience-based Test Techniques
+
+> Kỹ thuật kiểm thử dựa trên kinh nghiệm
+
+### 4.4.1. Error Guessing
+
+> Kỹ thuật đoán lỗi (Error Guessing)
+
+Error guessing is a test technique used to anticipate the occurrence of errors, defects, and failures, based
+on the tester’s knowledge, including:
+
+- How the application has worked in the past
+- The types of errors the developers tend to make and the types of defects that result from these errors
+- The types of failures that have occurred in other, similar applications
+
+In general, errors, defects and failures may be related to: input (e.g., correct input not accepted, parameters wrong or missing), output (e.g., wrong format, wrong result), logic (e.g., missing cases, wrong operator), computation (e.g., incorrect operand, wrong computation), interfaces (e.g., parameter mismatch, incompatible types), or data (e.g., incorrect initialization, wrong type).
+
+Fault attacks are a way to implement error guessing. This test technique requires the tester to create or acquire a list of possible errors, defects and failures, and to design tests that will identify defects associated with the errors, expose the defects, or cause the failures. These lists can be built based on experience, defect and failure data, or from common knowledge about why software fails.
+
+See (Whittaker 2002, Whittaker 2003, Andrews 2006) for more information on error guessing and fault attacks.
+
+> Đoán lỗi (Error guessing) là một kỹ thuật kiểm thử được sử dụng để dự đoán trước sự xuất hiện của các lỗi (errors), khuyết tật (defects) và sự cố (failures), dựa trên kiến thức của kiểm thử viên, bao gồm:
+>
+> - Ứng dụng đã hoạt động như thế nào trong quá khứ.
+> - Các loại lỗi mà lập trình viên có xu hướng mắc phải và các loại khuyết tật là hệ quả từ những lỗi đó.
+> - Các loại sự cố đã từng xảy ra trong các ứng dụng khác tương tự.
+>
+> Nhìn chung, các lỗi, khuyết tật và sự cố có thể liên quan đến: đầu vào (ví dụ: đầu vào đúng nhưng không được chấp nhận, tham số bị sai hoặc bị thiếu), đầu ra (ví dụ: sai định dạng, sai kết quả), logic (ví dụ: bỏ sót trường hợp, sai toán tử), tính toán (ví dụ: sai toán hạng, sai phép tính), giao diện kết nối/API (ví dụ: không khớp tham số, không tương thích kiểu dữ liệu), hoặc dữ liệu (ví dụ: khởi tạo không chính xác, sai kiểu dữ liệu).
+>
+> Tấn công lỗi (Fault attacks) là một cách để triển khai kỹ thuật đoán lỗi. Kỹ thuật kiểm thử này yêu cầu kiểm thử viên tạo ra hoặc thu thập một danh sách các lỗi, khuyết tật và sự cố có thể xảy ra, sau đó thiết kế các bài kiểm thử nhằm xác định các khuyết tật liên quan đến lỗi, vạch trần các khuyết tật đó, hoặc kích phát các sự cố. Các danh sách này có thể được xây dựng dựa trên kinh nghiệm, dữ liệu về khuyết tật và sự cố trước đó, hoặc từ kiến thức phổ thông về lý do tại sao phần mềm bị lỗi.
+>
+> Xem (Whittaker 2002, Whittaker 2003, Andrews 2006) để biết thêm thông tin về đoán lỗi và tấn công lỗi.
+
+### 4.4.2. Exploratory Testing
+
+> Kiểm thử khám phá (Exploratory Testing)
+
+In exploratory testing, tests are simultaneously designed, executed, and evaluated while the tester learns about the test object. The testing is used to learn more about the test object, to explore it more deeply with focused tests, and to create tests for untested areas.
+
+Exploratory testing is sometimes performed using session-based testing to structure the testing. In a session-based approach, exploratory testing is performed within a defined time box. The tester uses a test charter containing test objectives to guide the testing. The test session is usually followed by a debriefing that involves a discussion between the tester and stakeholders interested in the test results of the test session. In this approach test objectives may be treated as high-level test conditions. Coverage items are identified and exercised during the test session. The tester may use test session sheets to document the steps followed and the discoveries made.
+
+Exploratory testing is useful when there are few or inadequate specifications or there is significant time pressure on the testing. Exploratory testing is also useful to complement other more formal test techniques. Exploratory testing will be more effective if the tester is experienced, has domain knowledge and has a high degree of essential skills, like analytical skills, curiosity and creativeness (see section 1.5.1).
+
+Exploratory testing can incorporate the use of other test techniques (e.g., equivalence partitioning). More information about exploratory testing can be found in (Kaner 1999, Whittaker 2009, Hendrickson 2013).
+
+> Trong kiểm thử khám phá (exploratory testing), các bài kiểm thử được thiết kế, thực thi và đánh giá một cách đồng thời (simultaneously) trong khi kiểm thử viên tìm hiểu thêm về đối tượng kiểm thử. Hoạt động kiểm thử này được sử dụng để hiểu rõ hơn về đối tượng kiểm thử, khám phá nó sâu hơn bằng các bài kiểm thử có trọng tâm, và tạo ra các bài kiểm thử cho các vùng chưa được kiểm thử.
+>
+> Kiểm thử khám phá đôi khi được thực hiện bằng cách sử dụng phương pháp kiểm thử dựa trên phiên (session-based testing) để tạo cấu trúc cho quá trình kiểm thử. Trong cách tiếp cận dựa trên phiên này, kiểm thử khám phá được thực hiện trong một khung thời gian cố định (time box) đã được xác định trước. Kiểm thử viên sử dụng một hiến chương kiểm thử (test charter) chứa các mục tiêu kiểm thử để định hướng cho việc kiểm thử. Phiên kiểm thử thường được theo sau bởi một buổi báo cáo đúc rút (debriefing) bao gồm một cuộc thảo luận giữa kiểm thử viên và các bên liên quan (stakeholders) quan tâm đến kết quả của phiên kiểm thử đó. Trong cách tiếp cận này, các mục tiêu kiểm thử có thể được coi là các điều kiện kiểm thử cấp cao (high-level test conditions). Các hạng mục bao phủ (coverage items) được xác định và thực thi ngay trong suốt phiên kiểm thử. Kiểm thử viên có thể sử dụng các biểu mẫu ghi chép phiên kiểm thử (test session sheets) để ghi lại các bước đã thực hiện và những phát hiện của mình.
+>
+> Kiểm thử khám phá đặc biệt hữu ích khi có ít hoặc không có đủ tài liệu đặc tả, hoặc khi có áp lực lớn về mặt thời gian đối với việc kiểm thử. Kiểm thử khám phá cũng hữu ích để bổ trợ cho các kỹ thuật kiểm thử chính thống (formal test techniques) khác. Kiểm thử khám phá sẽ hiệu quả hơn nếu kiểm thử viên là người có kinh nghiệm, có kiến thức chuyên môn về domain nghiệp vụ và có mức độ cao về các kỹ năng thiết yếu, chẳng hạn như kỹ năng phân tích, sự tò mò và tính sáng tạo (xem phần 1.5.1).
+>
+> Kiểm thử khám phá có thể tích hợp việc sử dụng các kỹ thuật kiểm thử khác (ví dụ: phân chia vùng tương đương). Xem thêm thông tin về kiểm thử khám phá trong (Kaner 1999, Whittaker 2009, Hendrickson 2013).
