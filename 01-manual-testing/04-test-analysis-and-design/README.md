@@ -25,6 +25,8 @@
     - [4.4.1. Error Guessing](#441-error-guessing)
     - [4.4.2. Exploratory Testing](#442-exploratory-testing)
     - [4.4.3. Checklist-Based Testing](#443-checklist-based-testing)
+  - [4.5. Collaboration-based Test Approaches](#45-collaboration-based-test-approaches)
+    - [4.5.1. Collaborative User Story Writing](#451-collaborative-user-story-writing)
 
 ## Keywords
 
@@ -626,3 +628,46 @@ In the absence of detailed test cases, checklist-based testing can provide guide
 > Một số mục trong bảng kiểm có thể giảm dần hiệu quả theo thời gian vì các lập trình viên sẽ học được cách tránh mắc phải những lỗi tương tự. Các mục mới cũng có thể cần phải được bổ sung để phản ánh những khuyết tật có mức độ nghiêm trọng cao (high severity defects) mới được tìm thấy. Do đó, các bảng kiểm nên được cập nhật thường xuyên dựa trên việc phân tích khuyết tật (defect analysis). Tuy nhiên, cần cẩn trọng để tránh để bảng kiểm trở nên quá dài (Gawande 2009).
 >
 > Trong trường hợp thiếu các kịch bản kiểm thử chi tiết (detailed test cases), kiểm thử viên có thể sử dụng kiểm thử dựa trên bảng kiểm để cung cấp các hướng dẫn và một mức độ nhất quán nhất định cho việc kiểm thử. Nếu các bảng kiểm ở mức độ vĩ mô/cấp cao (high-level), một số biến động trong việc kiểm thử thực tế có khả năng sẽ xảy ra, dẫn đến việc có tiềm năng đạt độ bao phủ lớn hơn nhưng khả năng lặp lại (repeatability) sẽ thấp hơn.
+
+## 4.5. Collaboration-based Test Approaches
+
+> Các tiếp cận kiểm thử dựa trên sự cộng tác
+
+Each of the above-mentioned test techniques (see sections 4.2, 4.3, 4.4) has a particular objective with respect to defect detection. Collaboration-based approaches, on the other hand, focus also on defect avoidance by collaboration and communication.
+
+> Mỗi kỹ thuật kiểm thử được đề cập ở trên (xem các phần 4.2, 4.3, 4.4) đều có một mục tiêu cụ thể liên quan đến việc phát hiện khuyết tật (defect detection). Mặt khác, các tiếp cận dựa trên sự cộng tác (collaboration-based approaches) còn tập trung vào việc phòng tránh khuyết tật (defect avoidance) thông qua sự cộng tác và giao tiếp.
+
+### 4.5.1. Collaborative User Story Writing
+
+A user story represents a feature that will be valuable to either a user or purchaser of a system or software. User stories have three critical aspects (Jeffries 2000), called together the “3 C’s”:
+
+- Card – the medium describing a user story (e.g., an index card, an entry in an electronic board)
+- Conversation – explains how the software will be used (can be documented or verbal)
+- Confirmation – the acceptance criteria (see section 4.5.2)
+
+The most common format for a user story is “As a [role], I want [goal to be accomplished], so that I can [resulting business value for the role]”, followed by the acceptance criteria.
+
+Collaborative authorship of the user story can use techniques such as brainstorming and mind mapping. The collaboration allows the team to obtain a shared vision of what should be delivered, by taking into account three perspectives: business, development and testing.
+
+Good user stories should be: Independent, Negotiable, Valuable, Estimable, Small and Testable (INVEST). If a stakeholder does not know how to test a user story, this may indicate that the user story is not clear enough, or that it does not reflect something valuable to them, or that the stakeholder just needs help in testing (Wake 2003).
+
+> Một câu chuyện người dùng (user story) đại diện cho một tính năng mang lại giá trị cho người dùng hoặc người mua hệ thống/phần mềm. Các câu chuyện người dùng có ba khía cạnh quan trọng (Jeffries 2000), được gọi chung là "3 chữ C" (3 C’s):
+>
+> - Thẻ (Card): Phương tiện dùng để mô tả câu chuyện người dùng (ví dụ: một tấm thẻ ghi chú, một cổng thông tin trên bảng điện tử JIRA/Trello).
+> - Thảo luận (Conversation): Giải thích cách phần mềm sẽ được sử dụng (có thể được ghi chép lại hoặc trao đổi bằng lời nói).
+> - Xác nhận (Confirmation): Các tiêu chí nghiệm thu (acceptance criteria - xem phần 4.5.2).
+>
+> Định dạng phổ biến nhất của một câu chuyện người dùng là: "Với vai trò là [đối tượng], tôi muốn [mục tiêu cần đạt được], để tôi có thể [giá trị kinh doanh mang lại cho đối tượng đó]", theo sau là các tiêu chí nghiệm thu.
+>
+> Việc hợp tác đồng sáng tác câu chuyện người dùng có thể sử dụng các kỹ thuật như động não (brainstorming) và sơ đồ tư duy (mind mapping). Sự cộng tác này cho phép đội ngũ đạt được một tầm nhìn chung về những gì cần được bàn giao, bằng cách xem xét từ ba góc độ: kinh doanh (business), phát triển (development) và kiểm thử (testing).
+>
+> Các câu chuyện người dùng tốt cần đảm bảo quy tắc **INVEST**
+>
+> - Độc lập (Independent)
+> - Có thể thương lượng (Negotiable)
+> - Có giá trị (Valuable)
+> - Có thể ước lượng (Estimable)
+> - Nhỏ (Small)
+> - Có thể kiểm thử (Testable)
+>
+> Nếu một bên liên quan (stakeholder) không biết cách kiểm thử một câu chuyện người dùng, điều này có thể là dấu hiệu cho thấy câu chuyện người dùng đó chưa đủ rõ ràng, hoặc nó không phản ánh điều gì có giá trị đối với họ, hoặc bên liên quan đó chỉ đơn giản là cần sự trợ giúp trong việc kiểm thử (Wake 2003).
