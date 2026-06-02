@@ -28,6 +28,7 @@
   - [4.5. Collaboration-based Test Approaches](#45-collaboration-based-test-approaches)
     - [4.5.1. Collaborative User Story Writing](#451-collaborative-user-story-writing)
     - [4.5.2. Acceptance Criteria](#452-acceptance-criteria)
+    - [4.5.3. Acceptance Test-driven Development (ATDD)](#453-acceptance-test-driven-development-atdd)
 
 ## Keywords
 
@@ -708,3 +709,31 @@ Most acceptance criteria can be documented in one of these two formats. However,
 > - Hướng quy tắc (Rule-oriented): (Ví dụ: danh sách kiểm tra dạng đầu dòng - bullet point verification list, hoặc biểu mẫu dạng bảng ánh xạ đầu vào - đầu ra).
 >
 > Hầu hết các tiêu chí nghiệm thu có thể được ghi lại dưới một trong hai định dạng này. Tuy nhiên, đội ngũ có thể sử dụng một định dạng tùy chỉnh khác, miễn là các tiêu chí nghiệm thu được xác định rõ ràng và không mơ hồ.
+
+### 4.5.3. Acceptance Test-driven Development (ATDD)
+
+> Phát triển hướng kiểm thử nghiệm thu
+
+ATDD is a test-first approach (see section 2.1.3). Test cases are created prior to implementing the user story. The test cases are created by team members with different perspectives, e.g., customers, developers, and testers (Adzic 2009). Test cases may be executed manually or automated.
+
+The first step is a specification workshop where the user story and (if not yet defined) its acceptance criteria are analyzed, discussed, and written by the team members. Incompleteness, ambiguities, or defects in the user story are resolved during this process. The next step is to create the test cases. This can be done by the team as a whole or by the tester individually. The test cases are based on the acceptance criteria and can be seen as examples of how the software works. This will help the team implement the user story correctly.
+
+Since examples and tests are the same, these terms are often used interchangeably. During the test design the test techniques described in sections 4.2, 4.3 and 4.4 may be applied.
+
+Typically, the first test cases are positive, confirming the correct behavior without exceptions or error conditions, and comprising the sequence of activities executed if everything goes as expected. After the positive test cases are done, the team should perform negative testing. Finally, the team should cover non-functional quality characteristics (e.g., performance efficiency, usability). Test cases should be expressed in a way that is understandable for the stakeholders. Typically, test cases contain sentences in natural language involving the necessary preconditions (if any), the inputs, and the postconditions.
+
+The test cases must cover all the characteristics of the user story and should not go beyond the story. However, the acceptance criteria may detail some of the issues described in the user story. In addition, no two test cases should describe the same characteristics of the user story.
+
+When captured in a format supported by a test automation framework, the developers can automate the test cases by writing the supporting code as they implement the feature described by a user story. The acceptance tests then become executable requirements.
+
+> ATDD là một tiếp cận kiểm thử trước (test-first approach) (xem phần 2.1.3). Các kịch bản kiểm thử (test cases) được tạo ra trước khi triển khai câu chuyện người dùng. Những kịch bản kiểm thử này được thiết kế bởi các thành viên trong đội ngũ với nhiều góc độ khác nhau, ví dụ: khách hàng, lập trình viên và kiểm thử viên (Adzic 2009). Các kịch bản kiểm thử có thể được thực thi thủ công hoặc tự động hóa.
+>
+> Bước đầu tiên là một buổi hội thảo đặc tả (specification workshop), nơi câu chuyện người dùng và các tiêu chí nghiệm thu của nó (nếu chưa được định nghĩa) được phân tích, thảo luận và viết bởi các thành viên trong đội ngũ. Những điểm chưa hoàn thiện, sự mơ hồ hoặc khuyết tật trong câu chuyện người dùng sẽ được giải quyết trong quá trình này. Bước tiếp theo là tạo các kịch bản kiểm thử. Việc này có thể được thực hiện bởi toàn bộ đội ngũ hoặc bởi riêng kiểm thử viên. Các kịch bản kiểm thử được dựa trên các tiêu chí nghiệm thu và có thể được xem như là các ví dụ về cách phần mềm hoạt động. Điều này sẽ giúp đội ngũ triển khai câu chuyện người dùng một cách chính xác.
+>
+> Vì các ví dụ và các bài kiểm thử là như nhau, các thuật ngữ này thường được sử dụng thay thế cho nhau. Trong quá trình thiết kế kiểm thử, các kỹ thuật kiểm thử được mô tả trong các phần 4.2, 4.3 và 4.4 có thể được áp dụng.
+>
+> Thông thường, các kịch bản kiểm thử đầu tiên là tích cực (positive), nhằm xác nhận hành vi chính xác không có ngoại lệ hoặc điều kiện lỗi, và bao gồm chuỗi các hoạt động được thực thi nếu mọi thứ diễn ra như mong đợi. Sau khi các kịch bản kiểm thử tích cực hoàn thành, đội ngũ nên thực hiện kiểm thử tiêu cực (negative testing). Cuối cùng, đội ngũ nên bao phủ các đặc tính chất lượng phi chức năng (ví dụ: hiệu năng, độ khả dụng). Các kịch bản kiểm thử nên được diễn đạt theo cách dễ hiểu đối với các bên liên quan. Thông thường, các kịch bản kiểm thử chứa các câu bằng ngôn ngữ tự nhiên bao gồm các điều kiện tiên quyết cần thiết (nếu có), đầu vào và các điều kiện sau thực hiện (postconditions).
+>
+> Các kịch bản kiểm thử phải bao phủ tất cả các đặc tính của câu chuyện người dùng và không được vượt quá phạm vi của câu chuyện đó. Tuy nhiên, các tiêu chí nghiệm thu có thể chi tiết hóa một số vấn đề được mô tả trong câu chuyện người dùng. Ngoài ra, không được có hai kịch bản kiểm thử nào cùng mô tả các đặc tính giống nhau của câu chuyện người dùng.
+>
+> Khi được ghi lại dưới một định dạng được hỗ trợ bởi một khung tự động hóa kiểm thử (test automation framework), các lập trình viên có thể tự động hóa các kịch bản kiểm thử bằng cách viết mã nguồn hỗ trợ song song với quá trình họ triển khai tính năng được mô tả bởi câu chuyện người dùng. Các bài kiểm thử nghiệm thu khi đó sẽ trở thành các yêu cầu có thể thực thi được (executable requirements).
