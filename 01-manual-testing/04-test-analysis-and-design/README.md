@@ -27,6 +27,7 @@
     - [4.4.3. Checklist-Based Testing](#443-checklist-based-testing)
   - [4.5. Collaboration-based Test Approaches](#45-collaboration-based-test-approaches)
     - [4.5.1. Collaborative User Story Writing](#451-collaborative-user-story-writing)
+    - [4.5.2. Acceptance Criteria](#452-acceptance-criteria)
 
 ## Keywords
 
@@ -671,3 +672,39 @@ Good user stories should be: Independent, Negotiable, Valuable, Estimable, Small
 > - Có thể kiểm thử (Testable)
 >
 > Nếu một bên liên quan (stakeholder) không biết cách kiểm thử một câu chuyện người dùng, điều này có thể là dấu hiệu cho thấy câu chuyện người dùng đó chưa đủ rõ ràng, hoặc nó không phản ánh điều gì có giá trị đối với họ, hoặc bên liên quan đó chỉ đơn giản là cần sự trợ giúp trong việc kiểm thử (Wake 2003).
+
+### 4.5.2. Acceptance Criteria
+
+> Tiêu chí nghiệm thu
+
+Acceptance criteria for a user story are the conditions that an implementation of the user story must meet to be accepted by stakeholders. From this perspective, acceptance criteria may be viewed as the test conditions that should be exercised by the tests. Acceptance criteria are usually a result of the Conversation (see section 4.5.1).
+Acceptance criteria are used to:
+
+- Define the scope of the user story
+- Reach consensus among the stakeholders
+- Describe both positive and negative scenarios
+- Serve as a basis for the user story acceptance testing (see section 4.5.3)
+- Allow accurate planning and estimation
+
+There are several ways to write acceptance criteria for a user story. The two most common formats are:
+
+- Scenario-oriented (e.g., Given/When/Then format used in BDD, see section 2.1.3)
+- Rule-oriented (e.g., bullet point verification list, or tabulated form of input-output mapping)
+
+Most acceptance criteria can be documented in one of these two formats. However, the team may use another, custom format, as long as the acceptance criteria are well-defined and unambiguous.
+
+> Tiêu chí nghiệm thu (acceptance criteria) của một câu chuyện người dùng là các điều kiện mà việc triển khai câu chuyện người dùng đó phải đáp ứng để được các bên liên quan chấp nhận. Từ góc độ này, các tiêu chí nghiệm thu có thể được xem như là các điều kiện kiểm thử (test conditions) cần được thực thi bởi các bài kiểm thử. Tiêu chí nghiệm thu thường là kết quả của quá trình Thảo luận (Conversation - xem phần 4.5.1).
+> Tiêu chí nghiệm thu được sử dụng để:
+>
+> - Xác định phạm vi (scope) của câu chuyện người dùng.
+> - Đạt được sự đồng thuận giữa các bên liên quan.
+> - Mô tả cả kịch bản tích cực (positive scenarios) và tiêu cực (negative scenarios).
+> - Làm cơ sở cho việc kiểm thử nghiệm thu câu chuyện người dùng (user story acceptance testing - xem phần 4.5.3).
+> - Cho phép lập kế hoạch và ước lượng một cách chính xác.
+>
+> Có nhiều cách để viết tiêu chí nghiệm thu cho một câu chuyện người dùng. Hai định dạng phổ biến nhất là:
+>
+> - Hướng kịch bản (Scenario-oriented): (Ví dụ: định dạng Given/When/Then được sử dụng trong BDD, xem phần 2.1.3).
+> - Hướng quy tắc (Rule-oriented): (Ví dụ: danh sách kiểm tra dạng đầu dòng - bullet point verification list, hoặc biểu mẫu dạng bảng ánh xạ đầu vào - đầu ra).
+>
+> Hầu hết các tiêu chí nghiệm thu có thể được ghi lại dưới một trong hai định dạng này. Tuy nhiên, đội ngũ có thể sử dụng một định dạng tùy chỉnh khác, miễn là các tiêu chí nghiệm thu được xác định rõ ràng và không mơ hồ.
