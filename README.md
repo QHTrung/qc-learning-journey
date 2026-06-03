@@ -22,6 +22,7 @@ This is repository document my QC Engineer learning journey.
 - [2. Testing Throughout the SDLC](/01-manual-testing/02-testing-throughout-SDLC/README.md)
 - [3. Static Testing](/01-manual-testing/03-static-testing/README.md)
 - [4. Test Analysis and Design](/01-manual-testing/04-test-analysis-and-design/README.md)
+- [5. Managing the Test Activities](/01-manual-testing/05-managing-test-activities/README.md)
 - Updating...
 
 ## Resources
