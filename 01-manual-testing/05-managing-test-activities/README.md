@@ -3,12 +3,13 @@
 ### Table of contents
 
 - [5. Managing the Test Activitie](#5-managing-the-test-activitie)
-    - [Table of contents](#table-of-contents)
+  - [Table of contents](#table-of-contents)
   - [Keywords](#keywords)
   - [5.1. Test Planning](#51-test-planning)
     - [5.1.1. Purpose and Content of a Test Plan](#511-purpose-and-content-of-a-test-plan)
     - [5.1.2. Tester's Contribution to Iteration and Release Planning](#512-testers-contribution-to-iteration-and-release-planning)
     - [5.1.3. Entry Criteria and Exit Criteria](#513-entry-criteria-and-exit-criteria)
+    - [5.1.4. Estimation Techniques](#514-estimation-techniques)
 
 ## Keywords
 
@@ -137,3 +138,32 @@ In Agile software development, exit criteria are often called Definition of Done
 > Việc hết thời gian hoặc cạn kiệt ngân sách cũng có thể được xem là các tiêu chí kết thúc hợp lệ. Ngay cả khi các tiêu chí kết thúc khác chưa được thỏa mãn, việc kết thúc kiểm thử trong các hoàn cảnh như vậy vẫn có thể được chấp nhận, nếu các bên liên quan đã xem xét và chấp nhận rủi ro để đưa sản phẩm lên môi trường vận hành (go live) mà không cần kiểm thử thêm.
 >
 > Trong phát triển phần mềm theo phương pháp Agile, tiêu chí kết thúc thường được gọi là Định nghĩa về sự hoàn thành (Definition of Done - DoD), định nghĩa các chỉ số khách quan của đội ngũ đối với một hạng mục có thể phát hành. Các tiêu chí bắt đầu mà một câu chuyện người dùng phải đáp ứng để bắt đầu các hoạt động phát triển và/hoặc kiểm thử được gọi là Định nghĩa về sự sẵn sàng (Definition of Ready - DoR).
+
+### 5.1.4. Estimation Techniques
+
+> Các kỹ thuật ước lượng
+
+Test effort estimation involves predicting the amount of test-related work needed to meet the test objectives of a test project. It is important to make it clear to the stakeholders that the estimate is based on a number of assumptions and is always subject to estimation error. Estimation for small tasks is usually more accurate than for the large ones. Therefore, when estimating a large task, it can be decomposed into a set of smaller tasks which then in turn can be estimated.
+
+In this syllabus, the following four estimation techniques are described.
+
+Estimation based on ratios. In this metrics-based technique, figures are collected from previous projects within the organization, which makes it possible to derive “standard” ratios for similar projects. The ratios of an organization’s own projects (e.g., taken from historical data) are generally the best source to use in the estimation process. These standard ratios can then be used to estimate the test effort for the new project. For example, if in the previous project the development-to-test effort ratio was 3:2, and in the current project the development effort is expected to be 600 person-days, the test effort can be estimated to be 400 person-days
+
+Extrapolation. In this metrics-based technique, measurements are made as early as possible in the current project to gather the data. Having enough observations, the effort required for the remaining work can be approximated by extrapolating this data (usually by applying a mathematical model). This method is very suitable in iterative SDLCs. For example, the team may extrapolate the test effort in the forthcoming iteration as the averaged effort from the last three iterations.
+
+Wideband Delphi. In this iterative, expert-based technique, experts make experience-based estimations. Each expert, in isolation, estimates the effort. The results are collected and if there are deviations of an expert’s estimate that are out of range of the agreed upon boundaries, the experts discuss their current estimates. Each expert is then asked to make a new estimation based on that feedback, again in isolation. This process is repeated until a consensus is reached. Planning Poker is a variant of Wideband Delphi, commonly used in Agile software development. In Planning Poker, estimates are usually made using cards with numbers that represent the effort size.
+
+Three-point estimation. In this expert-based technique, three estimations are made by the experts: the most optimistic estimation (a), the most likely estimation (m) and the most pessimistic estimation (b). The final estimate (E) is their weighted arithmetic mean. In the most popular version of this technique, the estimate is calculated as E = (a + 4*m + b) / 6. The advantage of this technique is that it allows the experts to calculate the measurement error: SD = (b – a) / 6. For example, if the estimates (in personhours) are: a=6, m=9 and b=18, then the final estimation is 10±2 person-hours (i.e., between 8 and 12 person-hours), because E = (6 + 4*9 + 18) / 6 = 10 and SD = (18 – 6) / 6 = 2.
+
+See (Kan 2003, Koomen 2006, Westfall 2009) for these and many other test estimation techniques.
+
+> Ước lượng công sức kiểm thử (test effort estimation) bao gồm việc dự đoán khối lượng công việc liên quan đến kiểm thử cần thiết để đáp ứng các mục tiêu kiểm thử của một dự án. Điều quan trọng là phải làm rõ với các bên liên quan rằng con số ước lượng dựa trên một số giả định và luôn có sai số ước lượng. Việc ước lượng cho các tác vụ nhỏ thường chính xác hơn so với các tác vụ lớn. Do đó, khi ước lượng một tác vụ lớn, nó có thể được chia nhỏ thành một tập hợp các tác vụ nhỏ hơn để lần lượt ước lượng.
+>
+> Trong giáo trình này, bốn kỹ thuật ước lượng sau đây được mô tả:
+>
+> - **Ước lượng dựa trên tỷ lệ (Estimation based on ratios)**: Trong kỹ thuật dựa trên chỉ số (metrics-based) này, các số liệu được thu thập từ các dự án trước đó trong tổ chức, giúp rút ra các tỷ lệ "tiêu chuẩn" cho các dự án tương tự. Tỷ lệ từ chính các dự án của tổ chức (ví dụ: lấy từ dữ liệu lịch sử) nhìn chung là nguồn tốt nhất để sử dụng trong quá trình ước lượng. Các tỷ lệ tiêu chuẩn này sau đó có thể được sử dụng để ước lượng công sức kiểm thử cho dự án mới. Ví dụ: nếu trong dự án trước, tỷ lệ công sức giữa phát triển và kiểm thử là 3:2, và trong dự án hiện tại, công sức phát triển dự kiến là 600 ngày-người, thì công sức kiểm thử có thể được ước lượng là 400 ngày-người.
+> - **Ngoại suy (Extrapolation)**: Trong kỹ thuật dựa trên chỉ số này, các phép đo được thực hiện càng sớm càng tốt trong dự án hiện tại để thu thập dữ liệu. Khi có đủ các dữ liệu quan sát, công sức cần thiết cho phần công việc còn lại có thể được tính xấp xỉ bằng cách ngoại suy dữ liệu này (thường bằng cách áp dụng một mô hình toán học). Phương pháp này rất phù hợp trong các mô hình vòng đời phát triển phần mềm (SDLC) theo cụm/lặp. Ví dụ: đội ngũ có thể ngoại suy công sức kiểm thử trong phân đoạn sắp tới bằng mức công sức trung bình của ba phân đoạn gần nhất.
+> - **Wideband Delphi:** Trong kỹ thuật lặp đi lặp lại dựa trên chuyên gia (expert-based) này, các chuyên gia sẽ đưa ra các ước lượng dựa trên kinh nghiệm. Mỗi chuyên gia, một cách độc lập, tự ước lượng công sức. Các kết quả được thu thập và nếu có những sai lệch trong ước lượng của một chuyên gia vượt ra ngoài ranh giới đã thỏa thuận, các chuyên gia sẽ thảo luận về các ước lượng hiện tại của họ. Mỗi chuyên gia sau đó được yêu cầu đưa ra một ước lượng mới dựa trên phản hồi đó, một lần nữa thực hiện một cách độc lập. Quá trình này được lặp lại cho đến khi đạt được sự đồng thuận. Planning Poker là một biến thể của Wideband Delphi, thường được sử dụng trong phát triển phần mềm theo phương pháp Agile. Trong Planning Poker, các ước lượng thường được thực hiện bằng cách sử dụng các thẻ bài có các con số đại diện cho quy mô công sức.
+> - **Ước lượng ba điểm (Three-point estimation)**: Trong kỹ thuật dựa trên chuyên gia này, ba mức ước lượng được các chuyên gia đưa ra: ước lượng lạc quan nhất (a), ước lượng có khả năng xảy ra nhất (m) và ước lượng bi quan nhất (b). Ước lượng cuối cùng (E) là trung bình cộng có trọng số của chúng. Trong phiên bản phổ biến nhất của kỹ thuật này, giá trị ước lượng được tính theo công thức $E = \frac{a + 4m + b}{6}$. Ưu điểm của kỹ thuật này là nó cho phép các chuyên gia tính toán được sai số của phép đo: $SD = \frac{b - a}{6}$. Ví dụ: nếu các mức ước lượng (tính theo giờ-người) là: a=6, m=9 và b=18, thì ước lượng cuối cùng là $10 \pm 2$ giờ-người (tức là trong khoảng từ 8 đến 12 giờ-người), vì $E = \frac{6 + 4 \times 9 + 18}{6} = 10$ và $SD = \frac{18 - 6}{6} = 2$.
+>
+> Xem (Kan 2003, Koomen 2006, Westfall 2009) để biết thêm về các kỹ thuật này và nhiều kỹ thuật ước lượng kiểm thử khác.
