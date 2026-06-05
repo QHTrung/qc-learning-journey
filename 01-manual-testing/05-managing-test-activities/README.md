@@ -12,6 +12,7 @@
     - [5.1.4. Estimation Techniques](#514-estimation-techniques)
     - [5.1.5. Test Case Prioritization](#515-test-case-prioritization)
     - [5.1.6. Test Pyramid](#516-test-pyramid)
+    - [5.1.7. Testing Quadrants](#517-testing-quadrants)
 
 ## Keywords
 
@@ -208,3 +209,30 @@ dependency on other elements of the system) and the higher the test execution ti
 > Số lượng và cách đặt tên cho các tầng có thể khác nhau. Ví dụ, mô hình kim tự tháp kiểm thử nguyên bản (Cohn 2009) định nghĩa ba tầng: "kiểm thử đơn vị" (unit tests), "kiểm thử dịch vụ" (service tests) và "kiểm thử giao diện" (UI tests). Một mô hình phổ biến khác định nghĩa các tầng bao gồm: kiểm thử đơn vị/thành phần (unit/component tests), kiểm thử tích hợp thành phần (component integration tests) và kiểm thử đầu-cuối (end-to-end tests). Các mức độ kiểm thử khác (xem phần 2.2.1) cũng có thể được sử dụng.
 >
 > ![Test pyramid](./images/test-pyramid.png)
+
+### 5.1.7. Testing Quadrants
+
+> Các phân hạn kiểm thử
+
+The testing quadrants, defined by Brian Marick (Marick 2003, Crispin 2008), group the test levels with the appropriate test types, activities, test techniques and work products in the Agile software development. The model supports test management in visualizing these to ensure that all appropriate test types and test levels are included in the SDLC and in understanding that some test types are more relevant to certain test levels than others. This model also provides a way to differentiate and describe the test types to all stakeholders, including developers, testers, and business representatives.
+
+In this model, tests can be business facing or technology facing. Tests can also support the team (i.e., guide the development) or critique the product (i.e., measure its behavior against the expectations). The combination of these two viewpoints determines the four quadrants:
+
+- Quadrant Q1 (technology facing, support the team). This quadrant contains component tests and component integration tests. These tests should be automated and included in the CI process.
+
+- Quadrant Q2 (business facing, support the team). This quadrant contains functional tests, examples, user story tests, user experience prototypes, API testing, and simulations. These tests check the acceptance criteria and can be manual or automated.
+
+- Quadrant Q3 (business facing, critique the product). This quadrant contains exploratory testing, usability testing, user acceptance testing. These tests are user-oriented and often manual.
+
+- Quadrant Q4 (technology facing, critique the product). This quadrant contains smoke tests and non-functional tests (except usability tests). These tests are often automated.
+
+> Các phân hạn kiểm thử (testing quadrants), được định nghĩa bởi Brian Marick (Marick 2003, Crispin 2008), nhóm các mức độ kiểm thử (test levels) với các loại kiểm thử (test types), hoạt động, kỹ thuật kiểm thử và sản phẩm bàn giao phù hợp trong phát triển phần mềm theo phương pháp Agile. Mô hình này hỗ trợ quản lý kiểm thử trong việc trực quan hóa các yếu tố trên nhằm đảm bảo rằng tất cả các loại kiểm thử và mức độ kiểm thử phù hợp đều được đưa vào vòng đời phát triển phần mềm (SDLC), đồng thời giúp thấu hiểu rằng một số loại kiểm thử sẽ liên quan đến các mức độ kiểm thử này hơn là các mức độ kiểm thử khác. Mô hình này cũng cung cấp một cách thức để phân biệt và mô tả các loại kiểm thử cho tất cả các bên liên quan, bao gồm lập trình viên, kiểm thử viên và đại diện bên kinh doanh.
+>
+> Trong mô hình này, các bài kiểm thử có thể hướng về mặt kinh doanh (business facing) hoặc hướng về mặt công nghệ (technology facing). Các bài kiểm thử cũng có thể hỗ trợ đội ngũ (tức là định hướng cho việc phát triển) hoặc phản biện sản phẩm (tức là đo lường hành vi của sản phẩm so với các kỳ vọng). Sự kết hợp của hai góc nhìn này tạo nên bốn phân hạn:
+>
+> - Phân hạn Q1 (hướng công nghệ, hỗ trợ đội ngũ): Phân hạn này chứa các bài kiểm thử thành phần (component tests) và kiểm thử tích hợp thành phần (component integration tests). Các bài kiểm thử này nên được tự động hóa và tích hợp vào quy trình tích hợp liên tục (CI).
+> - Phân hạn Q2 (hướng kinh doanh, hỗ trợ đội ngũ): Phân hạn này chứa các bài kiểm thử chức năng, các ví dụ, kiểm thử câu chuyện người dùng (user story tests), các nguyên mẫu trải nghiệm người dùng (user experience prototypes), kiểm thử API và các mô phỏng. Các bài kiểm thử này dùng để kiểm tra các tiêu chí nghiệm thu và có thể thực hiện thủ công hoặc tự động hóa.
+> - Phân hạn Q3 (hướng kinh doanh, phản biện sản phẩm): Phân hạn này chứa kiểm thử khám phá (exploratory testing), kiểm thử độ khả dụng (usability testing) và kiểm thử nghiệm thu người dùng (user acceptance testing). Các bài kiểm thử này hướng về phía người dùng và thường là kiểm thử thủ công.
+> - Phân hạn Q4 (hướng công nghệ, phản biện sản phẩm): Phân hạn này chứa các bài kiểm thử khói (smoke tests) và các kiểm thử phi chức năng (ngoại trừ kiểm thử độ khả dụng). Các bài kiểm thử này thường được tự động hóa.
+>
+> ![Test Quadrants](./images/test-quadrant.png)
