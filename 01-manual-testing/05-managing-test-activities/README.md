@@ -11,6 +11,7 @@
     - [5.1.3. Entry Criteria and Exit Criteria](#513-entry-criteria-and-exit-criteria)
     - [5.1.4. Estimation Techniques](#514-estimation-techniques)
     - [5.1.5. Test Case Prioritization](#515-test-case-prioritization)
+    - [5.1.6. Test Pyramid](#516-test-pyramid)
 
 ## Keywords
 
@@ -192,3 +193,18 @@ The order of test execution must also take into account the availability of reso
 > Về mặt lý tưởng, các kịch bản kiểm thử sẽ được sắp xếp thứ tự chạy dựa trên các mức độ ưu tiên của chúng, ví dụ như sử dụng một trong các chiến lược ưu tiên nêu trên. Tuy nhiên, việc áp dụng này có thể không khả thi nếu các kịch bản kiểm thử hoặc các tính năng đang được kiểm thử có sự phụ thuộc lẫn nhau (dependencies). Nếu một kịch bản kiểm thử có độ ưu tiên cao hơn lại phụ thuộc vào một kịch bản kiểm thử có độ ưu tiên thấp hơn, thì kịch bản kiểm thử có độ ưu tiên thấp hơn bắt buộc phải được thực thi trước.
 >
 > Thứ tự thực thi kiểm thử cũng phải tính đến sự sẵn sàng của các nguồn lực. Ví dụ: các công cụ kiểm thử, môi trường kiểm thử hoặc nhân sự cần thiết có thể chỉ sẵn sàng trong một khung thời gian cụ thể.
+
+### 5.1.6. Test Pyramid
+
+> Kim tự tháp kiểm thử
+
+The test pyramid is a model showing that different tests may have different granularity. The test pyramid model supports the team in test automation and in test effort allocation by showing that different test objectives are supported by different levels of test automation. The pyramid layers represent groups of tests. The higher the layer, the lower the test granularity, the lower the test isolation (i.e., the degree of
+dependency on other elements of the system) and the higher the test execution time. Tests in the bottom layer are small, isolated, fast, and check a small piece of functionality, so usually a lot of them are needed to achieve a reasonable coverage. The top layer represents complex, high-level, end-to-end tests. These high-level tests are generally slower than the tests from the lower layers, and they typically check a large piece of functionality, so usually just a few of them are needed to achieve a reasonable level of coverage. The number and naming of the layers may differ. For example, the original test pyramid model (Cohn 2009) defines three layers: “unit tests”, “service tests” and “UI tests”. Another popular model defines unit (component) tests, integration (component integration) tests, and end-to-end tests. Other test levels (see section 2.2.1) can also be used.
+
+> Kim tự tháp kiểm thử (test pyramid) là một mô hình thể hiện rằng các bài kiểm thử khác nhau có thể có mức độ chi tiết (granularity) khác nhau. Mô hình kim tự tháp kiểm thử hỗ trợ đội ngũ trong việc tự động hóa kiểm thử và phân bổ công sức kiểm thử bằng cách chỉ ra rằng các mục tiêu kiểm thử khác nhau sẽ được hỗ trợ bởi các mức độ tự động hóa kiểm thử khác nhau.
+>
+> Các tầng của kim tự tháp đại diện cho các nhóm bài kiểm thử. Tầng càng cao thì mức độ chi tiết của bài kiểm thử càng thấp, tính cô lập của bài kiểm thử càng giảm (tức là mức độ phụ thuộc vào các thành phần khác của hệ thống càng cao) và thời gian thực thi kiểm thử càng lớn. Các bài kiểm thử ở tầng đáy thường nhỏ, cô lập, chạy nhanh và kiểm tra một phần chức năng nhỏ, do đó thường cần rất nhiều bài kiểm thử này để đạt được một độ bao phủ hợp lý. Tầng đỉnh đại diện cho các bài kiểm thử đầu-cuối (end-to-end tests) phức tạp và ở cấp độ cao. Những bài kiểm thử cấp cao này nhìn chung chậm hơn so với các bài kiểm thử ở các tầng dưới, và chúng thường kiểm tra một phần chức năng lớn, vì vậy thường chỉ cần một vài bài kiểm thử loại này là đủ để đạt được mức độ bao phủ hợp lý.
+>
+> Số lượng và cách đặt tên cho các tầng có thể khác nhau. Ví dụ, mô hình kim tự tháp kiểm thử nguyên bản (Cohn 2009) định nghĩa ba tầng: "kiểm thử đơn vị" (unit tests), "kiểm thử dịch vụ" (service tests) và "kiểm thử giao diện" (UI tests). Một mô hình phổ biến khác định nghĩa các tầng bao gồm: kiểm thử đơn vị/thành phần (unit/component tests), kiểm thử tích hợp thành phần (component integration tests) và kiểm thử đầu-cuối (end-to-end tests). Các mức độ kiểm thử khác (xem phần 2.2.1) cũng có thể được sử dụng.
+>
+> ![Test pyramid](./images/test-pyramid.png)
