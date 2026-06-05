@@ -10,6 +10,7 @@
     - [5.1.2. Tester's Contribution to Iteration and Release Planning](#512-testers-contribution-to-iteration-and-release-planning)
     - [5.1.3. Entry Criteria and Exit Criteria](#513-entry-criteria-and-exit-criteria)
     - [5.1.4. Estimation Techniques](#514-estimation-techniques)
+    - [5.1.5. Test Case Prioritization](#515-test-case-prioritization)
 
 ## Keywords
 
@@ -167,3 +168,27 @@ See (Kan 2003, Koomen 2006, Westfall 2009) for these and many other test estimat
 > - **Ước lượng ba điểm (Three-point estimation)**: Trong kỹ thuật dựa trên chuyên gia này, ba mức ước lượng được các chuyên gia đưa ra: ước lượng lạc quan nhất (a), ước lượng có khả năng xảy ra nhất (m) và ước lượng bi quan nhất (b). Ước lượng cuối cùng (E) là trung bình cộng có trọng số của chúng. Trong phiên bản phổ biến nhất của kỹ thuật này, giá trị ước lượng được tính theo công thức $E = \frac{a + 4m + b}{6}$. Ưu điểm của kỹ thuật này là nó cho phép các chuyên gia tính toán được sai số của phép đo: $SD = \frac{b - a}{6}$. Ví dụ: nếu các mức ước lượng (tính theo giờ-người) là: a=6, m=9 và b=18, thì ước lượng cuối cùng là $10 \pm 2$ giờ-người (tức là trong khoảng từ 8 đến 12 giờ-người), vì $E = \frac{6 + 4 \times 9 + 18}{6} = 10$ và $SD = \frac{18 - 6}{6} = 2$.
 >
 > Xem (Kan 2003, Koomen 2006, Westfall 2009) để biết thêm về các kỹ thuật này và nhiều kỹ thuật ước lượng kiểm thử khác.
+
+### 5.1.5. Test Case Prioritization
+
+> Thứ tự ưu tiên của kịch bản kiểm thử
+
+Once the test cases and test procedures are specified and assembled into test suites, these test suites can be arranged in a test execution schedule that defines the order in which they are to be run. When prioritizing test cases, different factors can be taken into account. The most commonly used test case prioritization strategies are as follows:
+
+- Risk-based prioritization, where the order of test execution is based on the results of risk analysis (see section 5.2.3). Test cases covering the most important risks are executed first.
+- Coverage-based prioritization, where the order of test execution is based on coverage (e.g., statement coverage). Test cases achieving the highest coverage are executed first. In another variant, called additional coverage prioritization, the test case achieving the highest coverage is executed first; each subsequent test case is the one that achieves the highest additional coverage.
+- Requirements-based prioritization, where the order of test execution is based on the priorities of the requirements traced back to the corresponding test cases. Requirement priorities are defined by stakeholders. Test cases related to the most important requirements are executed first.
+
+Ideally, test cases would be ordered to run based on their priority levels, using, for example, one of the above-mentioned prioritization strategies. However, this practice may not work if the test cases or the features being tested have dependencies. If a test case with a higher priority is dependent on a test case with a lower priority, the lower priority test case must be executed first.
+
+The order of test execution must also take into account the availability of resources. For example, the required test tools, test environments or people that may only be available for a specific time window.
+
+> Một khi các kịch bản kiểm thử (test cases) và thủ tục kiểm thử (test procedures) được xác định cụ thể và tập hợp thành các bộ kiểm thử (test suites), các bộ kiểm thử này có thể được sắp xếp vào một lịch trình thực thi kiểm thử (test execution schedule) nhằm định nghĩa thứ tự chạy của chúng. Khi thiết lập thứ tự ưu tiên cho các kịch bản kiểm thử, nhiều yếu tố khác nhau có thể được xem xét. Các chiến lược ưu tiên kịch bản kiểm thử phổ biến nhất bao gồm:
+>
+> - Ưu tiên dựa trên rủi ro (Risk-based prioritization): Thứ tự thực thi kiểm thử được dựa trên kết quả của hoạt động phân tích rủi ro (xem phần 5.2.3). Các kịch bản kiểm thử bao phủ những rủi ro quan trọng nhất sẽ được thực thi trước tiên.
+> - Ưu tiên dựa trên độ bao phủ (Coverage-based prioritization): Thứ tự thực thi kiểm thử được dựa trên độ bao phủ (ví dụ: độ bao phủ câu lệnh). Các kịch bản kiểm thử đạt được độ bao phủ cao nhất sẽ được thực thi trước. Trong một biến thể khác gọi là ưu tiên theo độ bao phủ bổ sung (additional coverage prioritization), kịch bản kiểm thử đạt độ bao phủ cao nhất sẽ chạy đầu tiên; mỗi kịch bản kiểm thử tiếp theo sẽ là kịch bản đạt được độ bao phủ bổ sung cao nhất.
+> - Ưu tiên dựa trên yêu cầu (Requirements-based prioritization): Thứ tự thực thi kiểm thử được dựa trên mức độ ưu tiên của các yêu cầu được truy xuất nguồn gốc (traced back) đến các kịch bản kiểm thử tương ứng. Mức độ ưu tiên của yêu cầu do các bên liên quan (stakeholders) định nghĩa. Các kịch bản kiểm thử liên quan đến các yêu cầu quan trọng nhất sẽ được thực thi trước tiên.
+>
+> Về mặt lý tưởng, các kịch bản kiểm thử sẽ được sắp xếp thứ tự chạy dựa trên các mức độ ưu tiên của chúng, ví dụ như sử dụng một trong các chiến lược ưu tiên nêu trên. Tuy nhiên, việc áp dụng này có thể không khả thi nếu các kịch bản kiểm thử hoặc các tính năng đang được kiểm thử có sự phụ thuộc lẫn nhau (dependencies). Nếu một kịch bản kiểm thử có độ ưu tiên cao hơn lại phụ thuộc vào một kịch bản kiểm thử có độ ưu tiên thấp hơn, thì kịch bản kiểm thử có độ ưu tiên thấp hơn bắt buộc phải được thực thi trước.
+>
+> Thứ tự thực thi kiểm thử cũng phải tính đến sự sẵn sàng của các nguồn lực. Ví dụ: các công cụ kiểm thử, môi trường kiểm thử hoặc nhân sự cần thiết có thể chỉ sẵn sàng trong một khung thời gian cụ thể.
