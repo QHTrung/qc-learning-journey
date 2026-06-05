@@ -15,6 +15,9 @@
     - [5.1.7. Testing Quadrants](#517-testing-quadrants)
   - [5.2. Risk Management](#52-risk-management)
     - [5.2.1. Risk Definition and Risk Attributes](#521-risk-definition-and-risk-attributes)
+    - [5.2.2. Project Risks and Product Risks](#522-project-risks-and-product-risks)
+    - [5.2.3. Product Risk Analysis](#523-product-risk-analysis)
+    - [5.2.4. Product Risk Control](#524-product-risk-control)
 
 ## Keywords
 
@@ -278,3 +281,110 @@ These two factors express the risk level, which is a measure for the risk. The h
 > - Mức độ ảnh hưởng của rủi ro (Risk impact/harm): Các hậu quả của sự xuất hiện rủi ro này.
 >
 > Hai yếu tố này thể hiện mức độ rủi ro (risk level), vốn là một thước đo cho rủi ro. Mức độ rủi ro càng cao thì việc xử lý rủi ro đó càng trở nên quan trọng.
+
+### 5.2.2. Project Risks and Product Risks
+
+> Rủi ro dự án và rủi ro sản phẩm
+
+In software testing one is generally concerned with two types of risks: project risks and product risks.
+
+**Project risks** are related to the management and control of the project. Project risks include:
+
+- Organizational issues (e.g., delays in work products deliveries, inaccurate estimates, cost cutting)
+- People issues (e.g., insufficient skills, conflicts, communication problems, shortage of staff)
+- Technical issues (e.g., scope creep, poor tool support)
+- Supplier issues (e.g., third-party delivery failure, bankruptcy of the supporting company)
+
+Project risks, when they occur, may have an impact on the project schedule, budget or scope, which affects the project's ability to achieve its objectives.
+
+**Product risks** are related to the product quality characteristics (e.g., described in the ISO 25010 quality model). Examples of product risks include: missing or wrong functionality, incorrect calculations, runtime errors, poor architecture, inefficient algorithms, inadequate response time, poor user experience, security vulnerabilities. Product risks, when they occur, may result in various negative consequences, including:
+
+- User dissatisfaction
+- Loss of revenue, trust, reputation
+- Damage to third parties
+- High maintenance costs, overload of the help desk
+- Criminal penalties
+- In extreme cases, physical damage, injuries or even death
+
+> Trong kiểm thử phần mềm, chúng ta thường quan tâm đến hai loại rủi ro: rủi ro dự án và rủi ro sản phẩm.
+
+> **Rủi ro dự án (Project risks)** liên quan đến việc quản lý và điều hành dự án. Rủi ro dự án bao gồm:
+>
+> - Các vấn đề về tổ chức: (Ví dụ: bàn giao sản phẩm công việc bị chậm trễ, ước lượng không chính xác, cắt giảm chi phí).
+> - Các vấn đề về con người: (Ví dụ: kỹ năng không đủ, xung đột, vấn đề giao tiếp, thiếu hụt nhân sự).
+> - Các vấn đề về kỹ thuật: (Ví dụ: phình đại phạm vi - scope creep, sự hỗ trợ công cụ kém).
+> - Các vấn đề về nhà cung cấp: (Ví dụ: bên thứ ba không bàn giao được hàng, công ty hỗ trợ bị phá sản).
+>
+> Rủi ro dự án khi xảy ra có thể tác động đến lịch trình, ngân sách hoặc phạm vi của dự án, từ đó ảnh hưởng đến khả năng đạt được các mục tiêu của dự án.
+
+> **Rủi ro sản phẩm (Product risks)** liên quan đến các đặc tính chất lượng của sản phẩm (ví dụ: được mô tả trong mô hình chất lượng ISO 25010). Các ví dụ về rủi ro sản phẩm bao gồm: thiếu hoặc sai chức năng, tính toán không chính xác, lỗi thời gian chạy (runtime errors), kiến trúc kém, thuật toán kém hiệu quả, thời gian phản hồi không đạt yêu cầu, trải nghiệm người dùng kém, lỗ hổng bảo mật. Rủi ro sản phẩm khi xảy ra có thể dẫn đến nhiều hậu quả tiêu cực khác nhau, bao gồm:
+>
+> - Sự không hài lòng của người dùng.
+> - Tổn thất về doanh thu, lòng tin, danh tiếng.
+> - Gây thiệt hại cho bên thứ ba.
+> - Chi phí bảo trì cao, quá tải cho bộ phận hỗ trợ (help desk).
+> - Hình phạt hình sự.
+> - Trong các trường hợp cực đoan, có thể gây thiệt hại về vật chất, thương tích hoặc thậm chí tử vong.
+
+### 5.2.3. Product Risk Analysis
+
+> Phân tích rủi ro sản phẩm
+
+From a testing perspective, the goal of product risk analysis is to provide an awareness of product risk to focus the test effort in a way that minimizes the residual level of product risk. Ideally, product risk analysis begins early in the SDLC.
+
+Product risk analysis consists of risk identification and risk assessment. Risk identification is about generating a comprehensive list of risks. Stakeholders can identify risks by using various techniques and tools, e.g., brainstorming, workshops, interviews, or cause-effect diagrams. Risk assessment involves: categorization of identified risks, determining their risk likelihood, risk impact and risk level, prioritizing, and proposing ways to handle them. Categorization helps in assigning mitigation actions, because usually risks falling into the same category can be mitigated using a similar approach.
+
+Risk assessment can use a quantitative or qualitative approach, or a mix of them. In the quantitative approach the risk level is calculated as the multiplication of risk likelihood and risk impact. In the qualitative approach the risk level can be determined using a risk matrix.
+
+Product risk analysis may influence the thoroughness and test scope. Its results are used to:
+
+- Determine the test scope to be carried out
+- Determine the particular test levels and propose test types to be performed
+- Determine the test techniques to be employed and the coverage to be achieved
+- Estimate the test effort required for each task
+- Prioritize testing in an attempt to find the critical defects as early as possible
+- Determine whether any activities in addition to testing could be employed to reduce risk
+
+> Từ góc độ kiểm thử, mục tiêu của phân tích rủi ro sản phẩm là mang lại sự nhận thức về rủi ro sản phẩm để tập trung công sức kiểm thử theo cách tối thiểu hóa mức độ rủi ro sản phẩm còn dư (residual level). Về mặt lý tưởng, phân tích rủi ro sản phẩm nên được bắt đầu từ sớm trong vòng đời phát triển phần mềm (SDLC).
+>
+> Phân tích rủi ro sản phẩm bao gồm nhận diện rủi ro (risk identification) và đánh giá rủi ro (risk assessment).
+>
+> - Nhận diện rủi ro là việc tạo ra một danh sách rủi ro toàn diện. Các bên liên quan có thể nhận diện rủi ro bằng cách sử dụng nhiều kỹ thuật và công cụ khác nhau, ví dụ: động não (brainstorming), hội thảo (workshops), phỏng vấn, hoặc sơ đồ nguyên nhân - kết quả (cause-effect diagrams).
+> - Đánh giá rủi ro bao gồm: phân loại các rủi ro đã nhận diện, xác định xác suất xảy ra rủi ro, mức độ ảnh hưởng của rủi ro và mức độ rủi ro, thiết lập thứ tự ưu tiên, và đề xuất các cách để xử lý chúng. Việc phân loại giúp ích cho việc chỉ định các hành động giảm thiểu, bởi vì thông thường các rủi ro rơi vào cùng một danh mục có thể được giảm thiểu bằng cách sử dụng một tiếp cận tương tự.
+>
+> Hoạt động đánh giá rủi ro có thể sử dụng tiếp cận định lượng (quantitative) hoặc định tính (qualitative), hoặc kết hợp cả hai. Trong tiếp cận định lượng, mức độ rủi ro được tính bằng tích của xác suất xảy ra rủi ro và mức độ ảnh hưởng của rủi ro. Trong tiếp cận định tính, mức độ rủi ro có thể được xác định bằng cách sử dụng một ma trận rủi ro (risk matrix).
+>
+> Phân tích rủi ro sản phẩm có thể ảnh hưởng đến độ triệt để và phạm vi kiểm thử. Kết quả của nó được sử dụng để:
+>
+> - Xác định phạm vi kiểm thử (test scope) cần được thực hiện.
+> - Xác định các mức độ kiểm thử (test levels) cụ thể và đề xuất các loại kiểm thử (test types) cần triển khai.
+> - Xác định các kỹ thuật kiểm thử (test techniques) cần áp dụng và độ bao phủ (coverage) cần đạt được.
+> - Ước lượng công sức kiểm thử (test effort) cần thiết cho từng tác vụ.
+> - Thiết lập thứ tự ưu tiên kiểm thử nhằm cố gắng tìm ra các khuyết tật nghiêm trọng (critical defects) càng sớm càng tốt.
+> - Xác định xem có thể áp dụng bất kỳ hoạt động nào khác ngoài kiểm thử để giảm thiểu rủi ro hay không.
+
+### 5.2.4. Product Risk Control
+
+> Kiểm soát rủi ro sản phẩm
+
+Product risk control comprises all measures that are taken in response to identified and assessed product risks. Product risk control consists of risk mitigation and risk monitoring. Risk mitigation involves implementing the actions proposed in risk assessment to reduce the risk level. The aim of risk monitoring is to ensure that the mitigation actions are effective, to obtain further information to improve risk assessment, and to identify emerging risks.
+
+With respect to product risk control, once a risk has been analyzed, several response options to risk are possible, e.g., risk mitigation by testing, risk acceptance, risk transfer, or a contingency plan (Veenendaal 2012). Actions that can be taken to mitigate the product risks by testing are as follows:
+
+- Select the testers with the right level of experience and skills, suitable for a given risk type
+- Apply an appropriate level of independence of testing
+- Perform reviews and static analysis
+- Apply the appropriate test techniques and coverage levels
+- Apply the appropriate test types addressing the affected quality characteristics
+- Perform dynamic testing, including regression testing
+
+> Kiểm soát rủi ro sản phẩm (product risk control) bao gồm tất cả các biện pháp được thực hiện nhằm phản hồi lại các rủi ro sản phẩm đã được nhận diện và đánh giá. Kiểm soát rủi ro sản phẩm bao gồm giảm thiểu rủi ro (risk mitigation) và giám sát rủi ro (risk monitoring). Giảm thiểu rủi ro liên quan đến việc triển khai các hành động được đề xuất trong bước đánh giá rủi ro để làm giảm mức độ rủi ro. Mục tiêu của giám sát rủi ro là nhằm đảm bảo rằng các hành động giảm thiểu rủi ro đạt hiệu quả, thu thập thêm thông tin để cải thiện hoạt động đánh giá rủi ro, và nhận diện các rủi ro mới phát sinh.
+>
+> Đối với việc kiểm soát rủi ro sản phẩm, một khi rủi ro đã được phân tích, có nhiều phương án phản hồi rủi ro khả thi có thể lựa chọn, ví dụ: giảm thiểu rủi ro bằng cách kiểm thử, chấp nhận rủi ro, chuyển giao rủi ro, hoặc lập kế hoạch dự phòng (Veenendaal 2012). Các hành động có thể được thực hiện để giảm thiểu rủi ro sản phẩm bằng cách kiểm thử bao gồm:
+>
+> - Lựa chọn kiểm thử viên có mức độ kinh nghiệm và kỹ năng phù hợp, đáp ứng đúng cho một loại rủi ro cụ thể.
+> - Áp dụng mức độ độc lập của kiểm thử (independence of testing) một cách thích hợp.
+> - Thực hiện các buổi rà soát (reviews) và phân tích tĩnh (static analysis).
+> - Áp dụng các kỹ thuật kiểm thử và các mức độ bao phủ (coverage levels) thích hợp.
+> - Áp dụng các loại kiểm thử (test types) thích hợp nhằm giải quyết các đặc tính chất lượng bị ảnh hưởng.
+> - Thực hiện kiểm thử động (dynamic testing), bao gồm cả kiểm thử hồi quy (regression testing).
