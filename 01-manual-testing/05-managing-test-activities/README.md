@@ -13,6 +13,8 @@
     - [5.1.5. Test Case Prioritization](#515-test-case-prioritization)
     - [5.1.6. Test Pyramid](#516-test-pyramid)
     - [5.1.7. Testing Quadrants](#517-testing-quadrants)
+  - [5.2. Risk Management](#52-risk-management)
+    - [5.2.1. Risk Definition and Risk Attributes](#521-risk-definition-and-risk-attributes)
 
 ## Keywords
 
@@ -236,3 +238,43 @@ In this model, tests can be business facing or technology facing. Tests can also
 > - Phân hạn Q4 (hướng công nghệ, phản biện sản phẩm): Phân hạn này chứa các bài kiểm thử khói (smoke tests) và các kiểm thử phi chức năng (ngoại trừ kiểm thử độ khả dụng). Các bài kiểm thử này thường được tự động hóa.
 >
 > ![Test Quadrants](./images/test-quadrant.png)
+
+## 5.2. Risk Management
+
+> Quản lý rủi ro
+
+Organizations face many internal and external factors that make it uncertain whether and when they will achieve their objectives (ISO 31000). Risk management allows the organizations to increase the likelihood of achieving objectives, improve the quality of their products and increase the stakeholders’ confidence and trust.
+
+The main risk management activities are:
+
+- Risk analysis (consisting of risk identification and risk assessment; see section 5.2.3)
+- Risk control (consisting of risk mitigation and risk monitoring; see section 5.2.4)
+
+The test approach, in which test activities are selected, prioritized, and managed based on risk analysis and risk control, is called risk-based testing.
+
+> Các tổ chức phải đối mặt với nhiều yếu tố nội bộ và bên ngoài khiến cho việc họ có đạt được mục tiêu của mình và đạt được vào lúc nào trở nên không chắc chắn (ISO 31000). Quản lý rủi ro cho phép các tổ chức tăng khả năng đạt được mục tiêu, cải thiện chất lượng sản phẩm và nâng cao sự tin tưởng cũng như lòng tin của các bên liên quan.
+>
+> Các hoạt động quản lý rủi ro chính bao gồm:
+>
+> - Phân tích rủi ro (Risk analysis): Bao gồm nhận diện rủi ro (risk identification) và đánh giá rủi ro (risk assessment); xem phần 5.2.3.
+> - Kiểm soát rủi ro (Risk control): Bao gồm giảm thiểu rủi ro (risk mitigation) và giám sát rủi ro (risk monitoring); xem phần 5.2.4.
+>
+> Tiếp cận kiểm thử (test approach), trong đó các hoạt động kiểm thử được lựa chọn, ưu tiên và quản lý dựa trên việc phân tích rủi ro và kiểm soát rủi ro, được gọi là kiểm thử dựa trên rủi ro (risk-based testing).
+
+### 5.2.1. Risk Definition and Risk Attributes
+
+> Định nghĩa rủi ro và Các thuộc tính rủi ro
+
+Risk is a potential event, hazard, threat, or situation whose occurrence causes an adverse effect. A risk can be characterized by two factors:
+
+- Risk likelihood – the probability of the risk occurrence (greater than zero and less than one)
+- Risk impact (harm) – the consequences of this occurrence
+
+These two factors express the risk level, which is a measure for the risk. The higher the risk level, the more important is its treatment.
+
+> Rủi ro (risk) là một sự kiện, mối nguy hại, mối đe dọa hoặc tình huống tiềm ẩn mà sự xuất hiện của nó sẽ gây ra một tác động bất lợi. Một rủi ro có thể được đặc trưng bởi hai yếu tố:
+>
+> - Xác suất xảy ra rủi ro (Risk likelihood): Khả năng xảy ra rủi ro (lớn hơn 0 và nhỏ hơn 1).
+> - Mức độ ảnh hưởng của rủi ro (Risk impact/harm): Các hậu quả của sự xuất hiện rủi ro này.
+>
+> Hai yếu tố này thể hiện mức độ rủi ro (risk level), vốn là một thước đo cho rủi ro. Mức độ rủi ro càng cao thì việc xử lý rủi ro đó càng trở nên quan trọng.
