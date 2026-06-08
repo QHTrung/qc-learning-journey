@@ -18,6 +18,7 @@
     - [5.2.2. Project Risks and Product Risks](#522-project-risks-and-product-risks)
     - [5.2.3. Product Risk Analysis](#523-product-risk-analysis)
     - [5.2.4. Product Risk Control](#524-product-risk-control)
+  - [5.3. Test Monitoring, Test Control and Test Completion](#53-test-monitoring-test-control-and-test-completion)
 
 ## Keywords
 
@@ -388,3 +389,29 @@ With respect to product risk control, once a risk has been analyzed, several res
 > - Áp dụng các kỹ thuật kiểm thử và các mức độ bao phủ (coverage levels) thích hợp.
 > - Áp dụng các loại kiểm thử (test types) thích hợp nhằm giải quyết các đặc tính chất lượng bị ảnh hưởng.
 > - Thực hiện kiểm thử động (dynamic testing), bao gồm cả kiểm thử hồi quy (regression testing).
+
+## 5.3. Test Monitoring, Test Control and Test Completion
+
+> Giám sát, Điều khiển và Kết thúc kiểm thử
+
+Test monitoring is concerned with gathering information about testing. This information is used to assess test progress and to measure whether the exit criteria or the test tasks associated with the exit criteria are satisfied, such as meeting the targets for coverage of product risks , requirements, or acceptance criteria.
+
+Test control uses the information from test monitoring to provide, in a form of the control directives, guidance and the necessary corrective actions to achieve the most effective and efficient testing. Examples of control directives include:
+
+- Reprioritizing tests when an identified risk becomes an issue
+- Re-evaluating whether a test item meets entry criteria or exit criteria due to rework
+- Adjusting the test schedule to address a delay in the delivery of the test environment
+- Adding new resources when and where needed
+
+Test completion collects data from completed test activities to consolidate experience, testware, and any other relevant information. Test completion activities occur at project milestones such as when a test level is completed, an agile iteration is finished, a test project is completed (or cancelled), a software system is released, or a maintenance release is completed.
+
+> Hoạt động giám sát kiểm thử (test monitoring) liên quan đến việc thu thập thông tin về các hoạt động kiểm thử. Thông tin này được sử dụng để đánh giá tiến độ kiểm thử và đo lường xem các tiêu chí kết thúc (exit criteria) hoặc các tác vụ kiểm thử gắn liền với tiêu chí kết thúc đã được thỏa mãn hay chưa, chẳng hạn như việc đáp ứng các mục tiêu về độ bao phủ đối với rủi ro sản phẩm, các yêu cầu hoặc các tiêu chí nghiệm thu.
+>
+> Hoạt động điều khiển kiểm thử (test control) sử dụng thông tin từ giám sát kiểm thử để đưa ra các chỉ thị điều khiển (control directives), các hướng dẫn và các hành động khắc phục cần thiết nhằm đạt được việc kiểm thử hiệu quả và tối ưu nhất. Các ví dụ về chỉ thị điều khiển bao gồm:
+>
+> - Thiết lập lại thứ tự ưu tiên của các bài kiểm thử khi một rủi ro được nhận diện trở thành một vấn đề thực tế.
+> - Đánh giá lại xem một hạng mục kiểm thử có đáp ứng các tiêu chí bắt đầu (entry criteria) hoặc tiêu chí kết thúc hay không do có sự làm lại (rework).
+> - Điều chỉnh lịch trình kiểm thử để giải quyết việc chậm trễ trong bàn giao môi trường kiểm thử.
+> - Bổ sung các nguồn lực mới khi nào và ở đâu cần thiết.
+>
+> Hoạt động kết thúc kiểm thử (test completion) thu thập dữ liệu từ các hoạt động kiểm thử đã hoàn thành để củng cố kinh nghiệm, các sản phẩm kiểm thử (testware) và bất kỳ thông tin liên quan nào khác. Các hoạt động kết thúc kiểm thử diễn ra tại các cột mốc của dự án, chẳng hạn như khi một mức độ kiểm thử (test level) hoàn thành, một phân đoạn agile (iteration) kết thúc, một dự án kiểm thử hoàn thành (hoặc bị hủy bỏ), một hệ thống phần mềm được phát hành, hoặc một bản phát hành bảo trì được hoàn tất.
