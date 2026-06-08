@@ -19,6 +19,7 @@
     - [5.2.3. Product Risk Analysis](#523-product-risk-analysis)
     - [5.2.4. Product Risk Control](#524-product-risk-control)
   - [5.3. Test Monitoring, Test Control and Test Completion](#53-test-monitoring-test-control-and-test-completion)
+    - [5.3.1. Metrics used in Testing](#531-metrics-used-in-testing)
 
 ## Keywords
 
@@ -415,3 +416,31 @@ Test completion collects data from completed test activities to consolidate expe
 > - Bổ sung các nguồn lực mới khi nào và ở đâu cần thiết.
 >
 > Hoạt động kết thúc kiểm thử (test completion) thu thập dữ liệu từ các hoạt động kiểm thử đã hoàn thành để củng cố kinh nghiệm, các sản phẩm kiểm thử (testware) và bất kỳ thông tin liên quan nào khác. Các hoạt động kết thúc kiểm thử diễn ra tại các cột mốc của dự án, chẳng hạn như khi một mức độ kiểm thử (test level) hoàn thành, một phân đoạn agile (iteration) kết thúc, một dự án kiểm thử hoàn thành (hoặc bị hủy bỏ), một hệ thống phần mềm được phát hành, hoặc một bản phát hành bảo trì được hoàn tất.
+
+### 5.3.1. Metrics used in Testing
+
+> Các chỉ số sử dụng trong kiểm thử
+
+Test metrics are gathered to show progress against the planned test schedule and budget, the current quality of the test object, and the effectiveness of the test activities with respect to the test objectives or an iteration goal. Test monitoring gathers a variety of metrics to support the test control and test completion.
+
+Common test metrics include:
+
+- Project progress metrics (e.g., task completion, resource usage, test effort)
+- Test progress metrics (e.g., test case implementation progress, test environment preparation progress, number of test cases run/not run, passed/failed, test execution time)
+- Product quality metrics (e.g., availability, response time, mean time to failure)
+- Defect metrics (e.g., number and priorities of defects found/fixed, defect density, defect detection percentage)
+- Risk metrics (e.g., residual risk level)
+- Coverage metrics (e.g., requirements coverage, code coverage)
+- Cost metrics (e.g., cost of testing, organizational cost of quality)
+
+> Các chỉ số kiểm thử (test metrics) được thu thập để thể hiện tiến độ so với lịch trình và ngân sách kiểm thử đã lập kế hoạch, chất lượng hiện tại của đối tượng kiểm thử, và hiệu quả của các hoạt động kiểm thử đối với các mục tiêu kiểm thử hoặc mục tiêu của một phân đoạn (iteration goal). Hoạt động giám sát kiểm thử thu thập nhiều loại chỉ số khác nhau để hỗ trợ cho việc điều khiển kiểm thử và kết thúc kiểm thử.
+>
+> Các chỉ số kiểm thử phổ biến bao gồm:
+>
+> - Các chỉ số về tiến độ dự án: (Ví dụ: mức độ hoàn thành tác vụ, mức độ sử dụng nguồn lực, công sức kiểm thử).
+> - Các chỉ số về tiến độ kiểm thử: (Ví dụ: tiến độ triển khai kịch bản kiểm thử, tiến độ chuẩn bị môi trường kiểm thử, số lượng kịch bản kiểm thử đã chạy/chưa chạy, vượt qua/thất bại, thời gian thực thi kiểm thử).
+> - Các chỉ số về chất lượng sản phẩm: (Ví dụ: độ khả dụng, thời gian phản hồi, thời gian trung bình đến khi xảy ra lỗi).
+> - Các chỉ số về khuyết tật (lỗi): (Ví dụ: số lượng và mức độ ưu tiên của các khuyết tật được tìm thấy/đã sửa, mật độ khuyết tật, tỷ lệ phát hiện khuyết tật).
+> - Các chỉ số về rủi ro: (Ví dụ: mức độ rủi ro còn dư).
+> - Các chỉ số về độ bao phủ: (Ví dụ: độ bao phủ yêu cầu, độ bao phủ mã nguồn).
+> - Các chỉ số về chi phí: (Ví dụ: chi phí kiểm thử, chi phí chất lượng của tổ chức).
