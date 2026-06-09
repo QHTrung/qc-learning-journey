@@ -20,6 +20,7 @@
     - [5.2.4. Product Risk Control](#524-product-risk-control)
   - [5.3. Test Monitoring, Test Control and Test Completion](#53-test-monitoring-test-control-and-test-completion)
     - [5.3.1. Metrics used in Testing](#531-metrics-used-in-testing)
+    - [5.3.2. Purpose, Content and Audience for Test Reports](#532-purpose-content-and-audience-for-test-reports)
 
 ## Keywords
 
@@ -444,3 +445,57 @@ Common test metrics include:
 > - Các chỉ số về rủi ro: (Ví dụ: mức độ rủi ro còn dư).
 > - Các chỉ số về độ bao phủ: (Ví dụ: độ bao phủ yêu cầu, độ bao phủ mã nguồn).
 > - Các chỉ số về chi phí: (Ví dụ: chi phí kiểm thử, chi phí chất lượng của tổ chức).
+
+### 5.3.2. Purpose, Content and Audience for Test Reports
+
+> Mục đích, Nội dung và Đối tượng nhận Báo cáo kiểm thử
+
+Test reporting summarizes and communicates test information during and after testing. Test progress reports support the ongoing test control and must provide enough information to make modifications to the test schedule, resources, or test plan, when such changes are needed due to deviation from the plan or changed circumstances. Test completion reports summarize a specific test activity (e.g., test level, test cycle, iteration) and can give information for subsequent testing.
+
+During test monitoring and test control, the test team generates test progress reports for stakeholders to keep them informed. Test progress reports are usually generated on a regular basis (e.g., daily, weekly, etc.) and include:
+
+- Testing period
+- Test progress (e.g., ahead or behind schedule), including any notable deviations
+- Impediments for testing, and their workarounds
+- Test metrics (see section 5.3.1 for examples)
+- New and changed risks within testing period
+- Testing planned for the next period
+
+A test completion report is prepared during test completion, when a project, test level, or test type is complete and when, ideally, its exit criteria have been met. This report uses test progress reports and other data. Typical test completion reports include:
+
+- Test summary
+- Testing and product quality evaluation based on the original test plan (i.e., test objectives and exit criteria)
+- Deviations from the test plan (e.g., differences from the planned test schedule, duration, and effort).
+- Testing impediments and workarounds
+- Test metrics based on test progress reports
+- Unmitigated risks, defects not fixed
+- Lessons learned that are relevant to the testing
+
+Different audiences require different information in the reports and influence the degree of formality and the frequency of test reporting. Test progress reporting to others in the same team is often frequent and informal, while test completion reporting follows a set template and occurs only once.
+
+The ISO/IEC/IEEE 29119-3 standard includes templates and examples for test progress reports (called test status reports) and test completion reports
+
+> Báo cáo kiểm thử (test reporting) tóm tắt và truyền đạt thông tin kiểm thử trong và sau quá trình kiểm thử. Báo cáo tiến độ kiểm thử (test progress reports) hỗ trợ cho hoạt động điều khiển kiểm thử đang diễn ra và phải cung cấp đủ thông tin để đưa ra các điều chỉnh về lịch trình, nguồn lực hoặc kế hoạch kiểm thử khi cần thiết do có sự sai lệch so với kế hoạch hoặc do thay đổi hoàn cảnh. Báo cáo kết thúc kiểm thử (test completion reports) tóm tắt một hoạt động kiểm thử cụ thể (ví dụ: mức độ kiểm thử, chu kỳ kiểm thử, phân đoạn) và có thể cung cấp thông tin cho các hoạt động kiểm thử tiếp theo.
+>
+> Trong quá trình giám sát và điều khiển kiểm thử, đội ngũ kiểm thử sẽ tạo ra các báo cáo tiến độ kiểm thử để cập nhật thông tin cho các bên liên quan. Báo cáo tiến độ kiểm thử thường được lập định kỳ (ví dụ: hàng ngày, hàng tuần, v.v.) và bao gồm:
+>
+> - Giai đoạn kiểm thử.
+> - Tiến độ kiểm thử (ví dụ: nhanh hơn hay chậm hơn lịch trình), bao gồm cả các sai lệch đáng chú ý.
+> - Các trở ngại (impediments) đối với việc kiểm thử và các giải pháp tạm thời (workarounds).
+> - Các chỉ số kiểm thử.
+> - Các rủi ro mới xuất hiện hoặc bị thay đổi trong giai đoạn kiểm thử.
+> - Kế hoạch kiểm thử cho giai đoạn tiếp theo.
+>
+> Một báo cáo kết thúc kiểm thử được chuẩn bị trong giai đoạn kết thúc kiểm thử, khi một dự án, mức độ kiểm thử hoặc loại kiểm thử đã hoàn thành và về mặt lý tưởng là khi các tiêu chí kết thúc (exit criteria) của nó đã được đáp ứng. Báo cáo này sử dụng dữ liệu từ các báo cáo tiến độ kiểm thử và các nguồn dữ liệu khác. Một báo cáo kết thúc kiểm thử điển hình bao gồm:
+>
+> - Tóm tắt kiểm thử (Test summary).
+> - Đánh giá chất lượng sản phẩm và hoạt động kiểm thử dựa trên kế hoạch kiểm thử gốc (tức là dựa trên các mục tiêu kiểm thử và tiêu chí kết thúc).
+> - Các sai lệch so với kế hoạch kiểm thử (ví dụ: sự khác biệt so với lịch trình, thời lượng và công sức đã lập kế hoạch).
+> - Các trở ngại kiểm thử và giải pháp tạm thời.
+> - Các chỉ số kiểm thử dựa trên các báo cáo tiến độ kiểm thử.
+> - Các rủi ro chưa được giảm thiểu, các khuyết tật chưa được sửa.
+> - Các bài học kinh nghiệm (lessons learned) liên quan đến việc kiểm thử.
+>
+> Các đối tượng nhận báo cáo (audiences) khác nhau sẽ yêu cầu các thông tin khác nhau, điều này ảnh hưởng đến mức độ trang trọng (formality) và tần suất của báo cáo kiểm thử. Báo cáo tiến độ kiểm thử gửi cho các thành viên khác trong cùng đội ngũ thường có tần suất cao và ít trang trọng, trong khi báo cáo kết thúc kiểm thử phải tuân theo một biểu mẫu cố định và chỉ lập một lần duy nhất.
+>
+> Tiêu chuẩn ISO/IEC/IEEE 29119-3 bao gồm các biểu mẫu và ví dụ cho báo cáo tiến độ kiểm thử (được gọi là báo cáo trạng thái kiểm thử - test status reports) và báo cáo kết thúc kiểm thử.
