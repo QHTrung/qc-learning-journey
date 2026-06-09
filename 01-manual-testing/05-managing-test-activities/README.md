@@ -21,6 +21,7 @@
   - [5.3. Test Monitoring, Test Control and Test Completion](#53-test-monitoring-test-control-and-test-completion)
     - [5.3.1. Metrics used in Testing](#531-metrics-used-in-testing)
     - [5.3.2. Purpose, Content and Audience for Test Reports](#532-purpose-content-and-audience-for-test-reports)
+    - [5.3.3. Communicating the Status of Testing](#533-communicating-the-status-of-testing)
 
 ## Keywords
 
@@ -499,3 +500,27 @@ The ISO/IEC/IEEE 29119-3 standard includes templates and examples for test progr
 > Các đối tượng nhận báo cáo (audiences) khác nhau sẽ yêu cầu các thông tin khác nhau, điều này ảnh hưởng đến mức độ trang trọng (formality) và tần suất của báo cáo kiểm thử. Báo cáo tiến độ kiểm thử gửi cho các thành viên khác trong cùng đội ngũ thường có tần suất cao và ít trang trọng, trong khi báo cáo kết thúc kiểm thử phải tuân theo một biểu mẫu cố định và chỉ lập một lần duy nhất.
 >
 > Tiêu chuẩn ISO/IEC/IEEE 29119-3 bao gồm các biểu mẫu và ví dụ cho báo cáo tiến độ kiểm thử (được gọi là báo cáo trạng thái kiểm thử - test status reports) và báo cáo kết thúc kiểm thử.
+
+### 5.3.3. Communicating the Status of Testing
+
+> Truyền đạt trạng thái kiểm thử
+
+The best means of communicating test status varies, depending on test management concerns, organizational test strategies, regulatory standards, or, in the case of self-organizing teams (see section 1.5.2), on the team itself. The options include:
+
+- Verbal communication with team members and other stakeholders
+- Dashboards (e.g., CI/CD dashboards, task boards, and burn-down charts)
+- Electronic communication channels (e.g., email, chat)
+- Online documentation
+- Formal test reports (see section 5.3.2)
+
+One or more of these options can be used. More formal communication may be more appropriate for distributed teams where direct face-to-face communication is not always possible due to geographical distance or time differences. Typically, different stakeholders are interested in different types of information, so communication should be tailored accordingly.
+
+> Phương thức tốt nhất để truyền đạt trạng thái kiểm thử rất đa dạng, tùy thuộc vào các mối quan tâm về quản lý kiểm thử, chiến lược kiểm thử của tổ chức, các tiêu chuẩn pháp lý (regulatory standards), hoặc trong trường hợp của các đội ngũ tự tổ chức (self-organizing teams - xem phần 1.5.2), tùy thuộc vào chính đội ngũ đó. Các phương án lựa chọn bao gồm:
+>
+> - Giao tiếp bằng lời nói: Trao đổi trực tiếp với các thành viên trong đội ngũ và các bên liên quan khác.
+> - Bảng điều khiển trực quan (Dashboards): (Ví dụ: bảng điều khiển CI/CD, bảng tác vụ - task boards, và biểu đồ tiến độ - burn-down charts).
+> - Các kênh truyền thông điện tử: (Ví dụ: email, các ứng dụng chat).
+> - Tài liệu trực tuyến (Online documentation).
+> - Các báo cáo kiểm thử trang trọng: (Formal test reports - xem phần 5.3.2).
+>
+> Một hoặc nhiều phương án này có thể được sử dụng phối hợp. Việc truyền đạt thông tin mang tính trang trọng hơn có thể sẽ phù hợp hơn đối với các đội ngũ phân tán (distributed teams), nơi mà việc giao tiếp trực tiếp mặt-đối-mặt không phải lúc nào cũng khả thi do khoảng cách địa lý hoặc chênh lệch múi giờ. Thông thường, các bên liên quan khác nhau sẽ quan tâm đến các loại thông tin khác nhau, vì vậy nội dung truyền đạt cần được thiết kế và điều chỉnh sao cho phù hợp tương ứng.
