@@ -23,6 +23,7 @@
     - [5.3.2. Purpose, Content and Audience for Test Reports](#532-purpose-content-and-audience-for-test-reports)
     - [5.3.3. Communicating the Status of Testing](#533-communicating-the-status-of-testing)
   - [5.4. Configuration Management](#54-configuration-management)
+  - [5.5. Defect Management](#55-defect-management)
 
 ## Keywords
 
@@ -556,3 +557,57 @@ Continuous integration, continuous delivery, continuous deployment and the assoc
 > - Tất cả các tài liệu và thành phần phần mềm đã xác định đều được tham chiếu một cách rõ ràng, không gây nhầm lẫn trong bộ công cụ kiểm thử (testware).
 >
 > Tích hợp liên tục (CI), chuyển giao liên tục (CD), triển khai liên tục (CD) và các hoạt động kiểm thử liên quan thường được triển khai như một phần của luồng tự động hóa DevOps (xem phần 2.1.4), trong đó quản lý cấu hình tự động thường là một thành phần đi kèm.
+
+## 5.5. Defect Management
+
+> Quản lý lỗi
+
+Since one of the major test objectives is to find defects, an established defect management process is essential. Although we refer to "defects" here, the reported anomalies may turn out to be real defects or something else (e.g., false–positive result, change request) - this is resolved during the process of dealing with the defect reports. Anomalies may be reported during any phase of the SDLC and the form depends on the SDLC. At a minimum, the defect management process includes a workflow for handling individual defects or anomalies from their discovery to their closure and rules for their classification. The workflow typically comprises activities to log the reported anomalies, analyze and classify them, decide on a suitable response such as to fix or keep it as it is and finally to close the defect report. The process must be followed by all involved stakeholders. It is advisable to handle defects from static testing (especially static analysis) in a similar way.
+
+Typical defect reports have the following objectives:
+
+- Provide those responsible for handling and resolving reported defects with sufficient information to resolve the issue
+- Provide a means of tracking the quality of the work product
+- Provide ideas for improvement of the development and test process
+
+A defect report logged during dynamic testing typically includes:
+
+- Unique identifier
+- Title with a short summary of the anomaly being reported
+- Date when the anomaly was observed, issuing organization, and author, including their role
+- Identification of the test object and test environment
+- Context of the defect (e.g., test case being run, test activity being performed, SDLC phase, and other relevant information such as the test technique, checklist or test data being used)
+- Description of the failure to enable reproduction and resolution including the test steps that detected the anomaly, and any relevant test logs, database dumps, screenshots, or recordings
+- Expected results and actual results
+- Severity of the defect (degree of impact) on the interests of stakeholders or requirements
+- Priority to fix
+- Status of the defect (e.g., open, deferred, duplicate, waiting to be fixed, awaiting confirmation testing, re-opened, closed, rejected)
+- References (e.g., to the test case)
+
+Some of this data may be automatically included when using defect management tools (e.g., identifier, date, author and initial status). Document templates for a defect report and example defect reports can be found in the ISO/IEC/IEEE 29119-3 standard, which refers to defect reports as incident reports.
+
+> Vì một trong những mục tiêu chính của kiểm thử là tìm ra lỗi, nên việc thiết lập một quy trình quản lý lỗi là vô cùng thiết yếu. Mặc dù ở đây chúng ta gọi là "lỗi" (defects), nhưng các bất thường (anomalies) được báo cáo có thể là lỗi thực sự hoặc là một thứ gì đó khác (ví dụ: kết quả dương tính giả — false-positive, hoặc một yêu cầu thay đổi — change request) - điều này sẽ được làm rõ trong quá trình xử lý các báo cáo lỗi. Các bất thường có thể được báo cáo trong bất kỳ giai đoạn nào của vòng đời phát triển phần mềm (SDLC) và hình thức báo cáo sẽ phụ thuộc vào SDLC đó.
+>
+> Tối thiểu, một quy trình quản lý lỗi phải bao gồm một quy trình làm việc (workflow) để xử lý từng lỗi hoặc bất thường riêng lẻ từ khi phát hiện cho đến khi đóng lại, cùng với các quy tắc để phân loại chúng. Quy trình làm việc này thường bao gồm các hoạt động: ghi nhận (log) các bất thường được báo cáo, phân tích và phân loại chúng, quyết định phương án xử lý phù hợp (ví dụ: sửa lỗi hoặc giữ nguyên không sửa) và cuối cùng là đóng báo cáo lỗi. Quy trình này phải được tuân thủ bởi tất cả các bên liên quan (stakeholders). Các lỗi phát hiện từ kiểm thử tĩnh (đặc biệt là phân tích tĩnh) cũng nên được xử lý theo cách tương tự.
+>
+> Một báo cáo lỗi điển hình thường hướng tới các mục tiêu sau:
+>
+> - Cung cấp đầy đủ thông tin cho những người chịu trách nhiệm xử lý và khắc phục lỗi để họ có thể giải quyết vấn đề.
+> - Cung cấp một phương thức để theo dõi chất lượng của sản phẩm công việc.
+> - Đưa ra các ý tưởng để cải tiến quy trình phát triển và quy trình kiểm thử.
+
+> Một báo cáo lỗi được ghi nhận trong quá trình kiểm thử động thường bao gồm:
+>
+> - Định danh duy nhất (ID).
+> - Tiêu đề kèm theo tóm tắt ngắn gọn về bất thường được báo cáo.
+> - Ngày phát hiện bất thường, tổ chức ban hành và người tạo (tác giả), bao gồm cả vai trò của họ.
+> - Định danh đối tượng kiểm thử và môi trường kiểm thử.
+> - Ngữ cảnh xảy ra lỗi (ví dụ: kịch bản kiểm thử đang chạy, hoạt động kiểm thử đang thực hiện, giai đoạn SDLC và các thông tin liên quan khác như kỹ thuật kiểm thử, danh sách kiểm tra — checklist, hoặc dữ liệu kiểm thử đang được sử dụng).
+> - Mô tả về hành vi sai hỏng (failure) để có thể tái hiện và giải quyết, bao gồm các bước kiểm thử đã phát hiện ra bất thường, cùng với bất kỳ nhật ký kiểm thử (test logs), bản sao lưu cơ sở dữ liệu (database dumps), ảnh chụp màn hình hoặc video ghi hình liên quan.
+> - Kết quả mong đợi (expected results) và kết quả thực tế (actual results).
+> - Mức độ nghiêm trọng của lỗi (severity) - mức độ ảnh hưởng đối với lợi ích của các bên liên quan hoặc đối với các yêu cầu.
+> - Mức độ ưu tiên sửa lỗi (priority).
+> - Trạng thái của lỗi (status) (ví dụ: mở — open, hoãn lại — deferred, trùng lặp — duplicate, đang chờ sửa — waiting to be fixed, đang chờ kiểm thử xác nhận — awaiting confirmation testing, mở lại — re-opened, đã đóng — closed, bị từ chối — rejected).
+> - Các tài liệu tham khảo liên quan (ví dụ: liên kết tới kịch bản kiểm thử).
+>
+> Một số dữ liệu này có thể được tự động điền sẵn khi sử dụng các công cụ quản lý lỗi (ví dụ: mã định danh, ngày tháng, người tạo và trạng thái ban đầu). Các biểu mẫu tài liệu cho một báo cáo lỗi và các báo cáo lỗi mẫu có thể được tìm thấy trong tiêu chuẩn ISO/IEC/IEEE 29119-3 (tiêu chuẩn này gọi báo cáo lỗi là báo cáo sự cố — incident reports).
