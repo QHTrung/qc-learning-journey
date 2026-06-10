@@ -22,6 +22,7 @@
     - [5.3.1. Metrics used in Testing](#531-metrics-used-in-testing)
     - [5.3.2. Purpose, Content and Audience for Test Reports](#532-purpose-content-and-audience-for-test-reports)
     - [5.3.3. Communicating the Status of Testing](#533-communicating-the-status-of-testing)
+  - [5.4. Configuration Management](#54-configuration-management)
 
 ## Keywords
 
@@ -524,3 +525,34 @@ One or more of these options can be used. More formal communication may be more 
 > - Các báo cáo kiểm thử trang trọng: (Formal test reports - xem phần 5.3.2).
 >
 > Một hoặc nhiều phương án này có thể được sử dụng phối hợp. Việc truyền đạt thông tin mang tính trang trọng hơn có thể sẽ phù hợp hơn đối với các đội ngũ phân tán (distributed teams), nơi mà việc giao tiếp trực tiếp mặt-đối-mặt không phải lúc nào cũng khả thi do khoảng cách địa lý hoặc chênh lệch múi giờ. Thông thường, các bên liên quan khác nhau sẽ quan tâm đến các loại thông tin khác nhau, vì vậy nội dung truyền đạt cần được thiết kế và điều chỉnh sao cho phù hợp tương ứng.
+
+## 5.4. Configuration Management
+
+> Quản lý cấu hình
+
+In testing, configuration management (CM) provides a discipline for identifying, controlling, and tracking work products such as test plans, test strategies, test conditions, test cases, test scripts, test results, test logs, and test reports as configuration items.
+
+For a complex configuration item (e.g., a test environment), CM records the items it consists of, their relationships, and versions. If the configuration item is approved for testing, it becomes a baseline and can only be changed through a formal change control process.
+
+Configuration management keeps a record of changed configuration items when a new baseline is created. It is possible to revert to a previous baseline to reproduce previous test results.
+
+To properly support testing, CM ensures the following:
+
+- All configuration items, including test items (individual parts of the test object), are uniquely identified, version controlled, tracked for changes, and related to other configuration items so that traceability can be maintained throughout the test process
+
+- All identified documentation and software items are referenced unambiguously in testware
+
+Continuous integration, continuous delivery, continuous deployment and the associated testing are typically implemented as part of an automated DevOps pipeline (see section 2.1.4), in which automated CM is normally included.
+
+> Trong kiểm thử, quản lý cấu hình (Configuration Management - CM) cung cấp một kỷ luật để xác định, kiểm soát và theo dõi các sản phẩm công việc như: kế hoạch kiểm thử, chiến lược kiểm thử, điều kiện kiểm thử, kịch bản kiểm thử (test cases), tập lệnh kiểm thử (test scripts), kết quả kiểm thử, nhật ký kiểm thử và báo cáo kiểm thử dưới dạng các mục cấu hình (configuration items).
+>
+> Đối với một mục cấu hình phức tạp (ví dụ: môi trường kiểm thử), CM ghi lại các thành phần cấu thành nên nó, mối quan hệ giữa chúng và các phiên bản tương ứng. Nếu mục cấu hình được phê duyệt để kiểm thử, nó sẽ trở thành một đường cơ sở (baseline) và chỉ có thể thay đổi thông qua quy trình kiểm soát thay đổi chính thức.
+>
+> Quản lý cấu hình lưu trữ hồ sơ về các mục cấu hình đã thay đổi khi một đường cơ sở mới được tạo ra. Điều này giúp chúng ta có thể quay lại đường cơ sở trước đó để tái hiện lại các kết quả kiểm thử cũ.
+>
+> Để hỗ trợ tốt cho công tác kiểm thử, CM đảm bảo các nội dung sau:
+>
+> - Tất cả các mục cấu hình, bao gồm cả đối tượng kiểm thử (các thành phần riêng lẻ của đối tượng kiểm thử), phải được định danh duy nhất, được kiểm soát phiên bản, được theo dõi thay đổi và có liên kết với các mục cấu hình khác để có thể duy trì tính truy xuất nguồn gốc (traceability) trong suốt quá trình kiểm thử.
+> - Tất cả các tài liệu và thành phần phần mềm đã xác định đều được tham chiếu một cách rõ ràng, không gây nhầm lẫn trong bộ công cụ kiểm thử (testware).
+>
+> Tích hợp liên tục (CI), chuyển giao liên tục (CD), triển khai liên tục (CD) và các hoạt động kiểm thử liên quan thường được triển khai như một phần của luồng tự động hóa DevOps (xem phần 2.1.4), trong đó quản lý cấu hình tự động thường là một thành phần đi kèm.
