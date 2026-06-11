@@ -2,8 +2,6 @@
 
 This is repository document my QC Engineer learning journey.
 
-![QC Journey](/qc-journey.png)
-
 ## Curent Focus
 
 - **Phase 01**: Deep Manual Testing
@@ -23,6 +21,7 @@ This is repository document my QC Engineer learning journey.
 - [3. Static Testing](/01-manual-testing/03-static-testing/README.md)
 - [4. Test Analysis and Design](/01-manual-testing/04-test-analysis-and-design/README.md)
 - [5. Managing the Test Activities](/01-manual-testing/05-managing-test-activities/README.md)
+- [6. Test tools](/01-manual-testing/06-test-tools/README.md)
 - Updating...
 
 ## Resources

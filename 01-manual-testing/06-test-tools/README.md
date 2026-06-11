@@ -1,9 +1,11 @@
-b# 6. Test tools
+# 6. Test tools
 
 ### Table of contents
 
-- [Keywords](#keywords)
-- [6.1. Tool Support for Testing](#61-tool-support-for-testing)
+- [6. Test tools](#6-test-tools)
+  - [Table of contents](#table-of-contents)
+  - [Keywords](#keywords)
+  - [6.1. Tool Support for Testing](#61-tool-support-for-testing)
 
 ## Keywords
 
