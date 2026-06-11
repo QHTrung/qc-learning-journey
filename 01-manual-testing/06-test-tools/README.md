@@ -1,11 +1,9 @@
-# 6. Test tools
+b# 6. Test tools
 
 ### Table of contents
 
-- [6. Test tools](#6-test-tools)
-  - [Table of contents](#table-of-contents)
-  - [Keywords](#keywords)
-  - [6.1. Tool Support for Testing](#61-tool-support-for-testing)
+- [Keywords](#keywords)
+- [6.1. Tool Support for Testing](#61-tool-support-for-testing)
 
 ## Keywords
 
@@ -40,3 +38,15 @@ Test tools support and facilitate many test activities. Examples include, but ar
 > - Công cụ cộng tác (Collaboration tools): Hỗ trợ việc giao tiếp và tương tác.
 > - Công cụ hỗ trợ mở rộng và chuẩn hóa triển khai (Tools supporting scalability and deployment standardization): Ví dụ như máy ảo (virtual machines), công cụ đóng gói container (containerization tools).
 > - Bất kỳ công cụ nào khác giúp ích cho việc kiểm thử: Ví dụ, một bảng tính (spreadsheet/Excel) cũng được coi là một công cụ kiểm thử trong ngữ cảnh của hoạt động kiểm thử.
+
+| Nhóm công cụ                                    | Tool                                                                                                                                 |
+| ----------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------- |
+| Quản lý kiểm thử (Test management)              | Jira (kèm plugin Xray/Zephyr), TestRail, Azure DevOps, HP ALM (Quality Center).                                                      |
+| Kiểm thử tĩnh (Static testing)                  | SonarQube (quét code tự động), Checkstyle, ESLint, hoặc chính các công cụ Review Code như GitHub, GitLab.                            |
+| Thiết kế & triển khai (Design & Implementation) | Postman (thiết kế request API), Mockaroo (tạo dữ liệu giả - test data), các công cụ vẽ Mindmap (XMind, Miro) để brainstorm kịch bản. |
+| Thực thi & đo độ bao phủ (Execution & Coverage) | Automation: Selenium, Playwright, Cypress, Katalon Studio. <br/> Coverage: JaCoCo (cho Java), Istanbul (cho JavaScript).             |
+| Kiểm thử phi chức năng (Non-functional)         | Hiệu năng (Performance): JMeter, LoadRunner, K6.<br/> Bảo mật (Security): OWASP ZAP, Burp Suite.                                     |
+| Công cụ DevOps (DevOps tools)                   | Jenkins, GitLab CI/CD, GitHub Actions, Bamboo.                                                                                       |
+| Công cụ cộng tác (Collaboration)                | Slack, Microsoft Teams, Confluence (lưu tài liệu nội bộ).                                                                            |
+| Mở rộng & Chuẩn hóa (Scalability & Deployment)  | Docker (đóng gói container môi trường test), Kubernetes (K8s), VMware, VirtualBox.                                                   |
+| Công cụ hỗ trợ khác                             | Google Sheets / MS Excel (dùng viết test case, checklist nhanh), Notepad++, Snipping Tool (chụp màn hình lỗi).                       |
