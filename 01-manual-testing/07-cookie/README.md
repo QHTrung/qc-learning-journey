@@ -61,3 +61,23 @@ Ví dụ:
 |session_id |abc123|
 |language |vi|
 |theme |dark|
+
+## 4. Các thành phần chính của một Cookie
+
+Khi F12 (DevTools) &rarr; tab Application &rarr; Cookies, cần chú ý các thuộc tính sau:
+
+- Name & Value: Tên và giá trị của cookie (thường được mã hóa chuỗi).
+- Domain & Path: Phạm vi hợp lệ mà cookie được phép gửi đi.
+- Expires / Max-Age: Thời gian sống của cookie. Nếu không có, nó là Session Cookie (xóa khi đóng trình duyệt).
+- HttpOnly: Thuộc tính bảo mật cực kỳ quan trọng. Nếu HttpOnly = True, bên thứ ba không thể dùng JavaScript (document.cookie) để hack và lấy cookie này $\rightarrow$ Chống lỗi bảo mật XSS.
+- Secure: Nếu Secure = True, cookie chỉ được gửi qua giao thức mã hóa bảo mật HTTPS.
+- SameSite: Kiểm soát việc cookie có được gửi kèm trong các request từ trang web khác hay không (Strict, Lax, hoặc None) $\rightarrow$ Chống lỗi bảo mật CSRF.
+
+## 5. Phân loại Cookie
+
+| Loại Cookie        | Đặc điểm                                                                     | Ví dụ                                                                                  |
+| :----------------- | ---------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| Session Cookie     | Lưu tạm thời ở bộ nhớ RAM, tự mất khi đóng trình duyệt hoặc hết hạn session. | Giữ trạng thái đăng nhập, giỏ hàng hiện tại khi đang mua sắm.                          |
+| Persistent Cookie  | Lưu cứng vào ổ đĩa, có ngày hết hạn cụ thể, tắt trình duyệt bật lại vẫn còn. | Tính năng "Ghi nhớ đăng nhập" (Remember me), cấu hình ngôn ngữ hiển thị.               |
+| First-party Cookie | Do chính Domain của trang web đang truy cập tạo ra.                          | Cookie do chính shopee.vn tạo khi lướt Shopee.                                         |
+| Third-party Cookie | Do một Domain khác (bên thứ 3) nhúng vào trang web hiện tại tạo ra.          | Các cookie quảng cáo của Google, Facebook Tracker dùng để theo dõi hành vi người dùng. |
