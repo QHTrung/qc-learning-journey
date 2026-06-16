@@ -14,6 +14,7 @@
     - [2.1 Session là gì?](#21-session-là-gì)
     - [2.2 Session hoạt động như thế nào?](#22-session-hoạt-động-như-thế-nào)
     - [2.3 Các thuộc tính quan trọng của Session](#23-các-thuộc-tính-quan-trọng-của-session)
+    - [2.4 So sánh nhanh Cookie và Session](#24-so-sánh-nhanh-cookie-và-session)
 
 ## 1. Cookie
 
@@ -176,3 +177,12 @@ tra cứu:
 - **Session Timeout / Idle Timeout**: Thời gian tối đa một Session được phép "đứng im" (không thao tác). Nếu quá thời gian này (ví dụ 15 phút), Server sẽ tự động hủy Session và yêu cầu đăng nhập lại.
 
 - **Absolute Timeout**: Thời gian sống tối đa của một Session kể từ lúc sinh ra, bất kể user có đang hoạt động liên tục hay không (dùng để tăng tính bảo mật).
+
+### 2.4 So sánh nhanh Cookie và Session
+
+| Đặc tính        | Cookie                                              | Session                                                               |
+| :-------------- | --------------------------------------------------- | --------------------------------------------------------------------- |
+| Vị trí lưu trữ  | Lưu tại Client (Trình duyệt).                       | Lưu tại Server.                                                       |
+| Độ bảo mật      | Thấp hơn (Dễ bị user sửa đổi hoặc bị hack qua XSS). | Cao hơn (User không thể can thiệp trực tiếp vào dữ liệu trên server). |
+| Dữ liệu lưu trữ | Chuỗi văn bản (Text) dung lượng nhỏ (< 4KB).        | Có thể lưu dữ liệu phức tạp (Object, Array), dung lượng lớn hơn.      |
+| Thời gian sống  | Có thể lưu rất lâu (Persistent Cookie).             | Thường ngắn, mất khi đóng trình duyệt hoặc hết hạn Timeout.           |
