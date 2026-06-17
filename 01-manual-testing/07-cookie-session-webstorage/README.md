@@ -1,9 +1,9 @@
-# Cookie - Session
+# Cookie - Session - Web Storage (Local Storage + Session Storage)
 
 ### Table of contents
 
-- [Cookie - Session](#cookie---session)
-  - [Table of contents](#table-of-contents)
+- [Cookie - Session - Web Storage (Local Storage + Session Storage)](#cookie---session---web-storage-local-storage--session-storage)
+    - [Table of contents](#table-of-contents)
   - [1. Cookie](#1-cookie)
     - [1.1 Cookie là gì?](#11-cookie-là-gì)
     - [1.2 Cookie hoạt động như thế nào?](#12-cookie-hoạt-động-như-thế-nào)
@@ -15,6 +15,8 @@
     - [2.2 Session hoạt động như thế nào?](#22-session-hoạt-động-như-thế-nào)
     - [2.3 Các thuộc tính quan trọng của Session](#23-các-thuộc-tính-quan-trọng-của-session)
     - [2.4 So sánh nhanh Cookie và Session](#24-so-sánh-nhanh-cookie-và-session)
+  - [3. Web Storage](#3-web-storage)
+    - [3.1 Local Storage](#31-local-storage)
 
 ## 1. Cookie
 
@@ -186,3 +188,80 @@ tra cứu:
 | Độ bảo mật      | Thấp hơn (Dễ bị user sửa đổi hoặc bị hack qua XSS). | Cao hơn (User không thể can thiệp trực tiếp vào dữ liệu trên server). |
 | Dữ liệu lưu trữ | Chuỗi văn bản (Text) dung lượng nhỏ (< 4KB).        | Có thể lưu dữ liệu phức tạp (Object, Array), dung lượng lớn hơn.      |
 | Thời gian sống  | Có thể lưu rất lâu (Persistent Cookie).             | Thường ngắn, mất khi đóng trình duyệt hoặc hết hạn Timeout.           |
+
+## 3. Web Storage
+
+Web Storage là cơ chế cho phép trình duyệt lưu dữ liệu dưới dạng key-value.
+
+Ví dụ:
+
+```
+localStorage.setItem("username", "trung");
+```
+
+hoặc:
+
+```
+sessionStorage.setItem("username", "trung");
+```
+
+QA có thể xem bằng:
+
+F12
+→ Application
+→ Local Storage
+→ Session Storage
+
+**Bản chất của Web Storage (Local & Session Storage)**
+
+Cả hai đều là các cơ chế lưu trữ dữ liệu ngay tại Client (Trình duyệt), được giới thiệu từ chuẩn HTML5 để khắc phục nhược điểm của Cookie.
+
+- Dung lượng lớn: Lưu được từ 5MB - 10MB (trong khi Cookie chỉ lưu được tối đa 4KB).
+
+- Hiệu năng cao: Dữ liệu lưu ở đây không tự động gửi kèm lên Server qua mỗi request giống như Cookie, giúp tiết kiệm băng thông đường truyền.
+
+### 3.1 Local Storage
+
+Local Storage lưu dữ liệu lâu dài trên trình duyệt.
+
+Ví dụ:
+
+```
+localStorage.setItem("theme", "dark");
+```
+
+**Đặc điểm**
+
+Dữ liệu vẫn tồn tại sau khi:
+
+✅ Refresh trang
+
+✅ Đóng tab
+
+✅ Đóng browser
+
+✅ Restart máy
+
+Chỉ mất khi:
+
+```
+localStorage.clear();
+```
+
+hoặc user xóa cache/browser data.
+
+**Ví dụ thực tế**
+
+Remember Me hoặc Website lưu:
+
+```
+{
+  "theme": "dark",
+  "language": "vi"
+}
+```
+
+User mở lại website sau 1 tháng:
+
+> Theme vẫn là Dark
+> Language vẫn là Tiếng Việt
