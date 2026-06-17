@@ -17,6 +17,7 @@
     - [2.4 So sánh nhanh Cookie và Session](#24-so-sánh-nhanh-cookie-và-session)
   - [3. Web Storage](#3-web-storage)
     - [3.1 Local Storage](#31-local-storage)
+    - [3.2 Session Storage](#32-session-storage)
 
 ## 1. Cookie
 
@@ -32,11 +33,15 @@ Ví dụ:
 
 Server trả về:
 
-`Set-Cookie: session_id=abc123; Path=/; HttpOnly`
+```
+Set-Cookie: session_id=abc123; Path=/; HttpOnly
+```
 
 Trình duyệt lưu lại và gửi trong request tiếp theo:
 
-`Cookie: session_id=abc123`
+```
+Cookie: session_id=abc123
+```
 
 ### 1.2 Cookie hoạt động như thế nào?
 
@@ -135,7 +140,9 @@ Password: 123456
 
 Server tạo session và lưu trong bộ nhớ hoặc database.
 
-`Session ID: XYZ123`
+```
+Session ID: XYZ123
+```
 
 ```
 XYZ123
@@ -154,7 +161,9 @@ session_id=XYZ123
 
 **Bước 4**: Browser lưu Cookie
 
-`session_id=XYZ123`
+```
+session_id=XYZ123
+```
 
 **Bước 5**: Request tiếp theo
 
@@ -166,9 +175,16 @@ session_id=XYZ123
 **Bước 6**: Server tra Session
 
 Server nhận:
-`session_id=XYZ123`
+
+```
+session_id=XYZ123
+```
+
 tra cứu:
-`XYZ123 -> User Trung`
+
+```
+XYZ123 -> User Trung
+```
 
 => Xác định đây là user đã đăng nhập.
 
@@ -265,3 +281,29 @@ User mở lại website sau 1 tháng:
 
 > Theme vẫn là Dark
 > Language vẫn là Tiếng Việt
+
+### 3.2 Session Storage
+
+Session Storage chỉ tồn tại trong một tab hoặc cửa sổ trình duyệt.
+
+Ví dụ:
+
+```
+sessionStorage.setItem("step", "2");
+```
+
+**Đặc điểm**
+
+Dữ liệu còn khi:
+
+✅ Refresh
+
+Dữ liệu mất khi:
+
+❌ Đóng tab
+
+❌ Đóng browser
+
+**Ví dụ thực tế**
+
+Form đăng ký nhiều bước được lưu trong Session Storage và khi Đóng tab thì mất data
