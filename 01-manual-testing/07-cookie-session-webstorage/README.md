@@ -18,6 +18,7 @@
   - [3. Web Storage](#3-web-storage)
     - [3.1 Local Storage](#31-local-storage)
     - [3.2 Session Storage](#32-session-storage)
+  - [4. Bảng so sánh (COOKIE - SESSION - LOCAL STORAGE - SESSION STORAGE)](#4-bảng-so-sánh-cookie---session---local-storage---session-storage)
 
 ## 1. Cookie
 
@@ -307,3 +308,15 @@ Dữ liệu mất khi:
 **Ví dụ thực tế**
 
 Form đăng ký nhiều bước được lưu trong Session Storage và khi Đóng tab thì mất data
+
+## 4. Bảng so sánh (COOKIE - SESSION - LOCAL STORAGE - SESSION STORAGE)
+
+| Tiêu chí                                     | Cookie                                                                                                    | Session                                                                                  | Local Storage                                                                                 | Session Storage                                                                          |
+| :------------------------------------------- | :-------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------- |
+| **Vị trí lưu trữ** _(Where)_                 | **Client** (Trình duyệt)                                                                                  | **Server** (RAM, DB hoặc Redis của máy chủ)                                              | **Client** (Trình duyệt)                                                                      | **Client** (Trình duyệt)                                                                 |
+| **Dung lượng tối đa** _(Capacity)_           | Rất nhỏ (**~4 KB**)                                                                                       | **Không giới hạn** (Phụ thuộc vào bộ nhớ Server)                                         | Lớn (**5 MB – 10 MB** tùy trình duyệt)                                                        | Lớn (**5 MB – 10 MB** tùy trình duyệt)                                                   |
+| **Thời gian sống** _(Lifespan)_              | Tùy cấu hình (Mất khi đóng tab nếu là Session Cookie, hoặc lưu đến ngày cụ thể nếu là Persistent Cookie). | Ngắn (Mất khi đăng xuất hoặc hết thời gian chờ - **Timeout**).                           | **Vĩnh viễn** (Chỉ mất khi dùng code xóa hoặc user chủ động clear cache).                     | Theo **Tab** (Mất ngay lập tức khi Trẫm **đóng tab** đó lại).                            |
+| **Luồng truyền dữ liệu** _(Data Transfer)_   | **Tự động gửi kèm** lên Server qua mỗi Request HTTP $\rightarrow$ Tốn băng thông nếu lưu nhiều.           | Chỉ lưu ở Server. Chỉ có **Session ID** được gửi đi để đối chiếu.                        | **Không** tự động gửi lên Server $\rightarrow$ Tiết kiệm băng thông, tối ưu hiệu năng.        | **Không** tự động gửi lên Server $\rightarrow$ Tiết kiệm băng thông, tối ưu hiệu năng.   |
+| **Phạm vi truy cập** _(Scope)_               | Mọi tab/cửa sổ mở cùng Domain.                                                                            | Mọi tab/cửa sổ mở cùng Domain (miễn là dùng chung Session ID).                           | Mọi tab/cửa sổ mở cùng Domain.                                                                | **Duy nhất trong tab đó**. Tab khác (dù cùng domain) cũng không đọc được.                |
+| **Độ bảo mật** _(Security)_                  | **Trung bình.** Dễ bị tấn công XSS/CSRF nếu thiếu cấu hình bảo mật (`HttpOnly`, `Secure`).                | **Cao nhất.** Vì dữ liệu nằm hoàn toàn ở phía Server, Client chỉ giữ mã định danh.       | **Thấp.** Hacker có thể dùng JavaScript độc hại để lấy toàn bộ dữ liệu qua lỗi XSS.           | **Thấp.** Hacker có thể dùng JavaScript độc hại để lấy toàn bộ dữ liệu qua lỗi XSS.      |
+| **Mục đích sử dụng chính** _(Best Use Case)_ | Lưu trữ trạng thái đăng nhập hệ thống, cấu hình ngôn ngữ, tracking quảng cáo.                             | Lưu trữ dữ liệu đăng nhập nhạy cảm, thông tin tài khoản, giỏ hàng cần xử lý nghiêm ngặt. | Lưu trữ cấu hình giao diện (Sáng/Tối), các dữ liệu cần cache lại để ứng dụng khởi động nhanh. | Lưu trữ dữ liệu tạm thời khi điền Form nhiều bước, trạng thái bộ lọc (Filter) của trang. |
