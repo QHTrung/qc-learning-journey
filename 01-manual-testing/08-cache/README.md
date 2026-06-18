@@ -9,6 +9,7 @@
     - [2.1 Browser Cache](#21-browser-cache)
     - [2.2 Server Cache (Backend)](#22-server-cache-backend)
     - [2.3 CDN Cache (Mạng lưới)](#23-cdn-cache-mạng-lưới)
+  - [3. Cache Hit, Cache Miss và TTL](#3-cache-hit-cache-miss-và-ttl)
 
 ## 1. Cache là gì?
 
@@ -46,3 +47,21 @@ Vị trí lưu trữ: Các máy chủ trung gian đặt ở nhiều quốc gia (
 Dữ liệu thường lưu: Toàn bộ nội dung tĩnh của trang web để phân phối nhanh theo vị trí địa lý.
 
 Tác động đối với QC: Thường gặp lỗi khi deploy phiên bản mới lên môi trường Production nhưng CDN chưa kịp cập nhật.
+
+## 3. Cache Hit, Cache Miss và TTL
+
+Cache Hit: Trình duyệt yêu cầu một tài nguyên (ví dụ: logo.png) $\rightarrow$ Tài nguyên đó đã có sẵn trong bộ nhớ đệm $\rightarrow$ Trình duyệt lấy ra dùng ngay lập tức, không cần gửi request lên Server. (Tốc độ tải bằng 0ms, hiển thị trong tab Network là from disk cache hoặc from memory cache).
+
+Cache Miss: Trình duyệt tìm tài nguyên trong bộ nhớ đệm nhưng không thấy (hoặc đã quá hạn) $\rightarrow$ Bắt buộc phải gửi request lên Server để tải lại từ đầu. (Status Code trả về là 200 OK).
+
+Cache Invalidation / Clearing: Hành động xóa dữ liệu cũ trong cache để nạp dữ liệu mới.
+
+TTL (Time-To-Live): Khoảng thời gian (tuổi thọ) mà dữ liệu được phép tồn tại trong bộ nhớ Cache kể từ lúc được nạp vào. Khi hết thời gian TTL, dữ liệu sẽ bị coi là "stale" (hết hạn/cũ) và lần gọi tiếp theo sẽ dẫn đến Cache Miss.
+
+Ví dụ:
+
+> **TTL = 5 phút**
+> 10:00 Cache tạo
+> 10:03 Dùng cache
+> 10:05 Cache hết hạn
+> 10:06 Query lại DB
