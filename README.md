@@ -23,6 +23,7 @@ This is repository document my QC Engineer learning journey.
 - [5. Managing the Test Activities](/01-manual-testing/05-managing-test-activities/README.md)
 - [6. Test tools](/01-manual-testing/06-test-tools/README.md)
 - [7. Cookie - Session - Web Storage](/01-manual-testing/07-cookie-session-webstorage/README.md)
+- [8. Cache](/01-manual-testing/08-cache/README.md)
 - Updating...
 
 ## Resources
