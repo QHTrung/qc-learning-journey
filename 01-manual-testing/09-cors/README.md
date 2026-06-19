@@ -6,6 +6,7 @@
   - [Table of contents](#table-of-contents)
   - [1. CORS là gì?](#1-cors-là-gì)
   - [2. Tại sao cần CORS?](#2-tại-sao-cần-cors)
+  - [3. Luồng hoạt động của CORS (Cơ chế Preflight Request)](#3-luồng-hoạt-động-của-cors-cơ-chế-preflight-request)
 
 ## 1. CORS là gì?
 
@@ -56,3 +57,18 @@ fetch("https://bank.com/account");
 Website độc hại có thể đọc dữ liệu tài khoản của bạn.
 
 &rarr; CORS được tạo ra để ngăn điều đó.
+
+## 3. Luồng hoạt động của CORS (Cơ chế Preflight Request)
+
+Khi mã JavaScript ở trang web (Client) gửi một request có nguy cơ làm thay đổi dữ liệu (như POST, PUT, DELETE) sang một Server khác Origin, Trình duyệt sẽ tự động thực hiện 2 bước:
+
+Preflight Request: Trình duyệt tự động gửi một request "dò đường" với Method là OPTIONS lên Server để hỏi: "Origin có được phép không?"
+
+Actual Request:
+
+- Nếu Server phản hồi: "Được phép" $\rightarrow$ Trình duyệt mới gửi tiếp Request chính thức (POST/PUT/DELETE) đi.
+- Nếu Server phản hồi: "Không" $\rightarrow$ Trình duyệt lập tức chặn đứng Request đó lại và bắn ra lỗi đỏ chót ở tab Console.
+
+```
+Access to fetch at 'https://api.test.com' from origin 'https://app.test.com' has been blocked by CORS policy
+```
