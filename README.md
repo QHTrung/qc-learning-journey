@@ -24,6 +24,7 @@ This is repository document my QC Engineer learning journey.
 - [6. Test tools](/01-manual-testing/06-test-tools/README.md)
 - [7. Cookie - Session - Web Storage](/01-manual-testing/07-cookie-session-webstorage/README.md)
 - [8. Cache](/01-manual-testing/08-cache/README.md)
+- [9. CORS](/01-manual-testing/09-cors/README.md)
 - Updating...
 
 ## Resources
