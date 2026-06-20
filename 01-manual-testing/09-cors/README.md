@@ -7,6 +7,7 @@
   - [1. CORS là gì?](#1-cors-là-gì)
   - [2. Tại sao cần CORS?](#2-tại-sao-cần-cors)
   - [3. Luồng hoạt động của CORS (Cơ chế Preflight Request)](#3-luồng-hoạt-động-của-cors-cơ-chế-preflight-request)
+  - [4. Header quan trọng trong CORS](#4-header-quan-trọng-trong-cors)
 
 ## 1. CORS là gì?
 
@@ -72,3 +73,41 @@ Actual Request:
 ```
 Access to fetch at 'https://api.test.com' from origin 'https://app.test.com' has been blocked by CORS policy
 ```
+
+## 4. Header quan trọng trong CORS
+
+**Access-Control-Allow-Origin**: Xác định những Origin nào được phép lấy dữ liệu. Nếu Server để là \* nghĩa là chấp nhận tất cả mọi nguồn (thường dùng cho API công khai). Nếu dùng cho hệ thống nội bộ, Server bắt buộc phải chỉ định rõ đích danh domain
+
+Ví dụ:
+
+```
+Access-Control-Allow-Origin: https://app.test.com
+```
+
+> Chỉ cho phép: https://app.test.com
+
+Cho phép tất cả:
+
+```
+Access-Control-Allow-Origin: *
+```
+
+**Access-Control-Allow-Methods**: Danh sách các hàm (POST, GET, PUT, DELETE) mà Client được phép dùng.
+
+```
+Access-Control-Allow-Methods: GET,POST,PUT,DELETE
+```
+
+**Access-Control-Allow-Headers**: Các Header tùy chỉnh (Custom Headers) mà Client được phép gửi lên (ví dụ: Authorization, Content-Type).
+
+```
+Access-Control-Allow-Headers: Content-Type, Authorization
+```
+
+**Access-Control-Allow-Credentials**: Nếu set là true, Client mới được phép gửi kèm Cookie hoặc Token bảo mật lên Server khác Origin.
+
+```
+Access-Control-Allow-Credentials: true
+```
+
+> Cho phép gửi: Cookie, Session, Authorization
