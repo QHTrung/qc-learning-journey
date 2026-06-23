@@ -9,6 +9,9 @@
     - [2.1 Client](#21-client)
     - [2.2 Server](#22-server)
   - [3. Quy trình hoạt động](#3-quy-trình-hoạt-động)
+  - [4. Kiến trúc Client - Server](#4-kiến-trúc-client---server)
+    - [4.1 Kiến trúc 2-Tier (Two-Tier Architecture)](#41-kiến-trúc-2-tier-two-tier-architecture)
+    - [4.2 Kiến trúc 3-Tier (Three-Tier Architecture)](#42-kiến-trúc-3-tier-three-tier-architecture)
 
 ## 1. Khái niệm
 
@@ -70,3 +73,23 @@ Ví dụ người dùng đăng nhập vào hệ thống:
 6. Client hiển thị thành công/thất bại
 
 ![Client Server Workflow](../images/client-server%20workflow.png)
+
+## 4. Kiến trúc Client - Server
+
+### 4.1 Kiến trúc 2-Tier (Two-Tier Architecture)
+
+Cấu trúc: Chỉ gồm 2 lớp: Client <-> Database Server. Client kết nối và tương tác trực tiếp với Cơ sở dữ liệu.
+
+Đặc điểm: Toàn bộ logic nghiệp vụ (Business Logic) được cài đặt ngay tại ứng dụng phía Client.
+
+Hạn chế: Kém bảo mật (vì Client giữ thông tin kết nối DB) và khó mở rộng khi số lượng người dùng tăng cao.
+
+### 4.2 Kiến trúc 3-Tier (Three-Tier Architecture)
+
+Đây là kiến trúc phổ biến nhất hiện nay, tách biệt hoàn toàn giao diện, logic và dữ liệu thành 3 lớp độc lập:
+
+| Lớp (Tier) | Tên gọi                            | Chức năng chính                                                                             | Thành phần tiêu biểu                               |
+| :--------- | :--------------------------------- | :------------------------------------------------------------------------------------------ | :------------------------------------------------- |
+| **Tier 1** | Presentation Tier (Giao diện)      | Hiển thị thông tin và nhận tương tác từ người dùng. Không xử lý logic nặng.                 | Web Browser, Mobile App (iOS/Android).             |
+| **Tier 2** | Application Tier (Logic nghiệp vụ) | Trung tâm xử lý. Nhận yêu cầu từ Tier 1, thực thi logic, tính toán và giao tiếp với Tier 3. | API Server (Java, Python, .NET), Payment Services. |
+| **Tier 3** | Data Tier (Dữ liệu)                | Lưu trữ, quản lý và bảo mật toàn bộ dữ liệu của hệ thống.                                   | Database (MySQL, Oracle, PostgreSQL).              |
