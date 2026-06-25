@@ -27,6 +27,12 @@ This is repository document my QC Engineer learning journey.
 - [9. CORS](/01-manual-testing/09-cors/README.md)
 - Updating...
 
+#### **Phase 02**: API Testing
+
+- [1. Client - Server Modal](/02-api-testing/client-server/README.md)
+- [2. HTTP vs HTTPS](/02-api-testing/http-https/README.md)
+- Updating...
+
 ## Resources
 
 - [Certified Tester Foundation Level (CTFL) v4.0
