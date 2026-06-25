@@ -28,3 +28,7 @@ $$\text{https://} \underbrace{\text{api.pay.com}}_{\text{Domain/Host}} \text{/} 
 - Endpoint (`/transactions`): Đường dẫn trỏ thẳng đến tài nguyên cụ thể.
 
 - Query Parameters (`?status=success&page=2`): Phần nằm sau dấu `?` . Dùng để lọc, sắp xếp hoặc phân trang` dữ liệu.
+
+Ví dụ:
+
+![URL Image](../images/url.png)
