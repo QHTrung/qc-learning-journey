@@ -11,6 +11,8 @@
     - [Cấu trúc một HTTP Response](#cấu-trúc-một-http-response)
   - [4. HTTP Headers (Các loại Headers phổ biến)](#4-http-headers-các-loại-headers-phổ-biến)
   - [5. HTTP Status Codes](#5-http-status-codes)
+  - [6. REST API (Các nguyên tắc cốt lõi)](#6-rest-api-các-nguyên-tắc-cốt-lõi)
+  - [7. JSON (JavaScript Object Notation)](#7-json-javascript-object-notation)
 
 ## 1. API (Application Programming Interface)
 
@@ -82,3 +84,52 @@ Headers được chia làm 2 loại: Request Headers (Client gửi đi) và Resp
 | **500**       | Internal Server Error     | Lỗi hệ thống từ phía Server (Sập nguồn, crash code, lỗi kết nối DB).             | API trả về mã này nghĩa là code server chưa bắt ngoại lệ (try-catch) tốt. Bug của Dev. |
 | **502**       | Bad Gateway               | Server trung gian (Gateway/Proxy) nhận phản hồi không hợp lệ từ server phía sau. | Thường xảy ra khi deploy code lỗi hoặc server backend bị sập đột ngột.                 |
 | **504**       | Gateway Timeout           | Server phía sau không phản hồi kịp thời cho Gateway trong thời gian quy định.    | Test case: Kiểm thử hiệu năng (Performance/Stress test) khi hệ thống bị quá tải xử lý. |
+
+## 6. REST API (Các nguyên tắc cốt lõi)
+
+**REST (REpresentational State Transfer)** không phải là một công nghệ, mà là một phong cách thiết kế. Một API được gọi là RESTful khi tuân thủ các nguyên tắc:
+
+**Stateless (Không lưu trạng thái)**: Mỗi Request gửi lên phải độc lập và chứa đầy đủ thông tin để Server hiểu được (bao gồm cả Token xác thực). Server không lưu bất kỳ ngữ cảnh nào của Client trước đó.
+
+**Sử dụng danh từ cho Endpoint**: Không dùng hành động trong endpoint.
+
+- Sai: `POST /create_transaction` hoặc `GET /get_all_transactions`
+- Đúng: Dùng chung endpoint danh từ `/transactions` nhưng thay đổi HTTP Method:
+  - `POST /transactions` $\rightarrow$ Tạo giao dịch.
+  - `GET /transactions` $\rightarrow$ Lấy danh sách giao dịch.
+
+**Idempotency (Tính đồng nhất):** Một số Method như GET, PUT, DELETE nếu gọi 1 lần hay 100 lần cùng một dữ liệu thì kết quả trên server vẫn không đổi. Ngược lại, POST không có tính chất này (gọi 2 lần POST sẽ tạo ra 2 giao dịch, gây trùng lặp thanh toán).
+
+## 7. JSON (JavaScript Object Notation)
+
+JSON là định dạng dữ liệu văn bản (text-only), độc lập với ngôn ngữ lập trình.
+
+Cú pháp nghiêm ngặt: Chỉ cần sai một dấu phẩy `,` hoặc thiếu một dấu ngoặc `}`, JSON sẽ bị lỗi cú pháp (400 Bad Request)
+
+Dưới đây là một ví dụ JSON Response điển hình của một giao dịch thanh toán thành công qua cổng kết nối:
+
+```
+{
+  "transaction_id": "TXN20260626-99",
+  "amount": 1500000,
+  "currency": "VND",
+  "is_success": true,
+  "error_code": null,
+  "customer_info": {
+    "name": "Nguyen Van A",
+    "phone": "0901234567"
+  },
+  "payment_items": [
+    {
+      "item_id": "PROD-01",
+      "quantity": 2,
+      "price": 500000
+    },
+    {
+      "item_id": "PROD-02",
+      "quantity": 1,
+      "price": 500000
+    }
+  ]
+}
+```
