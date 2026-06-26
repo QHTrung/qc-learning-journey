@@ -6,6 +6,9 @@
   - [Table of contents](#table-of-contents)
   - [1. API (Application Programming Interface)](#1-api-application-programming-interface)
   - [2. URL và Endpoint](#2-url-và-endpoint)
+  - [3. Request và Response](#3-request-và-response)
+    - [Cấu trúc một HTTP Request](#cấu-trúc-một-http-request)
+    - [Cấu trúc một HTTP Response](#cấu-trúc-một-http-response)
 
 ## 1. API (Application Programming Interface)
 
@@ -32,3 +35,23 @@ $$\text{https://} \underbrace{\text{api.pay.com}}_{\text{Domain/Host}} \text{/} 
 Ví dụ:
 
 ![URL Image](../images/url.png)
+
+## 3. Request và Response
+
+### Cấu trúc một HTTP Request
+
+- **Request Method (Phương thức)**: Hành động muốn thực hiện (GET, POST, PUT, DELETE...).
+
+- **Request URL**: Địa chỉ Endpoint nhận yêu cầu.
+
+- **Request Headers**: Các thông tin cấu hình đi kèm (Token, Loại dữ liệu...).
+
+- **Request Body**: Nội dung gửi lên (thường dùng cho POST, PUT, PATCH).
+
+### Cấu trúc một HTTP Response
+
+- **Status Code & Status Message**: Trạng thái xử lý (Ví dụ: 200 OK, 400 Bad Request).
+
+- **Response Headers**: Thông tin cấu hình từ server trả về (Thời gian xử lý, kiểu dữ liệu trả về, cơ chế bảo mật...).
+
+- **Response Body**: Dữ liệu kết quả (thường là JSON).
