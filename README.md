@@ -31,6 +31,7 @@ This is repository document my QC Engineer learning journey.
 
 - [1. Client - Server Modal](/02-api-testing/client-server/README.md)
 - [2. HTTP vs HTTPS](/02-api-testing/http-https/README.md)
+- [3. API Fundamentals](/02-api-testing/restful-api/README.md)
 - Updating...
 
 ## Resources
