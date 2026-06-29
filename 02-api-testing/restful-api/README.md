@@ -3,7 +3,7 @@
 ### Table of contents
 
 - [Kiến thức tổng quan về API Testing](#kiến-thức-tổng-quan-về-api-testing)
-  - [Table of contents](#table-of-contents)
+    - [Table of contents](#table-of-contents)
   - [1. API (Application Programming Interface)](#1-api-application-programming-interface)
   - [2. URL và Endpoint](#2-url-và-endpoint)
   - [3. Request và Response](#3-request-và-response)
@@ -16,11 +16,42 @@
 
 ## 1. API (Application Programming Interface)
 
-Giao diện lập trình ứng dụng, đóng vai trò là "cầu nối" cho phép hai hệ thống phần mềm giao tiếp và trao đổi dữ liệu với nhau một cách an toàn.
+API (Application Programming Interface) là tập hợp các quy tắc cho phép hai ứng dụng giao tiếp với nhau.
+
+Nói đơn giản:
+
+> API giống như một người phục vụ trong nhà hàng.
+> Khách (Client) gọi món.
+> Người phục vụ (API) mang yêu cầu vào bếp.
+> Bếp (Server) nấu.
+> Người phục vụ đem món ra cho khách
 
 Cơ chế hoạt động: Hoạt động theo mô hình Client-Server. Client gửi yêu cầu (Request) $\rightarrow$ API tiếp nhận, kiểm tra tính hợp lệ và chuyển đến Server $\rightarrow$ Server xử lý, truy vấn Database $\rightarrow$ API nhận kết quả từ Server và trả về Client (Response).
 
-Ví dụ: Hệ thống e-commerce của trẫm gọi API của cổng thanh toán (Payment Gateway) để tiến hành xác thực và trừ tiền khách hàng.
+Ví dụ thục tế:
+Bạn mở ứng dụng Shopee. Ứng dụng cần lấy danh sách sản phẩm.
+
+```
+GET /products
+```
+
+Server trả:
+
+```
+[
+  {
+    "id":1,
+    "name":"iPhone",
+    "price":25000000
+  },
+  {
+    "id":2,
+    "name":"Laptop"
+  }
+]
+```
+
+App chỉ việc hiển thị.
 
 ## 2. URL và Endpoint
 
@@ -35,6 +66,8 @@ $$\text{https://} \underbrace{\text{api.pay.com}}_{\text{Domain/Host}} \text{/} 
 - Endpoint (`/transactions`): Đường dẫn trỏ thẳng đến tài nguyên cụ thể.
 
 - Query Parameters (`?status=success&page=2`): Phần nằm sau dấu `?` . Dùng để lọc, sắp xếp hoặc phân trang` dữ liệu.
+
+- Path Param: Dùng để định danh 1 đối tượng duy nhất và nằm trực tiếp trong đường dẫn (`/transactions/TXN9988`)
 
 Ví dụ:
 
@@ -52,6 +85,24 @@ Ví dụ:
 
 - **Request Body**: Nội dung gửi lên (thường dùng cho POST, PUT, PATCH).
 
+Ví dụ:
+
+```
+POST
+
+/users
+
+Headers
+
+Content-Type: application/json
+
+Body
+
+{
+  "name":"John"
+}
+```
+
 ### Cấu trúc một HTTP Response
 
 - **Status Code & Status Message**: Trạng thái xử lý (Ví dụ: 200 OK, 400 Bad Request).
@@ -59,6 +110,27 @@ Ví dụ:
 - **Response Headers**: Thông tin cấu hình từ server trả về (Thời gian xử lý, kiểu dữ liệu trả về, cơ chế bảo mật...).
 
 - **Response Body**: Dữ liệu kết quả (thường là JSON).
+
+Ví dụ gửi request:
+
+```
+GET /users/1
+```
+
+Response:
+
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+Cache-Control: no-cache
+
+{
+    "id": 1,
+    "name": "John",
+    "email": "john@gmail.com",
+    "active": true
+}
+```
 
 ## 4. HTTP Headers (Các loại Headers phổ biến)
 
