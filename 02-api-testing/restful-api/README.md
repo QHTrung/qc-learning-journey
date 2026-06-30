@@ -222,5 +222,16 @@ Hãy sử dụng Postman để làm việc với API công khai của JSONPlaceh
    ![result](../images/ex03.png)
 
 4. Gửi `POST /posts` với một body JSON để tạo dữ liệu.
+   ![result](../images/ex04.png)
+
 5. Gửi `PUT /posts/1` và so sánh với `PATCH /posts/1`.
-6. Gửi `DELETE /posts/1` và quan sát status code cùng response.
+   ![result](../images/ex05.png)
+   - Khi sử dụng `PUT` thì payload bắt buộc phải gửi lại toàn bộ thông tin (các field).
+   - Nếu gửi không đầy đủ các fields thì hệ thống có thể báo lỗi 400 Bad Request hoặc làm mất dữ liệu của trường bị thiếu.
+
+   ![result](../images/ex06.png)
+
+- Với `PATCH` thì payload chỉ cần gửi các trường thay đổi. Hệ thống sẽ chỉ cập nhật đến các trường cần thay đổi và giữ nguyên giá trị các trường còn lại.
+
+1. Gửi `DELETE /posts/1` và quan sát status code cùng response.
+   ![result](../images/ex07.png)
