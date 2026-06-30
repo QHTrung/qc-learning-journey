@@ -3,7 +3,7 @@
 ### Table of contents
 
 - [Kiến thức tổng quan về API Testing](#kiến-thức-tổng-quan-về-api-testing)
-    - [Table of contents](#table-of-contents)
+  - [Table of contents](#table-of-contents)
   - [1. API (Application Programming Interface)](#1-api-application-programming-interface)
   - [2. URL và Endpoint](#2-url-và-endpoint)
   - [3. Request và Response](#3-request-và-response)
@@ -13,6 +13,7 @@
   - [5. HTTP Status Codes](#5-http-status-codes)
   - [6. REST API (Các nguyên tắc cốt lõi)](#6-rest-api-các-nguyên-tắc-cốt-lõi)
   - [7. JSON (JavaScript Object Notation)](#7-json-javascript-object-notation)
+  - [Bài tập thực hành](#bài-tập-thực-hành)
 
 ## 1. API (Application Programming Interface)
 
@@ -205,3 +206,21 @@ Dưới đây là một ví dụ JSON Response điển hình của một giao d�
   ]
 }
 ```
+
+## Bài tập thực hành
+
+Hãy sử dụng Postman để làm việc với API công khai của JSONPlaceholder:
+
+1. Gửi `GET /posts` và quan sát danh sách bài viết.
+
+   ![result](../images/ex01.png)
+
+2. Gửi `GET /posts/1` và phân tích response.
+   ![result](../images/ex02.png)
+
+3. Gửi `GET /comments?postId=1` để hiểu cách dùng Query Parameter.
+   ![result](../images/ex03.png)
+
+4. Gửi `POST /posts` với một body JSON để tạo dữ liệu.
+5. Gửi `PUT /posts/1` và so sánh với `PATCH /posts/1`.
+6. Gửi `DELETE /posts/1` và quan sát status code cùng response.
