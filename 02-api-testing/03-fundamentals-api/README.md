@@ -233,5 +233,5 @@ Hãy sử dụng Postman để làm việc với API công khai của JSONPlaceh
 
 - Với `PATCH` thì payload chỉ cần gửi các trường thay đổi. Hệ thống sẽ chỉ cập nhật đến các trường cần thay đổi và giữ nguyên giá trị các trường còn lại.
 
-1. Gửi `DELETE /posts/1` và quan sát status code cùng response.
+6. Gửi `DELETE /posts/1` và quan sát status code cùng response.
    ![result](../images/ex07.png)

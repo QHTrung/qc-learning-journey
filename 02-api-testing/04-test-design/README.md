@@ -1,0 +1,53 @@
+# How to Test an API
+
+### Table of contents
+
+- [How to Test an API](#how-to-test-an-api)
+  - [Table of contents](#table-of-contents)
+  - [1. Tư duy kiểm thử API (API Testing Mindset)](#1-tư-duy-kiểm-thử-api-api-testing-mindset)
+
+## 1. Tư duy kiểm thử API (API Testing Mindset)
+
+Khi mới bắt đầu học API Testing, nhiều người có xu hướng chỉ kiểm tra xem API có trả về 200 OK hay không. Tuy nhiên, đây chỉ là bước kiểm tra đầu tiên. Một API trả về mã trạng thái thành công không đồng nghĩa với việc chức năng hoạt động chính xác.
+
+Ví dụ, một API lấy thông tin người dùng:
+
+```
+GET /users/1001
+```
+
+Response:
+
+```
+{
+    "id": 1001,
+    "name": "",
+    "email": "abc@gmail",
+    "age": -10
+}
+```
+
+API trả:
+
+```
+HTTP/1.1 200 OK
+```
+
+Nếu chỉ nhìn vào Status Code, bạn sẽ nghĩ API hoạt động bình thường. Nhưng dưới góc nhìn của QA, response này có rất nhiều vấn đề:
+
+- `name` rỗng trong khi là trường bắt buộc.
+- `email` không đúng định dạng.
+- `age` âm, không hợp lệ theo nghiệp vụ.
+
+Dữ liệu trả về không phản ánh đúng yêu cầu của hệ thống.
+
+Vì vậy, khi kiểm thử API, QA luôn phải trả lời các câu hỏi:
+
+- API có trả đúng dữ liệu không?
+- Dữ liệu có đúng nghiệp vụ không?
+- Có đầy đủ field không?
+- Có đúng kiểu dữ liệu không?
+- Có xử lý đúng các trường hợp lỗi không?
+- Hiệu năng có đáp ứng yêu cầu không?
+
+&rarr; Đây chính là tư duy nền tảng của API Testing.
