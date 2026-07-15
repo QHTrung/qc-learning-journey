@@ -69,6 +69,8 @@ Một quy trình phổ biến gồm các bước:
 8. So sánh kết quả thực tế với kết quả mong đợi.
 9. Báo lỗi nếu có sai khác.
 
+![API Testing Process Image](../images/API_Testing_Process.jpeg)
+
 Ví dụ với API đăng nhập:
 
 ```
