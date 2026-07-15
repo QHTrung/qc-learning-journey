@@ -5,6 +5,7 @@
 - [How to Test an API](#how-to-test-an-api)
   - [Table of contents](#table-of-contents)
   - [1. Tư duy kiểm thử API (API Testing Mindset)](#1-tư-duy-kiểm-thử-api-api-testing-mindset)
+  - [2. Quy trình kiểm thử API](#2-quy-trình-kiểm-thử-api)
 
 ## 1. Tư duy kiểm thử API (API Testing Mindset)
 
@@ -51,3 +52,34 @@ Vì vậy, khi kiểm thử API, QA luôn phải trả lời các câu hỏi:
 - Hiệu năng có đáp ứng yêu cầu không?
 
 &rarr; Đây chính là tư duy nền tảng của API Testing.
+
+## 2. Quy trình kiểm thử API
+
+Trong thực tế, QA không mở Postman lên và gửi request ngay. Trước tiên, cần hiểu API sẽ được kiểm thử như thế nào.
+
+Một quy trình phổ biến gồm các bước:
+
+1. Đọc tài liệu API (Swagger/OpenAPI).
+2. Xác định chức năng của endpoint.
+3. Xác định dữ liệu đầu vào.
+4. Xác định dữ liệu đầu ra mong đợi.
+5. Thiết kế test case.
+6. Chuẩn bị dữ liệu test.
+7. Thực thi request.
+8. So sánh kết quả thực tế với kết quả mong đợi.
+9. Báo lỗi nếu có sai khác.
+
+Ví dụ với API đăng nhập:
+
+```
+POST /login
+```
+
+QA cần trả lời:
+
+- Username bắt buộc không?
+- Password có giới hạn độ dài không?
+- Sai password trả về gì?
+- Sai username trả về gì?
+- Có khóa tài khoản sau nhiều lần đăng nhập sai không?
+- Token có thời gian hết hạn bao lâu?
