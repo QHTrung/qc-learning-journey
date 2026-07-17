@@ -6,6 +6,7 @@
   - [Table of contents](#table-of-contents)
   - [1. Tư duy kiểm thử API (API Testing Mindset)](#1-tư-duy-kiểm-thử-api-api-testing-mindset)
   - [2. Quy trình kiểm thử API](#2-quy-trình-kiểm-thử-api)
+  - [3. Functional Testing (Kiểm thử chức năng)](#3-functional-testing-kiểm-thử-chức-năng)
 
 ## 1. Tư duy kiểm thử API (API Testing Mindset)
 
@@ -85,3 +86,51 @@ QA cần trả lời:
 - Sai username trả về gì?
 - Có khóa tài khoản sau nhiều lần đăng nhập sai không?
 - Token có thời gian hết hạn bao lâu?
+
+## 3. Functional Testing (Kiểm thử chức năng)
+
+Functional Testing là việc xác minh API thực hiện đúng chức năng theo yêu cầu.
+
+Ví dụ API tạo người dùng:
+
+```
+POST /users
+```
+
+Body:
+
+```
+{
+    "name": "Trung",
+    "email": "trung@gmail.com"
+}
+```
+
+Expected:
+
+- Status Code = 201.
+- User được tạo.
+- Database có bản ghi mới.
+- Response trả đúng dữ liệu vừa tạo.
+
+Nếu response như sau thì API hoạt động đúng:
+
+```
+{
+    "id": 15,
+    "name": "Trung",
+    "email": "trung@gmail.com"
+}
+```
+
+Ngược lại:
+
+```
+{
+    "id": 15,
+    "name": "Nguyen Van A",
+    "email": "abc@gmail.com"
+}
+```
+
+thì đây là lỗi chức năng, mặc dù Status Code vẫn là `201 Created`.
