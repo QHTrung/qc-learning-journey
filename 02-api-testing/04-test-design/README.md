@@ -7,6 +7,7 @@
   - [1. Tư duy kiểm thử API (API Testing Mindset)](#1-tư-duy-kiểm-thử-api-api-testing-mindset)
   - [2. Quy trình kiểm thử API](#2-quy-trình-kiểm-thử-api)
   - [3. Functional Testing (Kiểm thử chức năng)](#3-functional-testing-kiểm-thử-chức-năng)
+  - [4. Positive Testing](#4-positive-testing)
 
 ## 1. Tư duy kiểm thử API (API Testing Mindset)
 
@@ -134,3 +135,26 @@ Ngược lại:
 ```
 
 thì đây là lỗi chức năng, mặc dù Status Code vẫn là `201 Created`.
+
+## 4. Positive Testing
+
+Positive Testing là kiểm tra hệ thống với dữ liệu hợp lệ để xác nhận API hoạt động đúng trong điều kiện bình thường.
+Ví dụ:
+
+```
+POST /users
+```
+
+```
+{
+    "name": "David",
+    "email": "david@gmail.com"
+}
+```
+
+Expected:
+
+- 201 Created.
+- User được tạo thành công.
+- Response chứa id.
+- Database có dữ liệu mới.
