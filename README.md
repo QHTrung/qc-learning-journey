@@ -1,39 +1,23 @@
-# Quality Control Learning Journey
+# QC Learning Journey
 
-This is repository document my QC Engineer learning journey.
+> My journey from Manual to Automation and AI-Augmented QC.
 
-## Curent Focus
+## Current Position
 
-- **Phase 01**: Deep Manual Testing
-- **Phase 02**: API Testing
-- P**hase 03**: Database
-- **Phase 04:** Programming language & DSA
-- **Phase 05**: Automation Testing
-- Updating...
-- **Interview notes**
+Manual QC Engineer (Payment / Fintech)
+July/2025 - Present
 
-## Detailed content of each phase
+## Learning Goal
 
-#### **Phase 01**: Deep Manual Testing
+Manual → API → SQL → Automation → CI/CD → AI for QC
 
-- [1. Fundamentals of Testing](/01-manual-testing/01-fundamentals-testing/README.md)
-- [2. Testing Throughout the SDLC](/01-manual-testing/02-testing-throughout-SDLC/README.md)
-- [3. Static Testing](/01-manual-testing/03-static-testing/README.md)
-- [4. Test Analysis and Design](/01-manual-testing/04-test-analysis-and-design/README.md)
-- [5. Managing the Test Activities](/01-manual-testing/05-managing-test-activities/README.md)
-- [6. Test tools](/01-manual-testing/06-test-tools/README.md)
-- [7. Cookie - Session - Web Storage](/01-manual-testing/07-cookie-session-webstorage/README.md)
-- [8. Cache](/01-manual-testing/08-cache/README.md)
-- [9. CORS](/01-manual-testing/09-cors/README.md)
-- Updating...
+## Roadmap
 
-#### **Phase 02**: API Testing
+Updating...
 
-- [1. Client - Server Modal](/02-api-testing/01-client-server/README.md)
-- [2. HTTP vs HTTPS](/02-api-testing/02-http-https/README.md)
-- [3. API Fundamentals](/02-api-testing/03-fundamentals-api/README.md)
-- [4. How to test an API](/02-api-testing/04-test-design/README.md)
-- Updating...
+## Project
+
+Updating...
 
 ## Resources
 
