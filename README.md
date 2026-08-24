@@ -4,8 +4,8 @@
 
 ## Current Position
 
-Manual QC Engineer (Payment / Fintech)
-July/2025 - Present
+- Domain: Manual QC Engineer (Payment / Fintech)
+- From: July/2025 - Present
 
 ## Learning Goal
 
